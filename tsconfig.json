@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "useDefineForClassFields": true,
+    "lib": ["ES2022", "DOM", "DOM.Iterable", "WebWorker"],
+    "allowJs": false,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "resolveJsonModule": true,
+    "allowArbitraryExtensions": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "baseUrl": ".",
+    "ignoreDeprecations": "6.0",
+    "paths": {
+      "@ksro/shared": ["packages/shared/src/index.ts"],
+      "@ksro/game-data": ["packages/game-data/src/index.ts"],
+      "@ksro/optimizer-engine": ["packages/optimizer-engine/src/index.ts"],
+      "@ksro/combat-engine": ["packages/combat-engine/src/index.ts"]
+    },
+    "types": ["vitest/globals", "node"]
+  },
+  "include": ["apps/web/src", "packages", "tests", "*.ts"]
+}

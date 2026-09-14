@@ -1,0 +1,59 @@
+{
+  "name": "krzys-star-rail-optimizer",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "apps/web",
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "npm run data:verify && vite build --config apps/web/vite.config.ts",
+    "dev": "vite --config apps/web/vite.config.ts",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "format:check": "prettier --check .",
+    "format": "prettier --write .",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "test:e2e": "playwright test",
+    "test:pages": "node scripts/check-pages-build.mjs",
+    "data:update": "node scripts/update-game-data.mjs --write",
+    "data:verify": "node scripts/update-game-data.mjs --verify",
+    "links:check": "node scripts/check-links.mjs",
+    "scanner:test": "python -m unittest discover -s apps/scanner/tests -t apps/scanner -v",
+    "scanner:build": "python apps/scanner/scripts/build.py",
+    "verify": "npm run typecheck && npm run lint && npm run test && npm run build && npm run test:pages && npm run links:check && npm run scanner:test"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "latest",
+    "lucide-react": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "zod": "latest"
+  },
+  "devDependencies": {
+    "@eslint/js": "latest",
+    "@axe-core/playwright": "latest",
+    "@playwright/test": "latest",
+    "@testing-library/jest-dom": "latest",
+    "@testing-library/react": "latest",
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "@vitest/coverage-v8": "latest",
+    "eslint": "latest",
+    "eslint-plugin-react-hooks": "latest",
+    "eslint-plugin-react-refresh": "latest",
+    "globals": "latest",
+    "jsdom": "latest",
+    "prettier": "latest",
+    "typescript": "latest",
+    "typescript-eslint": "latest",
+    "vite": "latest",
+    "vitest": "latest"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

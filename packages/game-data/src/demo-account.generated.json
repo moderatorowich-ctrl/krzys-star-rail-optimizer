@@ -1,0 +1,2710 @@
+{
+  "metadata": {
+    "schemaVersion": 2,
+    "gameVersion": "4.5",
+    "exportedAt": "2026-09-13T00:00:00.000Z",
+    "source": "demo",
+    "uidRedacted": true
+  },
+  "characters": [
+    {
+      "id": "1308",
+      "name": "Acheron",
+      "nickname": "Raiden",
+      "path": "Nihility",
+      "element": "Lightning",
+      "level": 80,
+      "ascension": 6,
+      "eidolon": 1,
+      "traces": {
+        "basic": 6,
+        "skill": 10,
+        "ultimate": 10,
+        "talent": 10,
+        "unlockedNodes": ["A2", "A4", "A6"]
+      },
+      "baseStats": {
+        "hp": 1125.432,
+        "atk": 698.544,
+        "def": 436.59,
+        "spd": 101,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "tags": ["MoC side 1"]
+    },
+    {
+      "id": "1310",
+      "name": "Firefly",
+      "path": "Destruction",
+      "element": "Fire",
+      "level": 80,
+      "ascension": 6,
+      "eidolon": 0,
+      "traces": {
+        "basic": 6,
+        "skill": 10,
+        "ultimate": 10,
+        "talent": 10,
+        "unlockedNodes": ["A2", "A4", "A6"]
+      },
+      "baseStats": {
+        "hp": 814.968,
+        "atk": 523.908,
+        "def": 776.16,
+        "spd": 104,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "tags": ["MoC side 1"]
+    },
+    {
+      "id": "1303",
+      "name": "Ruan Mei",
+      "path": "Harmony",
+      "element": "Ice",
+      "level": 80,
+      "ascension": 6,
+      "eidolon": 0,
+      "traces": {
+        "basic": 6,
+        "skill": 10,
+        "ultimate": 10,
+        "talent": 10,
+        "unlockedNodes": ["A2", "A4", "A6"]
+      },
+      "baseStats": {
+        "hp": 1086.624,
+        "atk": 659.736,
+        "def": 485.1,
+        "spd": 104,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "tags": ["MoC side 1"]
+    },
+    {
+      "id": "1222",
+      "name": "Lingsha",
+      "path": "Abundance",
+      "element": "Fire",
+      "level": 80,
+      "ascension": 6,
+      "eidolon": 1,
+      "traces": {
+        "basic": 6,
+        "skill": 10,
+        "ultimate": 10,
+        "talent": 10,
+        "unlockedNodes": ["A2", "A4", "A6"]
+      },
+      "baseStats": {
+        "hp": 1358.28,
+        "atk": 679.14,
+        "def": 436.59,
+        "spd": 98,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "tags": ["MoC side 1"]
+    },
+    {
+      "id": "1401",
+      "name": "The Herta",
+      "path": "Erudition",
+      "element": "Ice",
+      "level": 80,
+      "ascension": 6,
+      "eidolon": 0,
+      "traces": {
+        "basic": 6,
+        "skill": 10,
+        "ultimate": 10,
+        "talent": 10,
+        "unlockedNodes": ["A2", "A4", "A6"]
+      },
+      "baseStats": {
+        "hp": 1164.24,
+        "atk": 679.14,
+        "def": 485.1,
+        "spd": 99,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "tags": ["MoC side 2"]
+    },
+    {
+      "id": "1309",
+      "name": "Robin",
+      "path": "Harmony",
+      "element": "Physical",
+      "level": 80,
+      "ascension": 6,
+      "eidolon": 0,
+      "traces": {
+        "basic": 6,
+        "skill": 10,
+        "ultimate": 10,
+        "talent": 10,
+        "unlockedNodes": ["A2", "A4", "A6"]
+      },
+      "baseStats": {
+        "hp": 1280.664,
+        "atk": 640.332,
+        "def": 485.1,
+        "spd": 102,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "tags": ["MoC side 2"]
+    },
+    {
+      "id": "1304",
+      "name": "Aventurine",
+      "path": "Preservation",
+      "element": "Imaginary",
+      "level": 80,
+      "ascension": 6,
+      "eidolon": 1,
+      "traces": {
+        "basic": 6,
+        "skill": 10,
+        "ultimate": 10,
+        "talent": 10,
+        "unlockedNodes": ["A2", "A4", "A6"]
+      },
+      "baseStats": {
+        "hp": 1203.048,
+        "atk": 446.292,
+        "def": 654.885,
+        "spd": 106,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "tags": ["MoC side 2"]
+    },
+    {
+      "id": "1313",
+      "name": "Sunday",
+      "path": "Harmony",
+      "element": "Imaginary",
+      "level": 70,
+      "ascension": 5,
+      "eidolon": 0,
+      "traces": {
+        "basic": 4,
+        "skill": 7,
+        "ultimate": 7,
+        "talent": 7,
+        "unlockedNodes": ["A2", "A4", "A6"]
+      },
+      "baseStats": {
+        "hp": 1241.856,
+        "atk": 640.332,
+        "def": 533.61,
+        "spd": 96,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "tags": ["MoC side 2"]
+    }
+  ],
+  "lightCones": [
+    {
+      "id": "23004-0",
+      "name": "In the Name of the World",
+      "path": "Nihility",
+      "rarity": 5,
+      "level": 80,
+      "ascension": 6,
+      "superimposition": 1,
+      "baseStats": {
+        "hp": 1058.4,
+        "atk": 582.12,
+        "def": 463.05
+      },
+      "locked": true,
+      "equippedCharacterId": "1308"
+    },
+    {
+      "id": "23002-1",
+      "name": "Something Irreplaceable",
+      "path": "Destruction",
+      "rarity": 5,
+      "level": 80,
+      "ascension": 6,
+      "superimposition": 1,
+      "baseStats": {
+        "hp": 1164.24,
+        "atk": 582.12,
+        "def": 396.9
+      },
+      "locked": true,
+      "equippedCharacterId": "1310"
+    },
+    {
+      "id": "23003-2",
+      "name": "But the Battle Isn't Over",
+      "path": "Harmony",
+      "rarity": 5,
+      "level": 80,
+      "ascension": 6,
+      "superimposition": 1,
+      "baseStats": {
+        "hp": 1164.24,
+        "atk": 529.2,
+        "def": 463.05
+      },
+      "locked": true,
+      "equippedCharacterId": "1303"
+    },
+    {
+      "id": "23008-3",
+      "name": "Echoes of the Coffin",
+      "path": "Abundance",
+      "rarity": 5,
+      "level": 80,
+      "ascension": 6,
+      "superimposition": 1,
+      "baseStats": {
+        "hp": 1164.24,
+        "atk": 582.12,
+        "def": 396.9
+      },
+      "locked": true,
+      "equippedCharacterId": "1222"
+    },
+    {
+      "id": "23000-4",
+      "name": "Night on the Milky Way",
+      "path": "Erudition",
+      "rarity": 5,
+      "level": 80,
+      "ascension": 6,
+      "superimposition": 1,
+      "baseStats": {
+        "hp": 1164.24,
+        "atk": 582.12,
+        "def": 396.9
+      },
+      "locked": true,
+      "equippedCharacterId": "1401"
+    },
+    {
+      "id": "23003-5",
+      "name": "But the Battle Isn't Over",
+      "path": "Harmony",
+      "rarity": 5,
+      "level": 80,
+      "ascension": 6,
+      "superimposition": 1,
+      "baseStats": {
+        "hp": 1164.24,
+        "atk": 529.2,
+        "def": 463.05
+      },
+      "locked": true,
+      "equippedCharacterId": "1309"
+    },
+    {
+      "id": "23005-6",
+      "name": "Moment of Victory",
+      "path": "Preservation",
+      "rarity": 5,
+      "level": 80,
+      "ascension": 6,
+      "superimposition": 1,
+      "baseStats": {
+        "hp": 1058.4,
+        "atk": 476.28,
+        "def": 595.35
+      },
+      "locked": true,
+      "equippedCharacterId": "1304"
+    },
+    {
+      "id": "23003-7",
+      "name": "But the Battle Isn't Over",
+      "path": "Harmony",
+      "rarity": 5,
+      "level": 70,
+      "ascension": 5,
+      "superimposition": 1,
+      "baseStats": {
+        "hp": 1164.24,
+        "atk": 529.2,
+        "def": 463.05
+      },
+      "locked": true,
+      "equippedCharacterId": "1313"
+    }
+  ],
+  "relics": [
+    {
+      "id": "R01001",
+      "set": "Pioneer Diver of Dead Waters",
+      "slot": "Head",
+      "rarity": 5,
+      "level": 15,
+      "mainStat": {
+        "stat": "hp",
+        "value": 705.6
+      },
+      "substats": [
+        {
+          "stat": "critRate",
+          "value": 0.0418
+        },
+        {
+          "stat": "critDmg",
+          "value": 0.0835
+        },
+        {
+          "stat": "spd",
+          "value": 2.6
+        },
+        {
+          "stat": "breakEffect",
+          "value": 0.0835
+        }
+      ],
+      "locked": false,
+      "discarded": false,
+      "equippedCharacterId": "1308",
+      "ocrConfidence": 0.96
+    },
+    {
+      "id": "R01002",
+      "set": "Iron Cavalry Against the Scourge",
+      "slot": "Head",
+      "rarity": 5,
+      "level": 15,
+      "mainStat": {
+        "stat": "hp",
+        "value": 705.6
+      },
+      "substats": [
+        {
+          "stat": "critRate",
+          "value": 0.0458
+        },
+        {
+          "stat": "critDmg",
+          "value": 0.0916
+        },
+        {
+          "stat": "spd",
+          "value": 4.5
+        },
+        {
+          "stat": "atkPct",
+          "value": 0.0687
+        }
+      ],
+      "locked": true,
+      "discarded": false,
+      "equippedCharacterId": "1310",
+      "ocrConfidence": 0.94
+    },
+    {
+      "id": "R01003",
+      "set": "Watchmaker, Master of Dream Machinations",
+      "slot": "Head",
+      "rarity": 5,
+      "level": 12,
+      "mainStat": {
+        "stat": "hp",
+        "value": 705.6
+      },
+      "substats": [
+        {
+          "stat": "critRate",
+          "value": 0.0499
+        },
+        {
+          "stat": "critDmg",
+          "value": 0.0998
+        },
+        {
+          "stat": "spd",
+          "value": 6.4
+        },
+        {
+          "stat": "atkPct",
+          "value": 0.0748
+        }
+      ],
+      "locked": false,
+      "discarded": false,
+      "equippedCharacterId": "1303",
+      "ocrConfidence": 0.92
+    },
+    {
+      "id": "R01004",
+      "set": "Messenger Traversing Hackerspace",
+      "slot": "Head",
+      "rarity": 5,
+      "level": 15,
+      "mainStat": {
+        "stat": "hp",
+        "value": 705.6
+      },
+      "substats": [
+        {
+          "stat": "critRate",
+          "value": 0.0429
+        },
+        {
+          "stat": "critDmg",
+          "value": 0.0858
+        },
+        {
+          "stat": "spd",
+          "value": 8.3
+        },
+        {
+          "stat": "breakEffect",
+          "value": 0.0858
+        }
+      ],
+      "locked": false,
+      "discarded": false,
+      "equippedCharacterId": "1222",
+      "ocrConfidence": 0.9
+    },
+    {
+      "id": "R01005",
+      "set": "Scholar Lost in Erudition",
+      "slot": "Head",
+      "rarity": 5,
+      "level": 9,
+      "mainStat": {
+        "stat": "hp",
+        "value": 705.6
+      },
+      "substats": [
+        {
+          "stat": "critRate",
+          "value": 0.047
+        },
+        {
+          "stat": "critDmg",
+          "value": 0.094
+        },
+        {
+          "stat": "spd",
+          "value": 2.6
+        },
+        {
+          "stat": "atkPct",
+          "value": 0.0705
+        }
+      ],
+      "locked": false,
+      "discarded": false,
+      "equippedCharacterId": "1401",
+      "ocrConfidence": 0.88
+    },
+    {
+      "id": "R01006",
+      "set": "The Ashblazing Grand Duke",
+      "slot": "Head",
+      "rarity": 5,
+      "level": 15,
+      "mainStat": {
+        "stat": "hp",
+        "value": 705.6
+      },
+      "substats": [
+        {
+          "stat": "critRate",
+          "value": 0.051
+        },
+        {
+          "stat": "critDmg",
+          "value": 0.1021
+        },
+        {
+          "stat": "spd",
+          "value": 4.5
+        },
+        {
+          "stat": "atkPct",
+          "value": 0.0766
+        }
+      ],
+      "locked": false,
+      "discarded": false,
+      "equippedCharacterId": "1309",
+      "ocrConfidence": 0.96
+    },
+    {
+      "id": "R01007",
+      "set": "Pioneer Diver of Dead Waters",
+      "slot": "Head",
+      "rarity": 5,
+      "level": 12,
+      "mainStat": {
+        "stat": "hp",
+        "value": 705.6
+      },
+      "substats": [
+        {
+          "stat": "critRate",
+          "value": 0.0441
+        },
+        {
+          "stat": "critDmg",
+          "value": 0.0882
+        },
+        {
+          "stat": "spd",
+          "value": 6.4
+        },
+        {
+          "stat": "breakEffect",
+          "value": 0.0882
+        }
+      ],
+      "locked": true,
+      "discarded": false,
+      "equippedCharacterId": "1304",
+      "ocrConfidence": 0.94
+    },
+    {
+      "id": "R01008",
+      "set": "Iron Cavalry Against the Scourge",
+      "slot": "Head",
+      "rarity": 5,
+      "level": 15,
+      "mainStat": {
+        "stat": "hp",
+        "value": 705.6
+      },
+      "substats": [
+        {
+          "stat": "critRate",
+          "value": 0.0481
+        },
+        {
+          "stat": "critDmg",
+          "value": 0.0963
+        },
+        {
+          "stat": "spd",
+          "value": 8.3
+        },
+        {
+          "stat": "atkPct",
+          "value": 0.0722
+        }
+      ],
+      "locked": false,
+      "discarded": false,
+      "equippedCharacterId": "1313",
+      "ocrConfidence": 0.92
+    },
+    {
+      "id": "R01009",
+      "set": "Watchmaker, Master of Dream Machinations",
+      "slot": "Head",
+      "rarity": 5,
+      "level": 6,
+      "mainStat": {
+        "stat": "hp",
+        "value": 705.6
+      },
+      "substats": [
+        {
+          "stat": "critRate",
+          "value": 0.0522
+        },
+        {
+          "stat": "critDmg",
+          "value": 0.1044
+        },
+        {
+          "stat": "spd",
+          "value": 2.6
+        },
+        {
+          "stat": "atkPct",
+          "value": 0.0783
+        }
+      ],
+      "locked": false,
+      "discarded": false,
+      "ocrConfidence": 0.71
+    },
+    {
+      "id": "R01010",
+      "set": "Messenger Traversing Hackerspace",
+      "slot": "Head",
+      "rarity": 5,
+      "level": 12,
+      "mainStat": {
+        "stat": "hp",
+        "value": 705.6
+      },
+      "substats": [
+        {
+          "stat": "critRate",
+          "value": 0.0452
+        },
+        {
+          "stat": "critDmg",
+          "value": 0.0905
+        },
+        {
+          "stat": "spd",
+          "value": 4.5
+        },
+        {
+          "stat": "breakEffect",
+          "value": 0.0905
+        }
+      ],
+      "locked": false,
+      "discarded": false,
+      "reservedFor": "1310",
+      "ocrConfidence": 0.88
+    },
+    {
+      "id": "R01011",
+      "set": "Scholar Lost in Erudition",
+      "slot": "Head",
+      "rarity": 5,
+      "level": 0,
+      "mainStat": {
+        "stat": "hp",
+        "value": 705.6
+      },
+      "substats": [
+        {
+          "stat": "critRate",
+          "value": 0.0493
+        },
+        {
+          "stat": "critDmg",
+          "value": 0.0986
+        },
+        {
+          "stat": "spd",
+          "value": 6.4
+        },
+        {
+          "stat": "atkPct",
+          "value": 0.0739
+        }
+      ],
+      "locked": false,
+      "discarded": true,
+      "ocrConfidence": 0.96
+    },
+    {
+      "id": "R01012",
+      "set": "The Ashblazing Grand Duke",
+      "slot": "Head",
+      "rarity": 5,
+      "level": 15,
+      "mainStat": {
+        "stat": "hp",
+        "value": 705.6
+      },
+      "substats": [
+        {
+          "stat": "critRate",
+          "value": 0.0423
+        },
+        {
+          "stat": "critDmg",
+          "value": 0.0847
+        },
+        {
+          "stat": "spd",
+          "value": 8.3
+        },
+        {
+          "stat": "atkPct",
+          "value": 0.0635
+        }
+      ],
+      "locked": false,
+      "discarded": false,
+      "ocrConfidence": 0.94
+    },
+    {
+      "id": "R02001",
+      "set": "Pioneer Diver of Dead Waters",
+      "slot": "Hands",
+      "rarity": 5,
+      "level": 15,
+      "mainStat": {
+        "stat": "atk",
+        "value": 352.8
+      },
+      "substats": [
+        {
+          "stat": "critRate",
+          "value": 0.0435
+        },
+        {
+          "stat": "critDmg",
+          "value": 0.087
+        },
+        {
+          "stat": "spd",
+          "value": 4.5
+        },
+        {
+          "stat": "breakEffect",
+          "value": 0.087
+        }
+      ],
+      "locked": false,
+      "discarded": false,
+      "equippedCharacterId": "1308",
+      "ocrConfidence": 0.94
+    },
+    {
+      "id": "R02002",
+      "set": "Iron Cavalry Against the Scourge",
+      "slot": "Hands",
+      "rarity": 5,
+      "level": 15,
+      "mainStat": {
+        "stat": "atk",
+        "value": 352.8
+      },
+      "substats": [
+        {
+          "stat": "critRate",
+          "value": 0.0476
+        },
+        {
+          "stat": "critDmg",
+          "value": 0.0951
+        },
+        {
+          "stat": "spd",
+          "value": 6.4
+        },
+        {
+          "stat": "atkPct",
+          "value": 0.0713
+        }
+      ],
+      "locked": true,
+      "discarded": false,
+      "equippedCharacterId": "1310",
+      "ocrConfidence": 0.92
+    },
+    {
+      "id": "R02003",
+      "set": "Watchmaker, Master of Dream Machinations",
+      "slot": "Hands",
+      "rarity": 5,
+      "level": 12,
+      "mainStat": {
+        "stat": "atk",
+        "value": 352.8
+      },
+      "substats": [
+        {
+          "stat": "critRate",
+          "value": 0.0516
+        },
+        {
+          "stat": "critDmg",
+          "value": 0.1032
+        },
+        {
+          "stat": "spd",
+          "value": 8.3
+        },
+        {
+          "stat": "atkPct",
+          "value": 0.0774
+        }
+      ],
+      "locked": false,
+      "discarded": false,
+      "equippedCharacterId": "1303",
+      "ocrConfidence": 0.9
+    },
+    {
+      "id": "R02004",
+      "set": "Messenger Traversing Hackerspace",
+      "slot": "Hands",
+      "rarity": 5,
+      "level": 15,
+      "mainStat": {
+        "stat": "atk",
+        "value": 352.8
+      },
+      "substats": [
+        {
+          "stat": "critRate",
+          "value": 0.0447
+        },
+        {
+          "stat": "critDmg",
+          "value": 0.0893
+        },
+        {
+          "stat": "spd",
+          "value": 2.6
+        },
+        {
+          "stat": "breakEffect",
+          "value": 0.0893
+        }
+      ],
+      "locked": false,
+      "discarded": false,
+      "equippedCharacterId": "1222",
+      "ocrConfidence": 0.88
+    },
+    {
+      "id": "R02005",
+      "set": "Scholar Lost in Erudition",
+      "slot": "Hands",
+      "rarity": 5,
+      "level": 9,
+      "mainStat": {
+        "stat": "atk",
+        "value": 352.8
+      },
+      "substats": [
+        {
+          "stat": "critRate",
+          "value": 0.0487
+        },
+        {
+          "stat": "critDmg",
+          "value": 0.0974
+        },
+        {
+          "stat": "spd",
+          "value": 4.5
+        },
+        {
+          "stat": "atkPct",
+          "value": 0.0731
+        }
+      ],
+      "locked": false,
+      "discarded": false,
+      "equippedCharacterId": "1401",
+      "ocrConfidence": 0.96
+    },
+    {
+      "id": "R02006",
+      "set": "The Ashblazing Grand Duke",
+      "slot": "Hands",
+      "rarity": 5,
+      "level": 15,
+      "mainStat": {
+        "stat": "atk",
+        "value": 352.8
+      },
+      "substats": [
+        {
+          "stat": "critRate",
+          "value": 0.0418
+        },
+        {
+          "stat": "critDmg",
+          "value": 0.0835
+        },
+        {
+          "stat": "spd",
+          "value": 6.4
+        },
+        {
+          "stat": "atkPct",
+          "value": 0.0626
+        }
+      ],
+      "locked": false,
+      "discarded": false,
+      "equippedCharacterId": "1309",
+      "ocrConfidence": 0.94
+    },
+    {
+      "id": "R02007",
+      "set": "Pioneer Diver of Dead Waters",
+      "slot": "Hands",
+      "rarity": 5,
+      "level": 12,
+      "mainStat": {
+        "stat": "atk",
+        "value": 352.8
+      },
+      "substats": [
+        {
+          "stat": "critRate",
+          "value": 0.0458
+        },
+        {
+          "stat": "critDmg",
+          "value": 0.0916
+        },
+        {
+          "stat": "spd",
+          "value": 8.3
+        },
+        {
+          "stat": "breakEffect",
+          "value": 0.0916
+        }
+      ],
+      "locked": true,
+      "discarded": false,
+      "equippedCharacterId": "1304",
+      "ocrConfidence": 0.92
+    },
+    {
+      "id": "R02008",
+      "set": "Iron Cavalry Against the Scourge",
+      "slot": "Hands",
+      "rarity": 5,
+      "level": 15,
+      "mainStat": {
+        "stat": "atk",
+        "value": 352.8
+      },
+      "substats": [
+        {
+          "stat": "critRate",
+          "value": 0.0499
+        },
+        {
+          "stat": "critDmg",
+          "value": 0.0998
+        },
+        {
+          "stat": "spd",
+          "value": 2.6
+        },
+        {
+          "stat": "atkPct",
+          "value": 0.0748
+        }
+      ],
+      "locked": false,
+      "discarded": false,
+      "equippedCharacterId": "1313",
+      "ocrConfidence": 0.9
+    },
+    {
+      "id": "R02009",
+      "set": "Watchmaker, Master of Dream Machinations",
+      "slot": "Hands",
+      "rarity": 5,
+      "level": 6,
+      "mainStat": {
+        "stat": "atk",
+        "value": 352.8
+      },
+      "substats": [
+        {
+          "stat": "critRate",
+          "value": 0.0429
+        },
+        {
+          "stat": "critDmg",
+          "value": 0.0858
+        },
+        {
+          "stat": "spd",
+          "value": 4.5
+        },
+        {
+          "stat": "atkPct",
+          "value": 0.0644
+        }
+      ],
+      "locked": false,
+      "discarded": false,
+      "ocrConfidence": 0.71
+    },
+    {
+      "id": "R02010",
+      "set": "Messenger Traversing Hackerspace",
+      "slot": "Hands",
+      "rarity": 5,
+      "level": 12,
+      "mainStat": {
+        "stat": "atk",
+        "value": 352.8
+      },
+      "substats": [
+        {
+          "stat": "critRate",
+          "value": 0.047
+        },
+        {
+          "stat": "critDmg",
+          "value": 0.094
+        },
+        {
+          "stat": "spd",
+          "value": 6.4
+        },
+        {
+          "stat": "breakEffect",
+          "value": 0.094
+        }
+      ],
+      "locked": false,
+      "discarded": false,
+      "reservedFor": "1303",
+      "ocrConfidence": 0.96
+    },
+    {
+      "id": "R02011",
+      "set": "Scholar Lost in Erudition",
+      "slot": "Hands",
+      "rarity": 5,
+      "level": 0,
+      "mainStat": {
+        "stat": "atk",
+        "value": 352.8
+      },
+      "substats": [
+        {
+          "stat": "critRate",
+          "value": 0.051
+        },
+        {
+          "stat": "critDmg",
+          "value": 0.1021
+        },
+        {
+          "stat": "spd",
+          "value": 8.3
+        },
+        {
+          "stat": "atkPct",
+          "value": 0.0766
+        }
+      ],
+      "locked": false,
+      "discarded": true,
+      "ocrConfidence": 0.94
+    },
+    {
+      "id": "R02012",
+      "set": "The Ashblazing Grand Duke",
+      "slot": "Hands",
+      "rarity": 5,
+      "level": 15,
+      "mainStat": {
+        "stat": "atk",
+        "value": 352.8
+      },
+      "substats": [
+        {
+          "stat": "critRate",
+          "value": 0.0441
+        },
+        {
+          "stat": "critDmg",
+          "value": 0.0882
+        },
+        {
+          "stat": "spd",
+          "value": 2.6
+        },
+        {
+          "stat": "atkPct",
+          "value": 0.0661
+        }
+      ],
+      "locked": false,
+      "discarded": false,
+      "ocrConfidence": 0.92
+    },
+    {
+      "id": "R03001",
+      "set": "Pioneer Diver of Dead Waters",
+      "slot": "Body",
+      "rarity": 5,
+      "level": 15,
+      "mainStat": {
+        "stat": "critRate",
+        "value": 0.324
+      },
+      "substats": [
+        {
+          "stat": "critDmg",
+          "value": 0.0905
+        },
+        {
+          "stat": "spd",
+          "value": 6.4
+        },
+        {
+          "stat": "breakEffect",
+          "value": 0.0905
+        },
+        {
+          "stat": "defPct",
+          "value": 0.054
+        }
+      ],
+      "locked": false,
+      "discarded": false,
+      "equippedCharacterId": "1308",
+      "ocrConfidence": 0.92
+    },
+    {
+      "id": "R03002",
+      "set": "Iron Cavalry Against the Scourge",
+      "slot": "Body",
+      "rarity": 5,
+      "level": 15,
+      "mainStat": {
+        "stat": "critDmg",
+        "value": 0.648
+      },
+      "substats": [
+        {
+          "stat": "critRate",
+          "value": 0.0493
+        },
+        {
+          "stat": "spd",
+          "value": 8.3
+        },
+        {
+          "stat": "atkPct",
+          "value": 0.0739
+        },
+        {
+          "stat": "defPct",
+          "value": 0.054
+        }
+      ],
+      "locked": true,
+      "discarded": false,
+      "equippedCharacterId": "1310",
+      "ocrConfidence": 0.9
+    },
+    {
+      "id": "R03003",
+      "set": "Watchmaker, Master of Dream Machinations",
+      "slot": "Body",
+      "rarity": 5,
+      "level": 12,
+      "mainStat": {
+        "stat": "atkPct",
+        "value": 0.432
+      },
+      "substats": [
+        {
+          "stat": "critRate",
+          "value": 0.0423
+        },
+        {
+          "stat": "critDmg",
+          "value": 0.0847
+        },
+        {
+          "stat": "spd",
+          "value": 2.6
+        },
+        {
+          "stat": "defPct",
+          "value": 0.054
+        }
+      ],
+      "locked": false,
+      "discarded": false,
+      "equippedCharacterId": "1303",
+      "ocrConfidence": 0.88
+    },
+    {
+      "id": "R03004",
+      "set": "Messenger Traversing Hackerspace",
+      "slot": "Body",
+      "rarity": 5,
+      "level": 15,
+      "mainStat": {
+        "stat": "critRate",
+        "value": 0.324
+      },
+      "substats": [
+        {
+          "stat": "critDmg",
+          "value": 0.0928
+        },
+        {
+          "stat": "spd",
+          "value": 4.5
+        },
+        {
+          "stat": "breakEffect",
+          "value": 0.0928
+        },
+        {
+          "stat": "defPct",
+          "value": 0.054
+        }
+      ],
+      "locked": false,
+      "discarded": false,
+      "equippedCharacterId": "1222",
+      "ocrConfidence": 0.96
+    },
+    {
+      "id": "R03005",
+      "set": "Scholar Lost in Erudition",
+      "slot": "Body",
+      "rarity": 5,
+      "level": 9,
+      "mainStat": {
+        "stat": "critDmg",
+        "value": 0.648
+      },
+      "substats": [
+        {
+          "stat": "critRate",
+          "value": 0.0505
+        },
+        {
+          "stat": "spd",
+          "value": 6.4
+        },
+        {
+          "stat": "atkPct",
+          "value": 0.0757
+        },
+        {
+          "stat": "defPct",
+          "value": 0.054
+        }
+      ],
+      "locked": false,
+      "discarded": false,
+      "equippedCharacterId": "1401",
+      "ocrConfidence": 0.94
+    },
+    {
+      "id": "R03006",
+      "set": "The Ashblazing Grand Duke",
+      "slot": "Body",
+      "rarity": 5,
+      "level": 15,
+      "mainStat": {
+        "stat": "atkPct",
+        "value": 0.432
+      },
+      "substats": [
+        {
+          "stat": "critRate",
+          "value": 0.0435
+        },
+        {
+          "stat": "critDmg",
+          "value": 0.087
+        },
+        {
+          "stat": "spd",
+          "value": 8.3
+        },
+        {
+          "stat": "defPct",
+          "value": 0.054
+        }
+      ],
+      "locked": false,
+      "discarded": false,
+      "equippedCharacterId": "1309",
+      "ocrConfidence": 0.92
+    },
+    {
+      "id": "R03007",
+      "set": "Pioneer Diver of Dead Waters",
+      "slot": "Body",
+      "rarity": 5,
+      "level": 12,
+      "mainStat": {
+        "stat": "critRate",
+        "value": 0.324
+      },
+      "substats": [
+        {
+          "stat": "critDmg",
+          "value": 0.0951
+        },
+        {
+          "stat": "spd",
+          "value": 2.6
+        },
+        {
+          "stat": "breakEffect",
+          "value": 0.0951
+        },
+        {
+          "stat": "defPct",
+          "value": 0.054
+        }
+      ],
+      "locked": true,
+      "discarded": false,
+      "equippedCharacterId": "1304",
+      "ocrConfidence": 0.9
+    },
+    {
+      "id": "R03008",
+      "set": "Iron Cavalry Against the Scourge",
+      "slot": "Body",
+      "rarity": 5,
+      "level": 15,
+      "mainStat": {
+        "stat": "critDmg",
+        "value": 0.648
+      },
+      "substats": [
+        {
+          "stat": "critRate",
+          "value": 0.0516
+        },
+        {
+          "stat": "spd",
+          "value": 4.5
+        },
+        {
+          "stat": "atkPct",
+          "value": 0.0774
+        },
+        {
+          "stat": "defPct",
+          "value": 0.054
+        }
+      ],
+      "locked": false,
+      "discarded": false,
+      "equippedCharacterId": "1313",
+      "ocrConfidence": 0.88
+    },
+    {
+      "id": "R03009",
+      "set": "Watchmaker, Master of Dream Machinations",
+      "slot": "Body",
+      "rarity": 5,
+      "level": 6,
+      "mainStat": {
+        "stat": "atkPct",
+        "value": 0.432
+      },
+      "substats": [
+        {
+          "stat": "critRate",
+          "value": 0.0447
+        },
+        {
+          "stat": "critDmg",
+          "value": 0.0893
+        },
+        {
+          "stat": "spd",
+          "value": 6.4
+        },
+        {
+          "stat": "defPct",
+          "value": 0.054
+        }
+      ],
+      "locked": false,
+      "discarded": false,
+      "ocrConfidence": 0.71
+    },
+    {
+      "id": "R03010",
+      "set": "Messenger Traversing Hackerspace",
+      "slot": "Body",
+      "rarity": 5,
+      "level": 12,
+      "mainStat": {
+        "stat": "critRate",
+        "value": 0.324
+      },
+      "substats": [
+        {
+          "stat": "critDmg",
+          "value": 0.0974
+        },
+        {
+          "stat": "spd",
+          "value": 8.3
+        },
+        {
+          "stat": "breakEffect",
+          "value": 0.0974
+        },
+        {
+          "stat": "defPct",
+          "value": 0.054
+        }
+      ],
+      "locked": false,
+      "discarded": false,
+      "reservedFor": "1222",
+      "ocrConfidence": 0.94
+    },
+    {
+      "id": "R03011",
+      "set": "Scholar Lost in Erudition",
+      "slot": "Body",
+      "rarity": 5,
+      "level": 0,
+      "mainStat": {
+        "stat": "critDmg",
+        "value": 0.648
+      },
+      "substats": [
+        {
+          "stat": "critRate",
+          "value": 0.0418
+        },
+        {
+          "stat": "spd",
+          "value": 2.6
+        },
+        {
+          "stat": "atkPct",
+          "value": 0.0626
+        },
+        {
+          "stat": "defPct",
+          "value": 0.054
+        }
+      ],
+      "locked": false,
+      "discarded": true,
+      "ocrConfidence": 0.92
+    },
+    {
+      "id": "R03012",
+      "set": "The Ashblazing Grand Duke",
+      "slot": "Body",
+      "rarity": 5,
+      "level": 15,
+      "mainStat": {
+        "stat": "atkPct",
+        "value": 0.432
+      },
+      "substats": [
+        {
+          "stat": "critRate",
+          "value": 0.0458
+        },
+        {
+          "stat": "critDmg",
+          "value": 0.0916
+        },
+        {
+          "stat": "spd",
+          "value": 4.5
+        },
+        {
+          "stat": "defPct",
+          "value": 0.054
+        }
+      ],
+      "locked": false,
+      "discarded": false,
+      "ocrConfidence": 0.9
+    },
+    {
+      "id": "R04001",
+      "set": "Pioneer Diver of Dead Waters",
+      "slot": "Feet",
+      "rarity": 5,
+      "level": 15,
+      "mainStat": {
+        "stat": "spd",
+        "value": 25
+      },
+      "substats": [
+        {
+          "stat": "critRate",
+          "value": 0.047
+        },
+        {
+          "stat": "critDmg",
+          "value": 0.094
+        },
+        {
+          "stat": "breakEffect",
+          "value": 0.094
+        },
+        {
+          "stat": "defPct",
+          "value": 0.054
+        }
+      ],
+      "locked": false,
+      "discarded": false,
+      "equippedCharacterId": "1308",
+      "ocrConfidence": 0.9
+    },
+    {
+      "id": "R04002",
+      "set": "Iron Cavalry Against the Scourge",
+      "slot": "Feet",
+      "rarity": 5,
+      "level": 15,
+      "mainStat": {
+        "stat": "atkPct",
+        "value": 0.432
+      },
+      "substats": [
+        {
+          "stat": "critRate",
+          "value": 0.051
+        },
+        {
+          "stat": "critDmg",
+          "value": 0.1021
+        },
+        {
+          "stat": "spd",
+          "value": 2.6
+        },
+        {
+          "stat": "defPct",
+          "value": 0.054
+        }
+      ],
+      "locked": true,
+      "discarded": false,
+      "equippedCharacterId": "1310",
+      "ocrConfidence": 0.88
+    },
+    {
+      "id": "R04003",
+      "set": "Watchmaker, Master of Dream Machinations",
+      "slot": "Feet",
+      "rarity": 5,
+      "level": 12,
+      "mainStat": {
+        "stat": "spd",
+        "value": 25
+      },
+      "substats": [
+        {
+          "stat": "critRate",
+          "value": 0.0441
+        },
+        {
+          "stat": "critDmg",
+          "value": 0.0882
+        },
+        {
+          "stat": "atkPct",
+          "value": 0.0661
+        },
+        {
+          "stat": "defPct",
+          "value": 0.054
+        }
+      ],
+      "locked": false,
+      "discarded": false,
+      "equippedCharacterId": "1303",
+      "ocrConfidence": 0.96
+    },
+    {
+      "id": "R04004",
+      "set": "Messenger Traversing Hackerspace",
+      "slot": "Feet",
+      "rarity": 5,
+      "level": 15,
+      "mainStat": {
+        "stat": "atkPct",
+        "value": 0.432
+      },
+      "substats": [
+        {
+          "stat": "critRate",
+          "value": 0.0481
+        },
+        {
+          "stat": "critDmg",
+          "value": 0.0963
+        },
+        {
+          "stat": "spd",
+          "value": 6.4
+        },
+        {
+          "stat": "breakEffect",
+          "value": 0.0963
+        }
+      ],
+      "locked": false,
+      "discarded": false,
+      "equippedCharacterId": "1222",
+      "ocrConfidence": 0.94
+    },
+    {
+      "id": "R04005",
+      "set": "Scholar Lost in Erudition",
+      "slot": "Feet",
+      "rarity": 5,
+      "level": 9,
+      "mainStat": {
+        "stat": "spd",
+        "value": 25
+      },
+      "substats": [
+        {
+          "stat": "critRate",
+          "value": 0.0522
+        },
+        {
+          "stat": "critDmg",
+          "value": 0.1044
+        },
+        {
+          "stat": "atkPct",
+          "value": 0.0783
+        },
+        {
+          "stat": "defPct",
+          "value": 0.054
+        }
+      ],
+      "locked": false,
+      "discarded": false,
+      "equippedCharacterId": "1401",
+      "ocrConfidence": 0.92
+    },
+    {
+      "id": "R04006",
+      "set": "The Ashblazing Grand Duke",
+      "slot": "Feet",
+      "rarity": 5,
+      "level": 15,
+      "mainStat": {
+        "stat": "atkPct",
+        "value": 0.432
+      },
+      "substats": [
+        {
+          "stat": "critRate",
+          "value": 0.0452
+        },
+        {
+          "stat": "critDmg",
+          "value": 0.0905
+        },
+        {
+          "stat": "spd",
+          "value": 2.6
+        },
+        {
+          "stat": "defPct",
+          "value": 0.054
+        }
+      ],
+      "locked": false,
+      "discarded": false,
+      "equippedCharacterId": "1309",
+      "ocrConfidence": 0.9
+    },
+    {
+      "id": "R04007",
+      "set": "Pioneer Diver of Dead Waters",
+      "slot": "Feet",
+      "rarity": 5,
+      "level": 12,
+      "mainStat": {
+        "stat": "spd",
+        "value": 25
+      },
+      "substats": [
+        {
+          "stat": "critRate",
+          "value": 0.0493
+        },
+        {
+          "stat": "critDmg",
+          "value": 0.0986
+        },
+        {
+          "stat": "breakEffect",
+          "value": 0.0986
+        },
+        {
+          "stat": "defPct",
+          "value": 0.054
+        }
+      ],
+      "locked": true,
+      "discarded": false,
+      "equippedCharacterId": "1304",
+      "ocrConfidence": 0.88
+    },
+    {
+      "id": "R04008",
+      "set": "Iron Cavalry Against the Scourge",
+      "slot": "Feet",
+      "rarity": 5,
+      "level": 15,
+      "mainStat": {
+        "stat": "atkPct",
+        "value": 0.432
+      },
+      "substats": [
+        {
+          "stat": "critRate",
+          "value": 0.0423
+        },
+        {
+          "stat": "critDmg",
+          "value": 0.0847
+        },
+        {
+          "stat": "spd",
+          "value": 6.4
+        },
+        {
+          "stat": "defPct",
+          "value": 0.054
+        }
+      ],
+      "locked": false,
+      "discarded": false,
+      "equippedCharacterId": "1313",
+      "ocrConfidence": 0.96
+    },
+    {
+      "id": "R04009",
+      "set": "Watchmaker, Master of Dream Machinations",
+      "slot": "Feet",
+      "rarity": 5,
+      "level": 6,
+      "mainStat": {
+        "stat": "spd",
+        "value": 25
+      },
+      "substats": [
+        {
+          "stat": "critRate",
+          "value": 0.0464
+        },
+        {
+          "stat": "critDmg",
+          "value": 0.0928
+        },
+        {
+          "stat": "atkPct",
+          "value": 0.0696
+        },
+        {
+          "stat": "defPct",
+          "value": 0.054
+        }
+      ],
+      "locked": false,
+      "discarded": false,
+      "ocrConfidence": 0.71
+    },
+    {
+      "id": "R04010",
+      "set": "Messenger Traversing Hackerspace",
+      "slot": "Feet",
+      "rarity": 5,
+      "level": 12,
+      "mainStat": {
+        "stat": "atkPct",
+        "value": 0.432
+      },
+      "substats": [
+        {
+          "stat": "critRate",
+          "value": 0.0505
+        },
+        {
+          "stat": "critDmg",
+          "value": 0.1009
+        },
+        {
+          "stat": "spd",
+          "value": 2.6
+        },
+        {
+          "stat": "breakEffect",
+          "value": 0.1009
+        }
+      ],
+      "locked": false,
+      "discarded": false,
+      "reservedFor": "1401",
+      "ocrConfidence": 0.92
+    },
+    {
+      "id": "R04011",
+      "set": "Scholar Lost in Erudition",
+      "slot": "Feet",
+      "rarity": 5,
+      "level": 0,
+      "mainStat": {
+        "stat": "spd",
+        "value": 25
+      },
+      "substats": [
+        {
+          "stat": "critRate",
+          "value": 0.0435
+        },
+        {
+          "stat": "critDmg",
+          "value": 0.087
+        },
+        {
+          "stat": "atkPct",
+          "value": 0.0653
+        },
+        {
+          "stat": "defPct",
+          "value": 0.054
+        }
+      ],
+      "locked": false,
+      "discarded": true,
+      "ocrConfidence": 0.9
+    },
+    {
+      "id": "R04012",
+      "set": "The Ashblazing Grand Duke",
+      "slot": "Feet",
+      "rarity": 5,
+      "level": 15,
+      "mainStat": {
+        "stat": "atkPct",
+        "value": 0.432
+      },
+      "substats": [
+        {
+          "stat": "critRate",
+          "value": 0.0476
+        },
+        {
+          "stat": "critDmg",
+          "value": 0.0951
+        },
+        {
+          "stat": "spd",
+          "value": 6.4
+        },
+        {
+          "stat": "defPct",
+          "value": 0.054
+        }
+      ],
+      "locked": false,
+      "discarded": false,
+      "ocrConfidence": 0.88
+    },
+    {
+      "id": "R05001",
+      "set": "Broken Keel",
+      "slot": "Planar Sphere",
+      "rarity": 5,
+      "level": 15,
+      "mainStat": {
+        "stat": "elementalDmg",
+        "value": 0.388
+      },
+      "substats": [
+        {
+          "stat": "critRate",
+          "value": 0.0487
+        },
+        {
+          "stat": "critDmg",
+          "value": 0.0974
+        },
+        {
+          "stat": "spd",
+          "value": 2.6
+        },
+        {
+          "stat": "breakEffect",
+          "value": 0.0974
+        }
+      ],
+      "locked": false,
+      "discarded": false,
+      "equippedCharacterId": "1308",
+      "ocrConfidence": 0.88
+    },
+    {
+      "id": "R05002",
+      "set": "Rutilant Arena",
+      "slot": "Planar Sphere",
+      "rarity": 5,
+      "level": 15,
+      "mainStat": {
+        "stat": "atkPct",
+        "value": 0.432
+      },
+      "substats": [
+        {
+          "stat": "critRate",
+          "value": 0.0418
+        },
+        {
+          "stat": "critDmg",
+          "value": 0.0835
+        },
+        {
+          "stat": "spd",
+          "value": 4.5
+        },
+        {
+          "stat": "defPct",
+          "value": 0.054
+        }
+      ],
+      "locked": true,
+      "discarded": false,
+      "equippedCharacterId": "1310",
+      "ocrConfidence": 0.96
+    },
+    {
+      "id": "R05003",
+      "set": "Duran, Dynasty of Running Wolves",
+      "slot": "Planar Sphere",
+      "rarity": 5,
+      "level": 12,
+      "mainStat": {
+        "stat": "elementalDmg",
+        "value": 0.388
+      },
+      "substats": [
+        {
+          "stat": "critRate",
+          "value": 0.0458
+        },
+        {
+          "stat": "critDmg",
+          "value": 0.0916
+        },
+        {
+          "stat": "spd",
+          "value": 6.4
+        },
+        {
+          "stat": "atkPct",
+          "value": 0.0687
+        }
+      ],
+      "locked": false,
+      "discarded": false,
+      "equippedCharacterId": "1303",
+      "ocrConfidence": 0.94
+    },
+    {
+      "id": "R05004",
+      "set": "Forge of the Kalpagni Lantern",
+      "slot": "Planar Sphere",
+      "rarity": 5,
+      "level": 15,
+      "mainStat": {
+        "stat": "atkPct",
+        "value": 0.432
+      },
+      "substats": [
+        {
+          "stat": "critRate",
+          "value": 0.0499
+        },
+        {
+          "stat": "critDmg",
+          "value": 0.0998
+        },
+        {
+          "stat": "spd",
+          "value": 8.3
+        },
+        {
+          "stat": "breakEffect",
+          "value": 0.0998
+        }
+      ],
+      "locked": false,
+      "discarded": false,
+      "equippedCharacterId": "1222",
+      "ocrConfidence": 0.92
+    },
+    {
+      "id": "R05005",
+      "set": "Broken Keel",
+      "slot": "Planar Sphere",
+      "rarity": 5,
+      "level": 9,
+      "mainStat": {
+        "stat": "elementalDmg",
+        "value": 0.388
+      },
+      "substats": [
+        {
+          "stat": "critRate",
+          "value": 0.0429
+        },
+        {
+          "stat": "critDmg",
+          "value": 0.0858
+        },
+        {
+          "stat": "spd",
+          "value": 2.6
+        },
+        {
+          "stat": "atkPct",
+          "value": 0.0644
+        }
+      ],
+      "locked": false,
+      "discarded": false,
+      "equippedCharacterId": "1401",
+      "ocrConfidence": 0.9
+    },
+    {
+      "id": "R05006",
+      "set": "Rutilant Arena",
+      "slot": "Planar Sphere",
+      "rarity": 5,
+      "level": 15,
+      "mainStat": {
+        "stat": "atkPct",
+        "value": 0.432
+      },
+      "substats": [
+        {
+          "stat": "critRate",
+          "value": 0.047
+        },
+        {
+          "stat": "critDmg",
+          "value": 0.094
+        },
+        {
+          "stat": "spd",
+          "value": 4.5
+        },
+        {
+          "stat": "defPct",
+          "value": 0.054
+        }
+      ],
+      "locked": false,
+      "discarded": false,
+      "equippedCharacterId": "1309",
+      "ocrConfidence": 0.88
+    },
+    {
+      "id": "R05007",
+      "set": "Duran, Dynasty of Running Wolves",
+      "slot": "Planar Sphere",
+      "rarity": 5,
+      "level": 12,
+      "mainStat": {
+        "stat": "elementalDmg",
+        "value": 0.388
+      },
+      "substats": [
+        {
+          "stat": "critRate",
+          "value": 0.051
+        },
+        {
+          "stat": "critDmg",
+          "value": 0.1021
+        },
+        {
+          "stat": "spd",
+          "value": 6.4
+        },
+        {
+          "stat": "breakEffect",
+          "value": 0.1021
+        }
+      ],
+      "locked": true,
+      "discarded": false,
+      "equippedCharacterId": "1304",
+      "ocrConfidence": 0.96
+    },
+    {
+      "id": "R05008",
+      "set": "Forge of the Kalpagni Lantern",
+      "slot": "Planar Sphere",
+      "rarity": 5,
+      "level": 15,
+      "mainStat": {
+        "stat": "atkPct",
+        "value": 0.432
+      },
+      "substats": [
+        {
+          "stat": "critRate",
+          "value": 0.0441
+        },
+        {
+          "stat": "critDmg",
+          "value": 0.0882
+        },
+        {
+          "stat": "spd",
+          "value": 8.3
+        },
+        {
+          "stat": "defPct",
+          "value": 0.054
+        }
+      ],
+      "locked": false,
+      "discarded": false,
+      "equippedCharacterId": "1313",
+      "ocrConfidence": 0.94
+    },
+    {
+      "id": "R05009",
+      "set": "Broken Keel",
+      "slot": "Planar Sphere",
+      "rarity": 5,
+      "level": 6,
+      "mainStat": {
+        "stat": "elementalDmg",
+        "value": 0.388
+      },
+      "substats": [
+        {
+          "stat": "critRate",
+          "value": 0.0481
+        },
+        {
+          "stat": "critDmg",
+          "value": 0.0963
+        },
+        {
+          "stat": "spd",
+          "value": 2.6
+        },
+        {
+          "stat": "atkPct",
+          "value": 0.0722
+        }
+      ],
+      "locked": false,
+      "discarded": false,
+      "ocrConfidence": 0.71
+    },
+    {
+      "id": "R05010",
+      "set": "Rutilant Arena",
+      "slot": "Planar Sphere",
+      "rarity": 5,
+      "level": 12,
+      "mainStat": {
+        "stat": "atkPct",
+        "value": 0.432
+      },
+      "substats": [
+        {
+          "stat": "critRate",
+          "value": 0.0522
+        },
+        {
+          "stat": "critDmg",
+          "value": 0.1044
+        },
+        {
+          "stat": "spd",
+          "value": 4.5
+        },
+        {
+          "stat": "breakEffect",
+          "value": 0.1044
+        }
+      ],
+      "locked": false,
+      "discarded": false,
+      "reservedFor": "1309",
+      "ocrConfidence": 0.9
+    },
+    {
+      "id": "R05011",
+      "set": "Duran, Dynasty of Running Wolves",
+      "slot": "Planar Sphere",
+      "rarity": 5,
+      "level": 0,
+      "mainStat": {
+        "stat": "elementalDmg",
+        "value": 0.388
+      },
+      "substats": [
+        {
+          "stat": "critRate",
+          "value": 0.0452
+        },
+        {
+          "stat": "critDmg",
+          "value": 0.0905
+        },
+        {
+          "stat": "spd",
+          "value": 6.4
+        },
+        {
+          "stat": "atkPct",
+          "value": 0.0679
+        }
+      ],
+      "locked": false,
+      "discarded": true,
+      "ocrConfidence": 0.88
+    },
+    {
+      "id": "R05012",
+      "set": "Forge of the Kalpagni Lantern",
+      "slot": "Planar Sphere",
+      "rarity": 5,
+      "level": 15,
+      "mainStat": {
+        "stat": "atkPct",
+        "value": 0.432
+      },
+      "substats": [
+        {
+          "stat": "critRate",
+          "value": 0.0493
+        },
+        {
+          "stat": "critDmg",
+          "value": 0.0986
+        },
+        {
+          "stat": "spd",
+          "value": 8.3
+        },
+        {
+          "stat": "defPct",
+          "value": 0.054
+        }
+      ],
+      "locked": false,
+      "discarded": false,
+      "ocrConfidence": 0.96
+    },
+    {
+      "id": "R06001",
+      "set": "Broken Keel",
+      "slot": "Link Rope",
+      "rarity": 5,
+      "level": 15,
+      "mainStat": {
+        "stat": "atkPct",
+        "value": 0.432
+      },
+      "substats": [
+        {
+          "stat": "critRate",
+          "value": 0.0505
+        },
+        {
+          "stat": "critDmg",
+          "value": 0.1009
+        },
+        {
+          "stat": "spd",
+          "value": 4.5
+        },
+        {
+          "stat": "breakEffect",
+          "value": 0.1009
+        }
+      ],
+      "locked": false,
+      "discarded": false,
+      "equippedCharacterId": "1308",
+      "ocrConfidence": 0.96
+    },
+    {
+      "id": "R06002",
+      "set": "Rutilant Arena",
+      "slot": "Link Rope",
+      "rarity": 5,
+      "level": 15,
+      "mainStat": {
+        "stat": "breakEffect",
+        "value": 0.648
+      },
+      "substats": [
+        {
+          "stat": "critRate",
+          "value": 0.0435
+        },
+        {
+          "stat": "critDmg",
+          "value": 0.087
+        },
+        {
+          "stat": "spd",
+          "value": 6.4
+        },
+        {
+          "stat": "atkPct",
+          "value": 0.0653
+        }
+      ],
+      "locked": true,
+      "discarded": false,
+      "equippedCharacterId": "1310",
+      "ocrConfidence": 0.94
+    },
+    {
+      "id": "R06003",
+      "set": "Duran, Dynasty of Running Wolves",
+      "slot": "Link Rope",
+      "rarity": 5,
+      "level": 12,
+      "mainStat": {
+        "stat": "energyRegen",
+        "value": 0.194
+      },
+      "substats": [
+        {
+          "stat": "critRate",
+          "value": 0.0476
+        },
+        {
+          "stat": "critDmg",
+          "value": 0.0951
+        },
+        {
+          "stat": "spd",
+          "value": 8.3
+        },
+        {
+          "stat": "atkPct",
+          "value": 0.0713
+        }
+      ],
+      "locked": false,
+      "discarded": false,
+      "equippedCharacterId": "1303",
+      "ocrConfidence": 0.92
+    },
+    {
+      "id": "R06004",
+      "set": "Forge of the Kalpagni Lantern",
+      "slot": "Link Rope",
+      "rarity": 5,
+      "level": 15,
+      "mainStat": {
+        "stat": "atkPct",
+        "value": 0.432
+      },
+      "substats": [
+        {
+          "stat": "critRate",
+          "value": 0.0516
+        },
+        {
+          "stat": "critDmg",
+          "value": 0.1032
+        },
+        {
+          "stat": "spd",
+          "value": 2.6
+        },
+        {
+          "stat": "breakEffect",
+          "value": 0.1032
+        }
+      ],
+      "locked": false,
+      "discarded": false,
+      "equippedCharacterId": "1222",
+      "ocrConfidence": 0.9
+    },
+    {
+      "id": "R06005",
+      "set": "Broken Keel",
+      "slot": "Link Rope",
+      "rarity": 5,
+      "level": 9,
+      "mainStat": {
+        "stat": "breakEffect",
+        "value": 0.648
+      },
+      "substats": [
+        {
+          "stat": "critRate",
+          "value": 0.0447
+        },
+        {
+          "stat": "critDmg",
+          "value": 0.0893
+        },
+        {
+          "stat": "spd",
+          "value": 4.5
+        },
+        {
+          "stat": "atkPct",
+          "value": 0.067
+        }
+      ],
+      "locked": false,
+      "discarded": false,
+      "equippedCharacterId": "1401",
+      "ocrConfidence": 0.88
+    },
+    {
+      "id": "R06006",
+      "set": "Rutilant Arena",
+      "slot": "Link Rope",
+      "rarity": 5,
+      "level": 15,
+      "mainStat": {
+        "stat": "energyRegen",
+        "value": 0.194
+      },
+      "substats": [
+        {
+          "stat": "critRate",
+          "value": 0.0487
+        },
+        {
+          "stat": "critDmg",
+          "value": 0.0974
+        },
+        {
+          "stat": "spd",
+          "value": 6.4
+        },
+        {
+          "stat": "atkPct",
+          "value": 0.0731
+        }
+      ],
+      "locked": false,
+      "discarded": false,
+      "equippedCharacterId": "1309",
+      "ocrConfidence": 0.96
+    },
+    {
+      "id": "R06007",
+      "set": "Duran, Dynasty of Running Wolves",
+      "slot": "Link Rope",
+      "rarity": 5,
+      "level": 12,
+      "mainStat": {
+        "stat": "atkPct",
+        "value": 0.432
+      },
+      "substats": [
+        {
+          "stat": "critRate",
+          "value": 0.0418
+        },
+        {
+          "stat": "critDmg",
+          "value": 0.0835
+        },
+        {
+          "stat": "spd",
+          "value": 8.3
+        },
+        {
+          "stat": "breakEffect",
+          "value": 0.0835
+        }
+      ],
+      "locked": true,
+      "discarded": false,
+      "equippedCharacterId": "1304",
+      "ocrConfidence": 0.94
+    },
+    {
+      "id": "R06008",
+      "set": "Forge of the Kalpagni Lantern",
+      "slot": "Link Rope",
+      "rarity": 5,
+      "level": 15,
+      "mainStat": {
+        "stat": "breakEffect",
+        "value": 0.648
+      },
+      "substats": [
+        {
+          "stat": "critRate",
+          "value": 0.0458
+        },
+        {
+          "stat": "critDmg",
+          "value": 0.0916
+        },
+        {
+          "stat": "spd",
+          "value": 2.6
+        },
+        {
+          "stat": "atkPct",
+          "value": 0.0687
+        }
+      ],
+      "locked": false,
+      "discarded": false,
+      "equippedCharacterId": "1313",
+      "ocrConfidence": 0.92
+    },
+    {
+      "id": "R06009",
+      "set": "Broken Keel",
+      "slot": "Link Rope",
+      "rarity": 5,
+      "level": 6,
+      "mainStat": {
+        "stat": "energyRegen",
+        "value": 0.194
+      },
+      "substats": [
+        {
+          "stat": "critRate",
+          "value": 0.0499
+        },
+        {
+          "stat": "critDmg",
+          "value": 0.0998
+        },
+        {
+          "stat": "spd",
+          "value": 4.5
+        },
+        {
+          "stat": "atkPct",
+          "value": 0.0748
+        }
+      ],
+      "locked": false,
+      "discarded": false,
+      "ocrConfidence": 0.71
+    },
+    {
+      "id": "R06010",
+      "set": "Rutilant Arena",
+      "slot": "Link Rope",
+      "rarity": 5,
+      "level": 12,
+      "mainStat": {
+        "stat": "atkPct",
+        "value": 0.432
+      },
+      "substats": [
+        {
+          "stat": "critRate",
+          "value": 0.0429
+        },
+        {
+          "stat": "critDmg",
+          "value": 0.0858
+        },
+        {
+          "stat": "spd",
+          "value": 6.4
+        },
+        {
+          "stat": "breakEffect",
+          "value": 0.0858
+        }
+      ],
+      "locked": false,
+      "discarded": false,
+      "reservedFor": "1304",
+      "ocrConfidence": 0.88
+    },
+    {
+      "id": "R06011",
+      "set": "Duran, Dynasty of Running Wolves",
+      "slot": "Link Rope",
+      "rarity": 5,
+      "level": 0,
+      "mainStat": {
+        "stat": "breakEffect",
+        "value": 0.648
+      },
+      "substats": [
+        {
+          "stat": "critRate",
+          "value": 0.047
+        },
+        {
+          "stat": "critDmg",
+          "value": 0.094
+        },
+        {
+          "stat": "spd",
+          "value": 8.3
+        },
+        {
+          "stat": "atkPct",
+          "value": 0.0705
+        }
+      ],
+      "locked": false,
+      "discarded": true,
+      "ocrConfidence": 0.96
+    },
+    {
+      "id": "R06012",
+      "set": "Forge of the Kalpagni Lantern",
+      "slot": "Link Rope",
+      "rarity": 5,
+      "level": 15,
+      "mainStat": {
+        "stat": "energyRegen",
+        "value": 0.194
+      },
+      "substats": [
+        {
+          "stat": "critRate",
+          "value": 0.051
+        },
+        {
+          "stat": "critDmg",
+          "value": 0.1021
+        },
+        {
+          "stat": "spd",
+          "value": 2.6
+        },
+        {
+          "stat": "atkPct",
+          "value": 0.0766
+        }
+      ],
+      "locked": false,
+      "discarded": false,
+      "ocrConfidence": 0.94
+    }
+  ],
+  "resources": {
+    "credits": 2650000,
+    "traceMaterials": 84,
+    "relicRemains": 560,
+    "stellarJade": 12800,
+    "specialPasses": 24
+  },
+  "reservations": {}
+}

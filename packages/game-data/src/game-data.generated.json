@@ -1,0 +1,4675 @@
+{
+  "sourceRevision": "d28928b1f09d7613c37ca7ca373a468367060fc0",
+  "generatedAt": "2026-09-13T00:00:00.000Z",
+  "checksum": "d87ca7c20cad3fe5a912daa6b5b4e27755c7d70af80120f15e71585c5682b10a",
+  "characters": [
+    {
+      "id": "1001",
+      "name": "March 7th",
+      "rarity": 4,
+      "path": "Preservation",
+      "element": "Ice",
+      "maxSp": 120,
+      "baseStats": {
+        "hp": 1058.4,
+        "atk": 511.56,
+        "def": 573.3,
+        "spd": 101,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1002",
+      "name": "Dan Heng",
+      "rarity": 4,
+      "path": "Hunt",
+      "element": "Wind",
+      "maxSp": 100,
+      "baseStats": {
+        "hp": 882,
+        "atk": 546.84,
+        "def": 396.9,
+        "spd": 110,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1003",
+      "name": "Himeko",
+      "rarity": 5,
+      "path": "Erudition",
+      "element": "Fire",
+      "maxSp": 120,
+      "baseStats": {
+        "hp": 1047.816,
+        "atk": 756.756,
+        "def": 436.59,
+        "spd": 96,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1004",
+      "name": "Welt",
+      "rarity": 5,
+      "path": "Nihility",
+      "element": "Imaginary",
+      "maxSp": 120,
+      "baseStats": {
+        "hp": 1125.432,
+        "atk": 620.928,
+        "def": 509.355,
+        "spd": 102,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1004b1",
+      "name": "Welt",
+      "rarity": 5,
+      "path": "Nihility",
+      "element": "Imaginary",
+      "maxSp": 120,
+      "baseStats": {
+        "hp": 1125.432,
+        "atk": 620.928,
+        "def": 509.355,
+        "spd": 102,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1005",
+      "name": "Kafka",
+      "rarity": 5,
+      "path": "Nihility",
+      "element": "Lightning",
+      "maxSp": 120,
+      "baseStats": {
+        "hp": 1086.624,
+        "atk": 679.14,
+        "def": 485.1,
+        "spd": 100,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1005b1",
+      "name": "Kafka",
+      "rarity": 5,
+      "path": "Nihility",
+      "element": "Lightning",
+      "maxSp": 120,
+      "baseStats": {
+        "hp": 1086.624,
+        "atk": 679.14,
+        "def": 485.1,
+        "spd": 100,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1006",
+      "name": "Silver Wolf",
+      "rarity": 5,
+      "path": "Nihility",
+      "element": "Quantum",
+      "maxSp": 110,
+      "baseStats": {
+        "hp": 1047.816,
+        "atk": 640.332,
+        "def": 460.845,
+        "spd": 107,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1006b1",
+      "name": "Silver Wolf",
+      "rarity": 5,
+      "path": "Nihility",
+      "element": "Quantum",
+      "maxSp": 110,
+      "baseStats": {
+        "hp": 1047.816,
+        "atk": 640.332,
+        "def": 460.845,
+        "spd": 107,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1008",
+      "name": "Arlan",
+      "rarity": 4,
+      "path": "Destruction",
+      "element": "Lightning",
+      "maxSp": 110,
+      "baseStats": {
+        "hp": 1199.52,
+        "atk": 599.76,
+        "def": 330.75,
+        "spd": 102,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1009",
+      "name": "Asta",
+      "rarity": 4,
+      "path": "Harmony",
+      "element": "Fire",
+      "maxSp": 120,
+      "baseStats": {
+        "hp": 1023.12,
+        "atk": 511.56,
+        "def": 463.05,
+        "spd": 106,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1013",
+      "name": "Herta",
+      "rarity": 4,
+      "path": "Erudition",
+      "element": "Ice",
+      "maxSp": 110,
+      "baseStats": {
+        "hp": 952.56,
+        "atk": 582.12,
+        "def": 396.9,
+        "spd": 100,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1014",
+      "name": "Saber",
+      "rarity": 5,
+      "path": "Destruction",
+      "element": "Wind",
+      "maxSp": 360,
+      "baseStats": {
+        "hp": 1241.856,
+        "atk": 601.524,
+        "def": 654.885,
+        "spd": 101,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1015",
+      "name": "Archer",
+      "rarity": 5,
+      "path": "Hunt",
+      "element": "Quantum",
+      "maxSp": 220,
+      "baseStats": {
+        "hp": 1164.24,
+        "atk": 620.928,
+        "def": 485.1,
+        "spd": 105,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1101",
+      "name": "Bronya",
+      "rarity": 5,
+      "path": "Harmony",
+      "element": "Wind",
+      "maxSp": 120,
+      "baseStats": {
+        "hp": 1241.856,
+        "atk": 582.12,
+        "def": 533.61,
+        "spd": 99,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1102",
+      "name": "Seele",
+      "rarity": 5,
+      "path": "Hunt",
+      "element": "Quantum",
+      "maxSp": 120,
+      "baseStats": {
+        "hp": 931.392,
+        "atk": 640.332,
+        "def": 363.825,
+        "spd": 115,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1102b1",
+      "name": "Seele",
+      "rarity": 5,
+      "path": "Hunt",
+      "element": "Quantum",
+      "maxSp": 120,
+      "baseStats": {
+        "hp": 931.392,
+        "atk": 640.332,
+        "def": 363.825,
+        "spd": 115,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1103",
+      "name": "Serval",
+      "rarity": 4,
+      "path": "Erudition",
+      "element": "Lightning",
+      "maxSp": 100,
+      "baseStats": {
+        "hp": 917.28,
+        "atk": 652.68,
+        "def": 374.85,
+        "spd": 104,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1104",
+      "name": "Gepard",
+      "rarity": 5,
+      "path": "Preservation",
+      "element": "Ice",
+      "maxSp": 100,
+      "baseStats": {
+        "hp": 1397.088,
+        "atk": 543.312,
+        "def": 654.885,
+        "spd": 92,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1105",
+      "name": "Natasha",
+      "rarity": 4,
+      "path": "Abundance",
+      "element": "Physical",
+      "maxSp": 90,
+      "baseStats": {
+        "hp": 1164.24,
+        "atk": 476.28,
+        "def": 507.15,
+        "spd": 98,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1106",
+      "name": "Pela",
+      "rarity": 4,
+      "path": "Nihility",
+      "element": "Ice",
+      "maxSp": 110,
+      "baseStats": {
+        "hp": 987.84,
+        "atk": 546.84,
+        "def": 463.05,
+        "spd": 105,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1107",
+      "name": "Clara",
+      "rarity": 5,
+      "path": "Destruction",
+      "element": "Physical",
+      "maxSp": 110,
+      "baseStats": {
+        "hp": 1241.856,
+        "atk": 737.352,
+        "def": 485.1,
+        "spd": 90,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1108",
+      "name": "Sampo",
+      "rarity": 4,
+      "path": "Nihility",
+      "element": "Wind",
+      "maxSp": 120,
+      "baseStats": {
+        "hp": 1023.12,
+        "atk": 617.4,
+        "def": 396.9,
+        "spd": 102,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1109",
+      "name": "Hook",
+      "rarity": 4,
+      "path": "Destruction",
+      "element": "Fire",
+      "maxSp": 120,
+      "baseStats": {
+        "hp": 1340.64,
+        "atk": 617.4,
+        "def": 352.8,
+        "spd": 94,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1110",
+      "name": "Lynx",
+      "rarity": 4,
+      "path": "Abundance",
+      "element": "Quantum",
+      "maxSp": 100,
+      "baseStats": {
+        "hp": 1058.4,
+        "atk": 493.92,
+        "def": 551.25,
+        "spd": 100,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1111",
+      "name": "Luka",
+      "rarity": 4,
+      "path": "Nihility",
+      "element": "Physical",
+      "maxSp": 130,
+      "baseStats": {
+        "hp": 917.28,
+        "atk": 582.12,
+        "def": 485.1,
+        "spd": 103,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1112",
+      "name": "Topaz & Numby",
+      "rarity": 5,
+      "path": "Hunt",
+      "element": "Fire",
+      "maxSp": 130,
+      "baseStats": {
+        "hp": 931.392,
+        "atk": 620.928,
+        "def": 412.335,
+        "spd": 110,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1201",
+      "name": "Qingque",
+      "rarity": 4,
+      "path": "Erudition",
+      "element": "Quantum",
+      "maxSp": 140,
+      "baseStats": {
+        "hp": 1023.12,
+        "atk": 652.68,
+        "def": 441,
+        "spd": 98,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1202",
+      "name": "Tingyun",
+      "rarity": 4,
+      "path": "Harmony",
+      "element": "Lightning",
+      "maxSp": 130,
+      "baseStats": {
+        "hp": 846.72,
+        "atk": 529.2,
+        "def": 396.9,
+        "spd": 112,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1203",
+      "name": "Luocha",
+      "rarity": 5,
+      "path": "Abundance",
+      "element": "Imaginary",
+      "maxSp": 100,
+      "baseStats": {
+        "hp": 1280.664,
+        "atk": 756.756,
+        "def": 363.825,
+        "spd": 101,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1204",
+      "name": "Jing Yuan",
+      "rarity": 5,
+      "path": "Erudition",
+      "element": "Lightning",
+      "maxSp": 130,
+      "baseStats": {
+        "hp": 1164.24,
+        "atk": 698.544,
+        "def": 485.1,
+        "spd": 99,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1205",
+      "name": "Blade",
+      "rarity": 5,
+      "path": "Destruction",
+      "element": "Wind",
+      "maxSp": 130,
+      "baseStats": {
+        "hp": 1358.28,
+        "atk": 543.312,
+        "def": 485.1,
+        "spd": 97,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1205b1",
+      "name": "Blade",
+      "rarity": 5,
+      "path": "Destruction",
+      "element": "Wind",
+      "maxSp": 130,
+      "baseStats": {
+        "hp": 1358.28,
+        "atk": 543.312,
+        "def": 485.1,
+        "spd": 97,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1206",
+      "name": "Sushang",
+      "rarity": 4,
+      "path": "Hunt",
+      "element": "Physical",
+      "maxSp": 120,
+      "baseStats": {
+        "hp": 917.28,
+        "atk": 564.48,
+        "def": 418.95,
+        "spd": 107,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1207",
+      "name": "Yukong",
+      "rarity": 4,
+      "path": "Harmony",
+      "element": "Imaginary",
+      "maxSp": 130,
+      "baseStats": {
+        "hp": 917.28,
+        "atk": 599.76,
+        "def": 374.85,
+        "spd": 107,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1208",
+      "name": "Fu Xuan",
+      "rarity": 5,
+      "path": "Preservation",
+      "element": "Quantum",
+      "maxSp": 135,
+      "baseStats": {
+        "hp": 1474.704,
+        "atk": 465.696,
+        "def": 606.375,
+        "spd": 100,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1209",
+      "name": "Yanqing",
+      "rarity": 5,
+      "path": "Hunt",
+      "element": "Ice",
+      "maxSp": 140,
+      "baseStats": {
+        "hp": 892.584,
+        "atk": 679.14,
+        "def": 412.335,
+        "spd": 109,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1210",
+      "name": "Guinaifen",
+      "rarity": 4,
+      "path": "Nihility",
+      "element": "Fire",
+      "maxSp": 120,
+      "baseStats": {
+        "hp": 882,
+        "atk": 582.12,
+        "def": 441,
+        "spd": 106,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1211",
+      "name": "Bailu",
+      "rarity": 5,
+      "path": "Abundance",
+      "element": "Lightning",
+      "maxSp": 100,
+      "baseStats": {
+        "hp": 1319.472,
+        "atk": 562.716,
+        "def": 485.1,
+        "spd": 98,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1212",
+      "name": "Jingliu",
+      "rarity": 5,
+      "path": "Destruction",
+      "element": "Ice",
+      "maxSp": 140,
+      "baseStats": {
+        "hp": 1435.896,
+        "atk": 679.14,
+        "def": 485.1,
+        "spd": 96,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1212b1",
+      "name": "Jingliu",
+      "rarity": 5,
+      "path": "Destruction",
+      "element": "Ice",
+      "maxSp": 140,
+      "baseStats": {
+        "hp": 1435.896,
+        "atk": 679.14,
+        "def": 485.1,
+        "spd": 96,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1213",
+      "name": "Dan Heng • Imbibitor Lunae",
+      "rarity": 5,
+      "path": "Destruction",
+      "element": "Imaginary",
+      "maxSp": 140,
+      "baseStats": {
+        "hp": 1241.856,
+        "atk": 698.544,
+        "def": 363.825,
+        "spd": 102,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1214",
+      "name": "Xueyi",
+      "rarity": 4,
+      "path": "Destruction",
+      "element": "Quantum",
+      "maxSp": 120,
+      "baseStats": {
+        "hp": 1058.4,
+        "atk": 599.76,
+        "def": 396.9,
+        "spd": 103,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1215",
+      "name": "Hanya",
+      "rarity": 4,
+      "path": "Harmony",
+      "element": "Physical",
+      "maxSp": 140,
+      "baseStats": {
+        "hp": 917.28,
+        "atk": 564.48,
+        "def": 352.8,
+        "spd": 110,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1217",
+      "name": "Huohuo",
+      "rarity": 5,
+      "path": "Abundance",
+      "element": "Wind",
+      "maxSp": 140,
+      "baseStats": {
+        "hp": 1358.28,
+        "atk": 601.524,
+        "def": 509.355,
+        "spd": 98,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1217b1",
+      "name": "Huohuo",
+      "rarity": 5,
+      "path": "Abundance",
+      "element": "Wind",
+      "maxSp": 140,
+      "baseStats": {
+        "hp": 1358.28,
+        "atk": 601.524,
+        "def": 509.355,
+        "spd": 98,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1218",
+      "name": "Jiaoqiu",
+      "rarity": 5,
+      "path": "Nihility",
+      "element": "Fire",
+      "maxSp": 100,
+      "baseStats": {
+        "hp": 1358.28,
+        "atk": 601.524,
+        "def": 509.355,
+        "spd": 98,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1220",
+      "name": "Feixiao",
+      "rarity": 5,
+      "path": "Hunt",
+      "element": "Wind",
+      "maxSp": 12,
+      "baseStats": {
+        "hp": 1047.816,
+        "atk": 601.524,
+        "def": 388.08,
+        "spd": 112,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1221",
+      "name": "Yunli",
+      "rarity": 5,
+      "path": "Destruction",
+      "element": "Physical",
+      "maxSp": 240,
+      "baseStats": {
+        "hp": 1358.28,
+        "atk": 679.14,
+        "def": 460.845,
+        "spd": 94,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1222",
+      "name": "Lingsha",
+      "rarity": 5,
+      "path": "Abundance",
+      "element": "Fire",
+      "maxSp": 110,
+      "baseStats": {
+        "hp": 1358.28,
+        "atk": 679.14,
+        "def": 436.59,
+        "spd": 98,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1223",
+      "name": "Moze",
+      "rarity": 4,
+      "path": "Hunt",
+      "element": "Lightning",
+      "maxSp": 120,
+      "baseStats": {
+        "hp": 811.44,
+        "atk": 599.76,
+        "def": 352.8,
+        "spd": 111,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1224",
+      "name": "March 7th",
+      "rarity": 4,
+      "path": "Hunt",
+      "element": "Imaginary",
+      "maxSp": 110,
+      "baseStats": {
+        "hp": 1058.4,
+        "atk": 564.48,
+        "def": 441,
+        "spd": 102,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1225",
+      "name": "Fugue",
+      "rarity": 5,
+      "path": "Nihility",
+      "element": "Fire",
+      "maxSp": 130,
+      "baseStats": {
+        "hp": 1125.432,
+        "atk": 582.12,
+        "def": 557.865,
+        "spd": 102,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1301",
+      "name": "Gallagher",
+      "rarity": 4,
+      "path": "Abundance",
+      "element": "Fire",
+      "maxSp": 110,
+      "baseStats": {
+        "hp": 1305.36,
+        "atk": 529.2,
+        "def": 441,
+        "spd": 98,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1302",
+      "name": "Argenti",
+      "rarity": 5,
+      "path": "Erudition",
+      "element": "Physical",
+      "maxSp": 180,
+      "baseStats": {
+        "hp": 1047.816,
+        "atk": 737.352,
+        "def": 363.825,
+        "spd": 103,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1303",
+      "name": "Ruan Mei",
+      "rarity": 5,
+      "path": "Harmony",
+      "element": "Ice",
+      "maxSp": 130,
+      "baseStats": {
+        "hp": 1086.624,
+        "atk": 659.736,
+        "def": 485.1,
+        "spd": 104,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1304",
+      "name": "Aventurine",
+      "rarity": 5,
+      "path": "Preservation",
+      "element": "Imaginary",
+      "maxSp": 110,
+      "baseStats": {
+        "hp": 1203.048,
+        "atk": 446.292,
+        "def": 654.885,
+        "spd": 106,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1305",
+      "name": "Dr. Ratio",
+      "rarity": 5,
+      "path": "Hunt",
+      "element": "Imaginary",
+      "maxSp": 140,
+      "baseStats": {
+        "hp": 1047.816,
+        "atk": 776.16,
+        "def": 460.845,
+        "spd": 103,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1306",
+      "name": "Sparkle",
+      "rarity": 5,
+      "path": "Harmony",
+      "element": "Quantum",
+      "maxSp": 110,
+      "baseStats": {
+        "hp": 1397.088,
+        "atk": 523.908,
+        "def": 485.1,
+        "spd": 101,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1306b1",
+      "name": "Sparkle",
+      "rarity": 5,
+      "path": "Harmony",
+      "element": "Quantum",
+      "maxSp": 110,
+      "baseStats": {
+        "hp": 1397.088,
+        "atk": 523.908,
+        "def": 485.1,
+        "spd": 101,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1307",
+      "name": "Black Swan",
+      "rarity": 5,
+      "path": "Nihility",
+      "element": "Wind",
+      "maxSp": 120,
+      "baseStats": {
+        "hp": 1086.624,
+        "atk": 659.736,
+        "def": 485.1,
+        "spd": 102,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1307b1",
+      "name": "Black Swan",
+      "rarity": 5,
+      "path": "Nihility",
+      "element": "Wind",
+      "maxSp": 120,
+      "baseStats": {
+        "hp": 1086.624,
+        "atk": 659.736,
+        "def": 485.1,
+        "spd": 102,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1308",
+      "name": "Acheron",
+      "rarity": 5,
+      "path": "Nihility",
+      "element": "Lightning",
+      "maxSp": 9,
+      "baseStats": {
+        "hp": 1125.432,
+        "atk": 698.544,
+        "def": 436.59,
+        "spd": 101,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1309",
+      "name": "Robin",
+      "rarity": 5,
+      "path": "Harmony",
+      "element": "Physical",
+      "maxSp": 160,
+      "baseStats": {
+        "hp": 1280.664,
+        "atk": 640.332,
+        "def": 485.1,
+        "spd": 102,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1310",
+      "name": "Firefly",
+      "rarity": 5,
+      "path": "Destruction",
+      "element": "Fire",
+      "maxSp": 240,
+      "baseStats": {
+        "hp": 814.968,
+        "atk": 523.908,
+        "def": 776.16,
+        "spd": 104,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1310b1",
+      "name": "Firefly",
+      "rarity": 5,
+      "path": "Destruction",
+      "element": "Fire",
+      "maxSp": 240,
+      "baseStats": {
+        "hp": 814.968,
+        "atk": 523.908,
+        "def": 776.16,
+        "spd": 104,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1312",
+      "name": "Misha",
+      "rarity": 4,
+      "path": "Destruction",
+      "element": "Ice",
+      "maxSp": 100,
+      "baseStats": {
+        "hp": 1270.08,
+        "atk": 599.76,
+        "def": 396.9,
+        "spd": 96,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1313",
+      "name": "Sunday",
+      "rarity": 5,
+      "path": "Harmony",
+      "element": "Imaginary",
+      "maxSp": 130,
+      "baseStats": {
+        "hp": 1241.856,
+        "atk": 640.332,
+        "def": 533.61,
+        "spd": 96,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1314",
+      "name": "Jade",
+      "rarity": 5,
+      "path": "Erudition",
+      "element": "Quantum",
+      "maxSp": 140,
+      "baseStats": {
+        "hp": 1086.624,
+        "atk": 659.736,
+        "def": 509.355,
+        "spd": 103,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1315",
+      "name": "Boothill",
+      "rarity": 5,
+      "path": "Hunt",
+      "element": "Physical",
+      "maxSp": 115,
+      "baseStats": {
+        "hp": 1203.048,
+        "atk": 620.928,
+        "def": 436.59,
+        "spd": 107,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1317",
+      "name": "Rappa",
+      "rarity": 5,
+      "path": "Erudition",
+      "element": "Imaginary",
+      "maxSp": 140,
+      "baseStats": {
+        "hp": 1086.624,
+        "atk": 717.948,
+        "def": 460.845,
+        "spd": 96,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1321",
+      "name": "The Dahlia",
+      "rarity": 5,
+      "path": "Nihility",
+      "element": "Fire",
+      "maxSp": 130,
+      "baseStats": {
+        "hp": 1086.624,
+        "atk": 679.14,
+        "def": 606.375,
+        "spd": 96,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1401",
+      "name": "The Herta",
+      "rarity": 5,
+      "path": "Erudition",
+      "element": "Ice",
+      "maxSp": 220,
+      "baseStats": {
+        "hp": 1164.24,
+        "atk": 679.14,
+        "def": 485.1,
+        "spd": 99,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1402",
+      "name": "Aglaea",
+      "rarity": 5,
+      "path": "Remembrance",
+      "element": "Lightning",
+      "maxSp": 350,
+      "baseStats": {
+        "hp": 1241.856,
+        "atk": 698.544,
+        "def": 485.1,
+        "spd": 102,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1403",
+      "name": "Tribbie",
+      "rarity": 5,
+      "path": "Harmony",
+      "element": "Quantum",
+      "maxSp": 120,
+      "baseStats": {
+        "hp": 1047.816,
+        "atk": 523.908,
+        "def": 727.65,
+        "spd": 96,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1404",
+      "name": "Mydei",
+      "rarity": 5,
+      "path": "Destruction",
+      "element": "Imaginary",
+      "maxSp": 160,
+      "baseStats": {
+        "hp": 1552.32,
+        "atk": 426.888,
+        "def": 194.04,
+        "spd": 95,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1405",
+      "name": "Anaxa",
+      "rarity": 5,
+      "path": "Erudition",
+      "element": "Wind",
+      "maxSp": 140,
+      "baseStats": {
+        "hp": 970.2,
+        "atk": 756.756,
+        "def": 557.865,
+        "spd": 97,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1406",
+      "name": "Cipher",
+      "rarity": 5,
+      "path": "Nihility",
+      "element": "Quantum",
+      "maxSp": 130,
+      "baseStats": {
+        "hp": 931.392,
+        "atk": 640.332,
+        "def": 509.355,
+        "spd": 106,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1407",
+      "name": "Castorice",
+      "rarity": 5,
+      "path": "Remembrance",
+      "element": "Quantum",
+      "maxSp": 120,
+      "baseStats": {
+        "hp": 1629.936,
+        "atk": 523.908,
+        "def": 485.1,
+        "spd": 95,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1408",
+      "name": "Phainon",
+      "rarity": 5,
+      "path": "Destruction",
+      "element": "Physical",
+      "maxSp": 12,
+      "baseStats": {
+        "hp": 1435.896,
+        "atk": 582.12,
+        "def": 703.395,
+        "spd": 94,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1409",
+      "name": "Hyacine",
+      "rarity": 5,
+      "path": "Remembrance",
+      "element": "Wind",
+      "maxSp": 140,
+      "baseStats": {
+        "hp": 1086.624,
+        "atk": 388.08,
+        "def": 630.63,
+        "spd": 110,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1410",
+      "name": "Hysilens",
+      "rarity": 5,
+      "path": "Nihility",
+      "element": "Physical",
+      "maxSp": 110,
+      "baseStats": {
+        "hp": 1203.048,
+        "atk": 601.524,
+        "def": 485.1,
+        "spd": 102,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1412",
+      "name": "Cerydra",
+      "rarity": 5,
+      "path": "Harmony",
+      "element": "Wind",
+      "maxSp": 130,
+      "baseStats": {
+        "hp": 1358.28,
+        "atk": 620.928,
+        "def": 485.1,
+        "spd": 99,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1413",
+      "name": "Evernight",
+      "rarity": 5,
+      "path": "Remembrance",
+      "element": "Ice",
+      "maxSp": 240,
+      "baseStats": {
+        "hp": 1319.472,
+        "atk": 543.312,
+        "def": 582.12,
+        "spd": 99,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1414",
+      "name": "Dan Heng • Permansor Terrae",
+      "rarity": 5,
+      "path": "Preservation",
+      "element": "Physical",
+      "maxSp": 135,
+      "baseStats": {
+        "hp": 1047.816,
+        "atk": 582.12,
+        "def": 776.16,
+        "spd": 97,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1415",
+      "name": "Cyrene",
+      "rarity": 5,
+      "path": "Remembrance",
+      "element": "Ice",
+      "maxSp": 24,
+      "baseStats": {
+        "hp": 1397.088,
+        "atk": 446.292,
+        "def": 582.12,
+        "spd": 101,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1501",
+      "name": "Sparxie",
+      "rarity": 5,
+      "path": "Elation",
+      "element": "Fire",
+      "maxSp": 160,
+      "baseStats": {
+        "hp": 1047.816,
+        "atk": 640.332,
+        "def": 460.845,
+        "spd": 107,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1502",
+      "name": "Yao Guang",
+      "rarity": 5,
+      "path": "Elation",
+      "element": "Physical",
+      "maxSp": 180,
+      "baseStats": {
+        "hp": 1241.856,
+        "atk": 465.696,
+        "def": 654.885,
+        "spd": 101,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1504",
+      "name": "Ashveil",
+      "rarity": 5,
+      "path": "Hunt",
+      "element": "Lightning",
+      "maxSp": 150,
+      "baseStats": {
+        "hp": 853.776,
+        "atk": 776.16,
+        "def": 388.08,
+        "spd": 106,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1505",
+      "name": "Evanescia",
+      "rarity": 5,
+      "path": "Elation",
+      "element": "Physical",
+      "maxSp": 480,
+      "baseStats": {
+        "hp": 1047.816,
+        "atk": 737.352,
+        "def": 460.845,
+        "spd": 104,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1506",
+      "name": "Silver Wolf LV.999",
+      "rarity": 5,
+      "path": "Elation",
+      "element": "Imaginary",
+      "maxSp": 60,
+      "baseStats": {
+        "hp": 1047.816,
+        "atk": 388.08,
+        "def": 654.885,
+        "spd": 110,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1507",
+      "name": "Mortenax Blade",
+      "rarity": 5,
+      "path": "Nihility",
+      "element": "Fire",
+      "maxSp": 160,
+      "baseStats": {
+        "hp": 1358.28,
+        "atk": 543.312,
+        "def": 485.1,
+        "spd": 107,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1508",
+      "name": "Rin Tohsaka",
+      "rarity": 5,
+      "path": "Erudition",
+      "element": "Quantum",
+      "maxSp": 160,
+      "baseStats": {
+        "hp": 1047.816,
+        "atk": 698.544,
+        "def": 460.845,
+        "spd": 102,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1509",
+      "name": "Gilgamesh",
+      "rarity": 5,
+      "path": "Destruction",
+      "element": "Lightning",
+      "maxSp": 360,
+      "baseStats": {
+        "hp": 1125.432,
+        "atk": 717.948,
+        "def": 509.355,
+        "spd": 97,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1510",
+      "name": "Himeko • Nova",
+      "rarity": 5,
+      "path": "Erudition",
+      "element": "Fire",
+      "maxSp": 150,
+      "baseStats": {
+        "hp": 1125.432,
+        "atk": 756.756,
+        "def": 485.1,
+        "spd": 98,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1512",
+      "name": "Robin • Summeretto",
+      "rarity": 5,
+      "path": "Remembrance",
+      "element": "Wind",
+      "maxSp": 140,
+      "baseStats": {
+        "hp": 1203.048,
+        "atk": 601.524,
+        "def": 485.1,
+        "spd": 95,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "1513",
+      "name": "Aventurine • Waveflair",
+      "rarity": 5,
+      "path": "Elation",
+      "element": "Quantum",
+      "maxSp": 130,
+      "baseStats": {
+        "hp": 1164.24,
+        "atk": 485.1,
+        "def": 606.375,
+        "spd": 107,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "8001",
+      "name": "Trailblazer",
+      "rarity": 5,
+      "path": "Destruction",
+      "element": "Physical",
+      "maxSp": 120,
+      "baseStats": {
+        "hp": 1203.048,
+        "atk": 620.928,
+        "def": 460.845,
+        "spd": 100,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "8002",
+      "name": "Trailblazer",
+      "rarity": 5,
+      "path": "Destruction",
+      "element": "Physical",
+      "maxSp": 120,
+      "baseStats": {
+        "hp": 1203.048,
+        "atk": 620.928,
+        "def": 460.845,
+        "spd": 100,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "8003",
+      "name": "Trailblazer",
+      "rarity": 5,
+      "path": "Preservation",
+      "element": "Fire",
+      "maxSp": 120,
+      "baseStats": {
+        "hp": 1241.856,
+        "atk": 601.524,
+        "def": 606.375,
+        "spd": 95,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "8004",
+      "name": "Trailblazer",
+      "rarity": 5,
+      "path": "Preservation",
+      "element": "Fire",
+      "maxSp": 120,
+      "baseStats": {
+        "hp": 1241.856,
+        "atk": 601.524,
+        "def": 606.375,
+        "spd": 95,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "8005",
+      "name": "Trailblazer",
+      "rarity": 5,
+      "path": "Harmony",
+      "element": "Imaginary",
+      "maxSp": 140,
+      "baseStats": {
+        "hp": 1086.624,
+        "atk": 446.292,
+        "def": 679.14,
+        "spd": 105,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "8006",
+      "name": "Trailblazer",
+      "rarity": 5,
+      "path": "Harmony",
+      "element": "Imaginary",
+      "maxSp": 140,
+      "baseStats": {
+        "hp": 1086.624,
+        "atk": 446.292,
+        "def": 679.14,
+        "spd": 105,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "8007",
+      "name": "Trailblazer",
+      "rarity": 5,
+      "path": "Remembrance",
+      "element": "Ice",
+      "maxSp": 160,
+      "baseStats": {
+        "hp": 1047.816,
+        "atk": 543.312,
+        "def": 630.63,
+        "spd": 103,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "8008",
+      "name": "Trailblazer",
+      "rarity": 5,
+      "path": "Remembrance",
+      "element": "Ice",
+      "maxSp": 160,
+      "baseStats": {
+        "hp": 1047.816,
+        "atk": 543.312,
+        "def": 630.63,
+        "spd": 103,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "8009",
+      "name": "Trailblazer",
+      "rarity": 5,
+      "path": "Elation",
+      "element": "Lightning",
+      "maxSp": 160,
+      "baseStats": {
+        "hp": 1086.624,
+        "atk": 465.696,
+        "def": 630.63,
+        "spd": 106,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "8010",
+      "name": "Trailblazer",
+      "rarity": 5,
+      "path": "Elation",
+      "element": "Lightning",
+      "maxSp": 160,
+      "baseStats": {
+        "hp": 1086.624,
+        "atk": 465.696,
+        "def": 630.63,
+        "spd": 106,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    }
+  ],
+  "lightCones": [
+    {
+      "id": "20000",
+      "name": "Arrows",
+      "rarity": 3,
+      "path": "Hunt",
+      "baseStats": {
+        "hp": 846.72,
+        "atk": 317.52,
+        "def": 264.6,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "20001",
+      "name": "Cornucopia",
+      "rarity": 3,
+      "path": "Abundance",
+      "baseStats": {
+        "hp": 952.56,
+        "atk": 264.6,
+        "def": 264.6,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "20002",
+      "name": "Collapsing Sky",
+      "rarity": 3,
+      "path": "Destruction",
+      "baseStats": {
+        "hp": 846.72,
+        "atk": 370.44,
+        "def": 198.45,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "20003",
+      "name": "Amber",
+      "rarity": 3,
+      "path": "Preservation",
+      "baseStats": {
+        "hp": 846.72,
+        "atk": 264.6,
+        "def": 330.75,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "20004",
+      "name": "Void",
+      "rarity": 3,
+      "path": "Nihility",
+      "baseStats": {
+        "hp": 846.72,
+        "atk": 317.52,
+        "def": 264.6,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "20005",
+      "name": "Chorus",
+      "rarity": 3,
+      "path": "Harmony",
+      "baseStats": {
+        "hp": 846.72,
+        "atk": 317.52,
+        "def": 264.6,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "20006",
+      "name": "Data Bank",
+      "rarity": 3,
+      "path": "Erudition",
+      "baseStats": {
+        "hp": 740.88,
+        "atk": 370.44,
+        "def": 264.6,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "20007",
+      "name": "Darting Arrow",
+      "rarity": 3,
+      "path": "Hunt",
+      "baseStats": {
+        "hp": 740.88,
+        "atk": 370.44,
+        "def": 264.6,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "20008",
+      "name": "Fine Fruit",
+      "rarity": 3,
+      "path": "Abundance",
+      "baseStats": {
+        "hp": 952.56,
+        "atk": 317.52,
+        "def": 198.45,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "20009",
+      "name": "Shattered Home",
+      "rarity": 3,
+      "path": "Destruction",
+      "baseStats": {
+        "hp": 846.72,
+        "atk": 370.44,
+        "def": 198.45,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "20010",
+      "name": "Defense",
+      "rarity": 3,
+      "path": "Preservation",
+      "baseStats": {
+        "hp": 952.56,
+        "atk": 264.6,
+        "def": 264.6,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "20011",
+      "name": "Loop",
+      "rarity": 3,
+      "path": "Nihility",
+      "baseStats": {
+        "hp": 846.72,
+        "atk": 317.52,
+        "def": 264.6,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "20012",
+      "name": "Meshing Cogs",
+      "rarity": 3,
+      "path": "Harmony",
+      "baseStats": {
+        "hp": 846.72,
+        "atk": 317.52,
+        "def": 264.6,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "20013",
+      "name": "Passkey",
+      "rarity": 3,
+      "path": "Erudition",
+      "baseStats": {
+        "hp": 740.88,
+        "atk": 370.44,
+        "def": 264.6,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "20014",
+      "name": "Adversarial",
+      "rarity": 3,
+      "path": "Hunt",
+      "baseStats": {
+        "hp": 740.88,
+        "atk": 370.44,
+        "def": 264.6,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "20015",
+      "name": "Multiplication",
+      "rarity": 3,
+      "path": "Abundance",
+      "baseStats": {
+        "hp": 952.56,
+        "atk": 317.52,
+        "def": 198.45,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "20016",
+      "name": "Mutual Demise",
+      "rarity": 3,
+      "path": "Destruction",
+      "baseStats": {
+        "hp": 846.72,
+        "atk": 370.44,
+        "def": 198.45,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "20017",
+      "name": "Pioneering",
+      "rarity": 3,
+      "path": "Preservation",
+      "baseStats": {
+        "hp": 952.56,
+        "atk": 264.6,
+        "def": 264.6,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "20018",
+      "name": "Hidden Shadow",
+      "rarity": 3,
+      "path": "Nihility",
+      "baseStats": {
+        "hp": 846.72,
+        "atk": 317.52,
+        "def": 264.6,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "20019",
+      "name": "Mediation",
+      "rarity": 3,
+      "path": "Harmony",
+      "baseStats": {
+        "hp": 846.72,
+        "atk": 317.52,
+        "def": 264.6,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "20020",
+      "name": "Sagacity",
+      "rarity": 3,
+      "path": "Erudition",
+      "baseStats": {
+        "hp": 740.88,
+        "atk": 370.44,
+        "def": 264.6,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "20021",
+      "name": "Shadowburn",
+      "rarity": 3,
+      "path": "Remembrance",
+      "baseStats": {
+        "hp": 846.72,
+        "atk": 317.52,
+        "def": 264.6,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "20022",
+      "name": "Reminiscence",
+      "rarity": 3,
+      "path": "Remembrance",
+      "baseStats": {
+        "hp": 635.04,
+        "atk": 423.36,
+        "def": 264.6,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "20023",
+      "name": "Sneering",
+      "rarity": 3,
+      "path": "Elation",
+      "baseStats": {
+        "hp": 740.88,
+        "atk": 370.44,
+        "def": 264.6,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "20024",
+      "name": "Lingering Tear",
+      "rarity": 3,
+      "path": "Elation",
+      "baseStats": {
+        "hp": 846.72,
+        "atk": 317.52,
+        "def": 264.6,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "21000",
+      "name": "Post-Op Conversation",
+      "rarity": 4,
+      "path": "Abundance",
+      "baseStats": {
+        "hp": 1058.4,
+        "atk": 423.36,
+        "def": 330.75,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "21001",
+      "name": "Good Night and Sleep Well",
+      "rarity": 4,
+      "path": "Nihility",
+      "baseStats": {
+        "hp": 952.56,
+        "atk": 476.28,
+        "def": 330.75,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "21002",
+      "name": "Day One of My New Life",
+      "rarity": 4,
+      "path": "Preservation",
+      "baseStats": {
+        "hp": 952.56,
+        "atk": 370.44,
+        "def": 463.05,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "21003",
+      "name": "Only Silence Remains",
+      "rarity": 4,
+      "path": "Hunt",
+      "baseStats": {
+        "hp": 952.56,
+        "atk": 476.28,
+        "def": 330.75,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "21004",
+      "name": "Memories of the Past",
+      "rarity": 4,
+      "path": "Harmony",
+      "baseStats": {
+        "hp": 952.56,
+        "atk": 423.36,
+        "def": 396.9,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "21005",
+      "name": "The Moles Welcome You",
+      "rarity": 4,
+      "path": "Destruction",
+      "baseStats": {
+        "hp": 1058.4,
+        "atk": 476.28,
+        "def": 264.6,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "21006",
+      "name": "The Birth of the Self",
+      "rarity": 4,
+      "path": "Erudition",
+      "baseStats": {
+        "hp": 952.56,
+        "atk": 476.28,
+        "def": 330.75,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "21007",
+      "name": "Shared Feeling",
+      "rarity": 4,
+      "path": "Abundance",
+      "baseStats": {
+        "hp": 952.56,
+        "atk": 423.36,
+        "def": 396.9,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "21008",
+      "name": "Eyes of the Prey",
+      "rarity": 4,
+      "path": "Nihility",
+      "baseStats": {
+        "hp": 952.56,
+        "atk": 476.28,
+        "def": 330.75,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "21009",
+      "name": "Landau's Choice",
+      "rarity": 4,
+      "path": "Preservation",
+      "baseStats": {
+        "hp": 952.56,
+        "atk": 423.36,
+        "def": 396.9,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "21010",
+      "name": "Swordplay",
+      "rarity": 4,
+      "path": "Hunt",
+      "baseStats": {
+        "hp": 952.56,
+        "atk": 476.28,
+        "def": 330.75,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "21011",
+      "name": "Planetary Rendezvous",
+      "rarity": 4,
+      "path": "Harmony",
+      "baseStats": {
+        "hp": 1058.4,
+        "atk": 423.36,
+        "def": 330.75,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "21012",
+      "name": "A Secret Vow",
+      "rarity": 4,
+      "path": "Destruction",
+      "baseStats": {
+        "hp": 1058.4,
+        "atk": 476.28,
+        "def": 264.6,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "21013",
+      "name": "Make the World Clamor",
+      "rarity": 4,
+      "path": "Erudition",
+      "baseStats": {
+        "hp": 846.72,
+        "atk": 476.28,
+        "def": 396.9,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "21014",
+      "name": "Perfect Timing",
+      "rarity": 4,
+      "path": "Abundance",
+      "baseStats": {
+        "hp": 952.56,
+        "atk": 423.36,
+        "def": 396.9,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "21015",
+      "name": "Resolution Shines As Pearls of Sweat",
+      "rarity": 4,
+      "path": "Nihility",
+      "baseStats": {
+        "hp": 952.56,
+        "atk": 476.28,
+        "def": 330.75,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "21016",
+      "name": "Trend of the Universal Market",
+      "rarity": 4,
+      "path": "Preservation",
+      "baseStats": {
+        "hp": 1058.4,
+        "atk": 370.44,
+        "def": 396.9,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "21017",
+      "name": "Subscribe for More!",
+      "rarity": 4,
+      "path": "Hunt",
+      "baseStats": {
+        "hp": 952.56,
+        "atk": 476.28,
+        "def": 330.75,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "21018",
+      "name": "Dance! Dance! Dance!",
+      "rarity": 4,
+      "path": "Harmony",
+      "baseStats": {
+        "hp": 952.56,
+        "atk": 423.36,
+        "def": 396.9,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "21019",
+      "name": "Under the Blue Sky",
+      "rarity": 4,
+      "path": "Destruction",
+      "baseStats": {
+        "hp": 952.56,
+        "atk": 476.28,
+        "def": 330.75,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "21020",
+      "name": "Geniuses' Repose",
+      "rarity": 4,
+      "path": "Erudition",
+      "baseStats": {
+        "hp": 846.72,
+        "atk": 476.28,
+        "def": 396.9,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "21021",
+      "name": "Quid Pro Quo",
+      "rarity": 4,
+      "path": "Abundance",
+      "baseStats": {
+        "hp": 952.56,
+        "atk": 423.36,
+        "def": 396.9,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "21022",
+      "name": "Fermata",
+      "rarity": 4,
+      "path": "Nihility",
+      "baseStats": {
+        "hp": 952.56,
+        "atk": 476.28,
+        "def": 330.75,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "21023",
+      "name": "We Are Wildfire",
+      "rarity": 4,
+      "path": "Preservation",
+      "baseStats": {
+        "hp": 740.88,
+        "atk": 476.28,
+        "def": 463.05,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "21024",
+      "name": "River Flows in Spring",
+      "rarity": 4,
+      "path": "Hunt",
+      "baseStats": {
+        "hp": 846.72,
+        "atk": 476.28,
+        "def": 396.9,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "21025",
+      "name": "Past and Future",
+      "rarity": 4,
+      "path": "Harmony",
+      "baseStats": {
+        "hp": 952.56,
+        "atk": 423.36,
+        "def": 396.9,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "21026",
+      "name": "Woof! Walk Time!",
+      "rarity": 4,
+      "path": "Destruction",
+      "baseStats": {
+        "hp": 952.56,
+        "atk": 476.28,
+        "def": 330.75,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "21027",
+      "name": "The Seriousness of Breakfast",
+      "rarity": 4,
+      "path": "Erudition",
+      "baseStats": {
+        "hp": 846.72,
+        "atk": 476.28,
+        "def": 396.9,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "21028",
+      "name": "Warmth Shortens Cold Nights",
+      "rarity": 4,
+      "path": "Abundance",
+      "baseStats": {
+        "hp": 1058.4,
+        "atk": 370.44,
+        "def": 396.9,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "21029",
+      "name": "We Will Meet Again",
+      "rarity": 4,
+      "path": "Nihility",
+      "baseStats": {
+        "hp": 846.72,
+        "atk": 529.2,
+        "def": 330.75,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "21030",
+      "name": "This Is Me!",
+      "rarity": 4,
+      "path": "Preservation",
+      "baseStats": {
+        "hp": 846.72,
+        "atk": 370.44,
+        "def": 529.2,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "21031",
+      "name": "Return to Darkness",
+      "rarity": 4,
+      "path": "Hunt",
+      "baseStats": {
+        "hp": 846.72,
+        "atk": 529.2,
+        "def": 330.75,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "21032",
+      "name": "Carve the Moon, Weave the Clouds",
+      "rarity": 4,
+      "path": "Harmony",
+      "baseStats": {
+        "hp": 952.56,
+        "atk": 476.28,
+        "def": 330.75,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "21033",
+      "name": "Nowhere to Run",
+      "rarity": 4,
+      "path": "Destruction",
+      "baseStats": {
+        "hp": 952.56,
+        "atk": 529.2,
+        "def": 264.6,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "21034",
+      "name": "Today Is Another Peaceful Day",
+      "rarity": 4,
+      "path": "Erudition",
+      "baseStats": {
+        "hp": 846.72,
+        "atk": 529.2,
+        "def": 330.75,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "21035",
+      "name": "What Is Real?",
+      "rarity": 4,
+      "path": "Abundance",
+      "baseStats": {
+        "hp": 1058.4,
+        "atk": 423.36,
+        "def": 330.75,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "21036",
+      "name": "Dreamville Adventure",
+      "rarity": 4,
+      "path": "Harmony",
+      "baseStats": {
+        "hp": 952.56,
+        "atk": 423.36,
+        "def": 396.9,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "21037",
+      "name": "Final Victor",
+      "rarity": 4,
+      "path": "Hunt",
+      "baseStats": {
+        "hp": 952.56,
+        "atk": 476.28,
+        "def": 330.75,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "21038",
+      "name": "Flames Afar",
+      "rarity": 4,
+      "path": "Destruction",
+      "baseStats": {
+        "hp": 1058.4,
+        "atk": 476.28,
+        "def": 264.6,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "21039",
+      "name": "Destiny's Threads Forewoven",
+      "rarity": 4,
+      "path": "Preservation",
+      "baseStats": {
+        "hp": 952.56,
+        "atk": 370.44,
+        "def": 463.05,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "21040",
+      "name": "The Day The Cosmos Fell",
+      "rarity": 4,
+      "path": "Erudition",
+      "baseStats": {
+        "hp": 952.56,
+        "atk": 476.28,
+        "def": 330.75,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "21041",
+      "name": "It's Showtime",
+      "rarity": 4,
+      "path": "Nihility",
+      "baseStats": {
+        "hp": 1058.4,
+        "atk": 476.28,
+        "def": 264.6,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "21042",
+      "name": "Indelible Promise",
+      "rarity": 4,
+      "path": "Destruction",
+      "baseStats": {
+        "hp": 952.56,
+        "atk": 476.28,
+        "def": 330.75,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "21043",
+      "name": "Concert for Two",
+      "rarity": 4,
+      "path": "Preservation",
+      "baseStats": {
+        "hp": 952.56,
+        "atk": 370.44,
+        "def": 463.05,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "21044",
+      "name": "Boundless Choreo",
+      "rarity": 4,
+      "path": "Nihility",
+      "baseStats": {
+        "hp": 952.56,
+        "atk": 476.28,
+        "def": 330.75,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "21045",
+      "name": "After the Charmony Fall",
+      "rarity": 4,
+      "path": "Erudition",
+      "baseStats": {
+        "hp": 846.72,
+        "atk": 476.28,
+        "def": 396.9,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "21046",
+      "name": "Poised to Bloom",
+      "rarity": 4,
+      "path": "Harmony",
+      "baseStats": {
+        "hp": 952.56,
+        "atk": 423.36,
+        "def": 396.9,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "21047",
+      "name": "Shadowed by Night",
+      "rarity": 4,
+      "path": "Hunt",
+      "baseStats": {
+        "hp": 846.72,
+        "atk": 476.28,
+        "def": 396.9,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "21048",
+      "name": "Dream's Montage",
+      "rarity": 4,
+      "path": "Abundance",
+      "baseStats": {
+        "hp": 952.56,
+        "atk": 423.36,
+        "def": 396.9,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "21050",
+      "name": "Victory In a Blink",
+      "rarity": 4,
+      "path": "Remembrance",
+      "baseStats": {
+        "hp": 846.72,
+        "atk": 476.28,
+        "def": 396.9,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "21051",
+      "name": "Geniuses' Greetings",
+      "rarity": 4,
+      "path": "Remembrance",
+      "baseStats": {
+        "hp": 952.56,
+        "atk": 476.28,
+        "def": 330.75,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "21052",
+      "name": "Sweat Now, Cry Less",
+      "rarity": 4,
+      "path": "Remembrance",
+      "baseStats": {
+        "hp": 1058.4,
+        "atk": 529.2,
+        "def": 198.45,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "21053",
+      "name": "Journey, Forever Peaceful",
+      "rarity": 4,
+      "path": "Preservation",
+      "baseStats": {
+        "hp": 1058.4,
+        "atk": 370.44,
+        "def": 529.2,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "21054",
+      "name": "The Story's Next Page",
+      "rarity": 4,
+      "path": "Remembrance",
+      "baseStats": {
+        "hp": 1058.4,
+        "atk": 370.44,
+        "def": 396.9,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "21055",
+      "name": "Unto Tomorrow's Morrow",
+      "rarity": 4,
+      "path": "Abundance",
+      "baseStats": {
+        "hp": 1058.4,
+        "atk": 476.28,
+        "def": 396.9,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "21056",
+      "name": "In Pursuit of the Wind",
+      "rarity": 4,
+      "path": "Harmony",
+      "baseStats": {
+        "hp": 1058.4,
+        "atk": 476.28,
+        "def": 396.9,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "21057",
+      "name": "The Flower Remembers",
+      "rarity": 4,
+      "path": "Remembrance",
+      "baseStats": {
+        "hp": 1058.4,
+        "atk": 529.2,
+        "def": 330.75,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "21058",
+      "name": "A Trail of Bygone Blood",
+      "rarity": 4,
+      "path": "Destruction",
+      "baseStats": {
+        "hp": 1058.4,
+        "atk": 529.2,
+        "def": 330.75,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "21060",
+      "name": "A Dream Scented in Wheat",
+      "rarity": 4,
+      "path": "Erudition",
+      "baseStats": {
+        "hp": 952.56,
+        "atk": 529.2,
+        "def": 396.9,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "21061",
+      "name": "Holiday Thermae Escapade",
+      "rarity": 4,
+      "path": "Nihility",
+      "baseStats": {
+        "hp": 1058.4,
+        "atk": 529.2,
+        "def": 330.75,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "21062",
+      "name": "See You at the End",
+      "rarity": 4,
+      "path": "Hunt",
+      "baseStats": {
+        "hp": 952.56,
+        "atk": 529.2,
+        "def": 396.9,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "21064",
+      "name": "Mushy Shroomy's Adventures",
+      "rarity": 4,
+      "path": "Elation",
+      "baseStats": {
+        "hp": 846.72,
+        "atk": 476.28,
+        "def": 396.9,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "21065",
+      "name": "Today's Good Luck",
+      "rarity": 4,
+      "path": "Elation",
+      "baseStats": {
+        "hp": 952.56,
+        "atk": 529.2,
+        "def": 396.9,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "21066",
+      "name": "A Little Getaway",
+      "rarity": 4,
+      "path": "Elation",
+      "baseStats": {
+        "hp": 952.56,
+        "atk": 423.36,
+        "def": 396.9,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "22000",
+      "name": "Before the Tutorial Mission Starts",
+      "rarity": 4,
+      "path": "Nihility",
+      "baseStats": {
+        "hp": 952.56,
+        "atk": 476.28,
+        "def": 330.75,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "22001",
+      "name": "Hey, Over Here",
+      "rarity": 4,
+      "path": "Abundance",
+      "baseStats": {
+        "hp": 952.56,
+        "atk": 423.36,
+        "def": 396.9,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "22002",
+      "name": "For Tomorrow's Journey",
+      "rarity": 4,
+      "path": "Harmony",
+      "baseStats": {
+        "hp": 952.56,
+        "atk": 476.28,
+        "def": 330.75,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "22003",
+      "name": "Ninja Record: Sound Hunt",
+      "rarity": 4,
+      "path": "Destruction",
+      "baseStats": {
+        "hp": 1058.4,
+        "atk": 476.28,
+        "def": 264.6,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "22004",
+      "name": "The Great Cosmic Enterprise",
+      "rarity": 4,
+      "path": "Erudition",
+      "baseStats": {
+        "hp": 952.56,
+        "atk": 476.28,
+        "def": 330.75,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "22005",
+      "name": "The Forever Victual",
+      "rarity": 4,
+      "path": "Harmony",
+      "baseStats": {
+        "hp": 952.56,
+        "atk": 476.28,
+        "def": 330.75,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "22006",
+      "name": "Fly Into a Pink Tomorrow",
+      "rarity": 4,
+      "path": "Remembrance",
+      "baseStats": {
+        "hp": 846.72,
+        "atk": 476.28,
+        "def": 396.9,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "22007",
+      "name": "Tomorrow, Together",
+      "rarity": 4,
+      "path": "Elation",
+      "baseStats": {
+        "hp": 952.56,
+        "atk": 476.28,
+        "def": 330.75,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "22008",
+      "name": "Race to the Horizon",
+      "rarity": 4,
+      "path": "Hunt",
+      "baseStats": {
+        "hp": 846.72,
+        "atk": 476.28,
+        "def": 396.9,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "23000",
+      "name": "Night on the Milky Way",
+      "rarity": 5,
+      "path": "Erudition",
+      "baseStats": {
+        "hp": 1164.24,
+        "atk": 582.12,
+        "def": 396.9,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "23001",
+      "name": "In the Night",
+      "rarity": 5,
+      "path": "Hunt",
+      "baseStats": {
+        "hp": 1058.4,
+        "atk": 582.12,
+        "def": 463.05,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "23002",
+      "name": "Something Irreplaceable",
+      "rarity": 5,
+      "path": "Destruction",
+      "baseStats": {
+        "hp": 1164.24,
+        "atk": 582.12,
+        "def": 396.9,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "23003",
+      "name": "But the Battle Isn't Over",
+      "rarity": 5,
+      "path": "Harmony",
+      "baseStats": {
+        "hp": 1164.24,
+        "atk": 529.2,
+        "def": 463.05,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "23004",
+      "name": "In the Name of the World",
+      "rarity": 5,
+      "path": "Nihility",
+      "baseStats": {
+        "hp": 1058.4,
+        "atk": 582.12,
+        "def": 463.05,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "23005",
+      "name": "Moment of Victory",
+      "rarity": 5,
+      "path": "Preservation",
+      "baseStats": {
+        "hp": 1058.4,
+        "atk": 476.28,
+        "def": 595.35,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "23006",
+      "name": "Patience Is All You Need",
+      "rarity": 5,
+      "path": "Nihility",
+      "baseStats": {
+        "hp": 1058.4,
+        "atk": 582.12,
+        "def": 463.05,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "23007",
+      "name": "Incessant Rain",
+      "rarity": 5,
+      "path": "Nihility",
+      "baseStats": {
+        "hp": 1058.4,
+        "atk": 582.12,
+        "def": 463.05,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "23008",
+      "name": "Echoes of the Coffin",
+      "rarity": 5,
+      "path": "Abundance",
+      "baseStats": {
+        "hp": 1164.24,
+        "atk": 582.12,
+        "def": 396.9,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "23009",
+      "name": "The Unreachable Side",
+      "rarity": 5,
+      "path": "Destruction",
+      "baseStats": {
+        "hp": 1270.08,
+        "atk": 582.12,
+        "def": 330.75,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "23010",
+      "name": "Before Dawn",
+      "rarity": 5,
+      "path": "Erudition",
+      "baseStats": {
+        "hp": 1058.4,
+        "atk": 582.12,
+        "def": 463.05,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "23011",
+      "name": "She Already Shut Her Eyes",
+      "rarity": 5,
+      "path": "Preservation",
+      "baseStats": {
+        "hp": 1270.08,
+        "atk": 423.36,
+        "def": 529.2,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "23012",
+      "name": "Sleep Like the Dead",
+      "rarity": 5,
+      "path": "Hunt",
+      "baseStats": {
+        "hp": 1058.4,
+        "atk": 582.12,
+        "def": 463.05,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "23013",
+      "name": "Time Waits for No One",
+      "rarity": 5,
+      "path": "Abundance",
+      "baseStats": {
+        "hp": 1270.08,
+        "atk": 476.28,
+        "def": 463.05,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "23014",
+      "name": "I Shall Be My Own Sword",
+      "rarity": 5,
+      "path": "Destruction",
+      "baseStats": {
+        "hp": 1164.24,
+        "atk": 582.12,
+        "def": 396.9,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "23015",
+      "name": "Brighter Than the Sun",
+      "rarity": 5,
+      "path": "Destruction",
+      "baseStats": {
+        "hp": 1058.4,
+        "atk": 635.04,
+        "def": 396.9,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "23016",
+      "name": "Worrisome, Blissful",
+      "rarity": 5,
+      "path": "Hunt",
+      "baseStats": {
+        "hp": 1058.4,
+        "atk": 582.12,
+        "def": 463.05,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "23017",
+      "name": "Night of Fright",
+      "rarity": 5,
+      "path": "Abundance",
+      "baseStats": {
+        "hp": 1164.24,
+        "atk": 476.28,
+        "def": 529.2,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "23018",
+      "name": "An Instant Before A Gaze",
+      "rarity": 5,
+      "path": "Erudition",
+      "baseStats": {
+        "hp": 1058.4,
+        "atk": 582.12,
+        "def": 463.05,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "23019",
+      "name": "Past Self in Mirror",
+      "rarity": 5,
+      "path": "Harmony",
+      "baseStats": {
+        "hp": 1058.4,
+        "atk": 529.2,
+        "def": 529.2,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "23020",
+      "name": "Baptism of Pure Thought",
+      "rarity": 5,
+      "path": "Hunt",
+      "baseStats": {
+        "hp": 952.56,
+        "atk": 582.12,
+        "def": 529.2,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "23021",
+      "name": "Earthly Escapade",
+      "rarity": 5,
+      "path": "Harmony",
+      "baseStats": {
+        "hp": 1164.24,
+        "atk": 529.2,
+        "def": 463.05,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "23022",
+      "name": "Reforged Remembrance",
+      "rarity": 5,
+      "path": "Nihility",
+      "baseStats": {
+        "hp": 1058.4,
+        "atk": 582.12,
+        "def": 463.05,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "23023",
+      "name": "Inherently Unjust Destiny",
+      "rarity": 5,
+      "path": "Preservation",
+      "baseStats": {
+        "hp": 1058.4,
+        "atk": 423.36,
+        "def": 661.5,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "23024",
+      "name": "Along the Passing Shore",
+      "rarity": 5,
+      "path": "Nihility",
+      "baseStats": {
+        "hp": 1058.4,
+        "atk": 635.04,
+        "def": 396.9,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "23025",
+      "name": "Whereabouts Should Dreams Rest",
+      "rarity": 5,
+      "path": "Destruction",
+      "baseStats": {
+        "hp": 1164.24,
+        "atk": 476.28,
+        "def": 529.2,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "23026",
+      "name": "Flowing Nightglow",
+      "rarity": 5,
+      "path": "Harmony",
+      "baseStats": {
+        "hp": 952.56,
+        "atk": 635.04,
+        "def": 463.05,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "23027",
+      "name": "Sailing Towards a Second Life",
+      "rarity": 5,
+      "path": "Hunt",
+      "baseStats": {
+        "hp": 1058.4,
+        "atk": 582.12,
+        "def": 463.05,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "23028",
+      "name": "Yet Hope Is Priceless",
+      "rarity": 5,
+      "path": "Erudition",
+      "baseStats": {
+        "hp": 952.56,
+        "atk": 582.12,
+        "def": 529.2,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "23029",
+      "name": "Those Many Springs",
+      "rarity": 5,
+      "path": "Nihility",
+      "baseStats": {
+        "hp": 952.56,
+        "atk": 582.12,
+        "def": 529.2,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "23030",
+      "name": "Dance at Sunset",
+      "rarity": 5,
+      "path": "Destruction",
+      "baseStats": {
+        "hp": 1058.4,
+        "atk": 582.12,
+        "def": 463.05,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "23031",
+      "name": "I Venture Forth to Hunt",
+      "rarity": 5,
+      "path": "Hunt",
+      "baseStats": {
+        "hp": 952.56,
+        "atk": 635.04,
+        "def": 463.05,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "23032",
+      "name": "Scent Alone Stays True",
+      "rarity": 5,
+      "path": "Abundance",
+      "baseStats": {
+        "hp": 1058.4,
+        "atk": 529.2,
+        "def": 529.2,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "23033",
+      "name": "Ninjutsu Inscription: Dazzling Evilbreaker",
+      "rarity": 5,
+      "path": "Erudition",
+      "baseStats": {
+        "hp": 952.56,
+        "atk": 582.12,
+        "def": 529.2,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "23034",
+      "name": "A Grounded Ascent",
+      "rarity": 5,
+      "path": "Harmony",
+      "baseStats": {
+        "hp": 1164.24,
+        "atk": 476.28,
+        "def": 529.2,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "23035",
+      "name": "Long Road Leads Home",
+      "rarity": 5,
+      "path": "Nihility",
+      "baseStats": {
+        "hp": 952.56,
+        "atk": 476.28,
+        "def": 661.5,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "23036",
+      "name": "Time Woven Into Gold",
+      "rarity": 5,
+      "path": "Remembrance",
+      "baseStats": {
+        "hp": 1058.4,
+        "atk": 635.04,
+        "def": 396.9,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "23037",
+      "name": "Into the Unreachable Veil",
+      "rarity": 5,
+      "path": "Erudition",
+      "baseStats": {
+        "hp": 952.56,
+        "atk": 635.04,
+        "def": 463.05,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "23038",
+      "name": "If Time Were a Flower",
+      "rarity": 5,
+      "path": "Harmony",
+      "baseStats": {
+        "hp": 1270.08,
+        "atk": 529.2,
+        "def": 396.9,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "23039",
+      "name": "Flame of Blood, Blaze My Path",
+      "rarity": 5,
+      "path": "Destruction",
+      "baseStats": {
+        "hp": 1375.92,
+        "atk": 476.28,
+        "def": 396.9,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "23040",
+      "name": "Make Farewells More Beautiful",
+      "rarity": 5,
+      "path": "Remembrance",
+      "baseStats": {
+        "hp": 1270.08,
+        "atk": 529.2,
+        "def": 396.9,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "23041",
+      "name": "Life Should Be Cast to Flames",
+      "rarity": 5,
+      "path": "Erudition",
+      "baseStats": {
+        "hp": 952.56,
+        "atk": 582.12,
+        "def": 529.2,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "23042",
+      "name": "Long May Rainbows Adorn the Sky",
+      "rarity": 5,
+      "path": "Remembrance",
+      "baseStats": {
+        "hp": 1164.24,
+        "atk": 476.28,
+        "def": 529.2,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "23043",
+      "name": "Lies Dance on the Breeze",
+      "rarity": 5,
+      "path": "Nihility",
+      "baseStats": {
+        "hp": 952.56,
+        "atk": 582.12,
+        "def": 529.2,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "23044",
+      "name": "Thus Burns the Dawn",
+      "rarity": 5,
+      "path": "Destruction",
+      "baseStats": {
+        "hp": 952.56,
+        "atk": 687.96,
+        "def": 396.9,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "23045",
+      "name": "A Thankless Coronation",
+      "rarity": 5,
+      "path": "Destruction",
+      "baseStats": {
+        "hp": 952.56,
+        "atk": 582.12,
+        "def": 529.2,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "23046",
+      "name": "The Hell Where Ideals Burn",
+      "rarity": 5,
+      "path": "Hunt",
+      "baseStats": {
+        "hp": 952.56,
+        "atk": 582.12,
+        "def": 529.2,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "23047",
+      "name": "Why Does the Ocean Sing",
+      "rarity": 5,
+      "path": "Nihility",
+      "baseStats": {
+        "hp": 952.56,
+        "atk": 635.04,
+        "def": 463.05,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "23048",
+      "name": "Epoch Etched in Golden Blood",
+      "rarity": 5,
+      "path": "Harmony",
+      "baseStats": {
+        "hp": 952.56,
+        "atk": 635.04,
+        "def": 463.05,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "23049",
+      "name": "To Evernight's Stars",
+      "rarity": 5,
+      "path": "Remembrance",
+      "baseStats": {
+        "hp": 1164.24,
+        "atk": 529.2,
+        "def": 463.05,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "23050",
+      "name": "Never Forget Her Flame",
+      "rarity": 5,
+      "path": "Nihility",
+      "baseStats": {
+        "hp": 1164.24,
+        "atk": 529.2,
+        "def": 463.05,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "23051",
+      "name": "Though Worlds Apart",
+      "rarity": 5,
+      "path": "Preservation",
+      "baseStats": {
+        "hp": 1058.4,
+        "atk": 582.12,
+        "def": 463.05,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "23052",
+      "name": "This Love, Forever",
+      "rarity": 5,
+      "path": "Remembrance",
+      "baseStats": {
+        "hp": 1270.08,
+        "atk": 476.28,
+        "def": 463.05,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "23053",
+      "name": "Dazzled by a Flowery World",
+      "rarity": 5,
+      "path": "Elation",
+      "baseStats": {
+        "hp": 1058.4,
+        "atk": 582.12,
+        "def": 463.05,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "23054",
+      "name": "When She Decided to See",
+      "rarity": 5,
+      "path": "Elation",
+      "baseStats": {
+        "hp": 1058.4,
+        "atk": 529.2,
+        "def": 529.2,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "23056",
+      "name": "The Finale of a Lie",
+      "rarity": 5,
+      "path": "Hunt",
+      "baseStats": {
+        "hp": 846.72,
+        "atk": 635.04,
+        "def": 529.2,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "23057",
+      "name": "Welcome to the Cosmic City",
+      "rarity": 5,
+      "path": "Elation",
+      "baseStats": {
+        "hp": 1164.24,
+        "atk": 476.28,
+        "def": 529.2,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "23058",
+      "name": "Until the Flowers Bloom Again",
+      "rarity": 5,
+      "path": "Elation",
+      "baseStats": {
+        "hp": 952.56,
+        "atk": 635.04,
+        "def": 463.05,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "23059",
+      "name": "Reforged in Hellfire",
+      "rarity": 5,
+      "path": "Nihility",
+      "baseStats": {
+        "hp": 1375.92,
+        "atk": 423.36,
+        "def": 463.05,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "23060",
+      "name": "A Star That Lights the Night",
+      "rarity": 5,
+      "path": "Erudition",
+      "baseStats": {
+        "hp": 846.72,
+        "atk": 635.04,
+        "def": 529.2,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "23061",
+      "name": "Flickering Stars",
+      "rarity": 5,
+      "path": "Erudition",
+      "baseStats": {
+        "hp": 846.72,
+        "atk": 635.04,
+        "def": 529.2,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "23062",
+      "name": "I Am As You Behold",
+      "rarity": 5,
+      "path": "Destruction",
+      "baseStats": {
+        "hp": 952.56,
+        "atk": 635.04,
+        "def": 463.05,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "23063",
+      "name": "Rise and Sing",
+      "rarity": 5,
+      "path": "Remembrance",
+      "baseStats": {
+        "hp": 1164.24,
+        "atk": 582.12,
+        "def": 396.9,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "23064",
+      "name": "Summer Rides the Surf",
+      "rarity": 5,
+      "path": "Elation",
+      "baseStats": {
+        "hp": 952.56,
+        "atk": 582.12,
+        "def": 529.2,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "24000",
+      "name": "On the Fall of an Aeon",
+      "rarity": 5,
+      "path": "Destruction",
+      "baseStats": {
+        "hp": 1058.4,
+        "atk": 529.2,
+        "def": 396.9,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "24001",
+      "name": "Cruising in the Stellar Sea",
+      "rarity": 5,
+      "path": "Hunt",
+      "baseStats": {
+        "hp": 952.56,
+        "atk": 529.2,
+        "def": 463.05,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "24002",
+      "name": "Texture of Memories",
+      "rarity": 5,
+      "path": "Preservation",
+      "baseStats": {
+        "hp": 1058.4,
+        "atk": 423.36,
+        "def": 529.2,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "24003",
+      "name": "Solitary Healing",
+      "rarity": 5,
+      "path": "Nihility",
+      "baseStats": {
+        "hp": 1058.4,
+        "atk": 529.2,
+        "def": 396.9,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "24004",
+      "name": "Eternal Calculus",
+      "rarity": 5,
+      "path": "Erudition",
+      "baseStats": {
+        "hp": 1058.4,
+        "atk": 529.2,
+        "def": 396.9,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "24005",
+      "name": "Memory's Curtain Never Falls",
+      "rarity": 5,
+      "path": "Remembrance",
+      "baseStats": {
+        "hp": 1058.4,
+        "atk": 529.2,
+        "def": 396.9,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    },
+    {
+      "id": "24006",
+      "name": "Elation Brimming With Blessings",
+      "rarity": 5,
+      "path": "Elation",
+      "baseStats": {
+        "hp": 952.56,
+        "atk": 529.2,
+        "def": 463.05,
+        "spd": 0,
+        "critRate": 0.05,
+        "critDmg": 0.5
+      },
+      "unreleased": false
+    }
+  ],
+  "relicSets": [
+    {
+      "id": "101",
+      "name": "Passerby of Wandering Cloud",
+      "skills": "Increases Outgoing Healing by 10%. At the start of the battle, immediately regenerates 1 Skill Point."
+    },
+    {
+      "id": "102",
+      "name": "Musketeer of Wild Wheat",
+      "skills": "Increases ATK by 12%. The wearer's SPD increases by 6% and DMG dealt by Basic ATK increases by 10%."
+    },
+    {
+      "id": "103",
+      "name": "Knight of Purity Palace",
+      "skills": "Increases DEF by 15%. Increases the max DMG that can be absorbed by the Shield created by the wearer by 20%."
+    },
+    {
+      "id": "104",
+      "name": "Hunter of Glacial Forest",
+      "skills": "Increases Ice DMG by 10%. After the wearer uses their Ultimate, their CRIT DMG increases by 25% for 2 turns."
+    },
+    {
+      "id": "105",
+      "name": "Champion of Streetwise Boxing",
+      "skills": "Increases Physical DMG by 10%. After the wearer attacks or is hit, their ATK increases by 5% for the rest of the battle. This effect can stack up to 5 times."
+    },
+    {
+      "id": "106",
+      "name": "Guard of Wuthering Snow",
+      "skills": "Reduces DMG taken by 8%. At the beginning of the turn, if the wearer's HP percentage is equal to or less than 50%, restores HP equal to 8% of their Max HP and regenerates 5 Energy."
+    },
+    {
+      "id": "107",
+      "name": "Firesmith of Lava-Forging",
+      "skills": "Increases Fire DMG by 10%. Increases DMG by the wearer's Skill by 12%. After unleashing Ultimate, increases the wearer's Fire DMG by 12% for the next attack."
+    },
+    {
+      "id": "108",
+      "name": "Genius of Brilliant Stars",
+      "skills": "Increases Quantum DMG by 10%. When the wearer deals DMG to the target enemy, ignores 10% DEF. If the target enemy has Quantum Weakness, the wearer additionally ignores 10% DEF."
+    },
+    {
+      "id": "109",
+      "name": "Band of Sizzling Thunder",
+      "skills": "Increases Lightning DMG by 10%. When the wearer uses their Skill, increases the wearer's ATK by 20% for 1 turn."
+    },
+    {
+      "id": "110",
+      "name": "Eagle of Twilight Line",
+      "skills": "Increases Wind DMG by 10%. After the wearer uses their Ultimate, their action is Advanced Forward by 25%."
+    },
+    {
+      "id": "111",
+      "name": "Thief of Shooting Meteor",
+      "skills": "Increases Break Effect by 16%. Increases the wearer's Break Effect by 16%. After the wearer inflicts Weakness Break on an enemy, regenerates 3 Energy."
+    },
+    {
+      "id": "112",
+      "name": "Wastelander of Banditry Desert",
+      "skills": "Increases Imaginary DMG by 10%. When dealing DMG to debuffed enemy targets, the wearer has their CRIT Rate increased by 10%. And when they deal DMG to Imprisoned enemy targets, their CRIT DMG increases by 20%."
+    },
+    {
+      "id": "113",
+      "name": "Longevous Disciple",
+      "skills": "Increases Max HP by 12%. When the wearer is hit or has their HP consumed by an ally or themselves, their CRIT Rate increases by 8% for 2 turns and up to 2 stacks."
+    },
+    {
+      "id": "114",
+      "name": "Messenger Traversing Hackerspace",
+      "skills": "Increases SPD by 6%. When the wearer uses their Ultimate on an ally, SPD for all allies increases by 12% for 1 turn. This effect cannot be stacked."
+    },
+    {
+      "id": "115",
+      "name": "The Ashblazing Grand Duke",
+      "skills": "Increases the DMG dealt by Follow-Up ATK by 20%. When the wearer uses a Follow-Up ATK, increases the wearer's ATK by 6% for every time the Follow-Up ATK deals DMG. This effect can stack up to 8 times and lasts for 3 turns. This effect is removed the next time the wearer uses a Follow-Up ATK."
+    },
+    {
+      "id": "116",
+      "name": "Prisoner in Deep Confinement",
+      "skills": "Increases ATK by 12%. For every DoT the enemy target is afflicted with, the wearer will ignore 6% of its DEF when dealing DMG to it. This effect is valid for a max of 3 DoTs."
+    },
+    {
+      "id": "117",
+      "name": "Pioneer Diver of Dead Waters",
+      "skills": "Increases DMG dealt to enemies with debuffs by 12%. Increases CRIT Rate by 4%. The wearer deals 8%/12% increased CRIT DMG to enemies with at least 2/3 debuffs. After the wearer inflicts a debuff on enemy targets, the aforementioned effects increase by 100%, lasting for 1 turn."
+    },
+    {
+      "id": "118",
+      "name": "Watchmaker, Master of Dream Machinations",
+      "skills": "Increases Break Effect by 16%. When the wearer uses their Ultimate on an ally, all allies' Break Effect increases by 30% for 2 turns. This effect cannot be stacked."
+    },
+    {
+      "id": "119",
+      "name": "Iron Cavalry Against the Scourge",
+      "skills": "Increases Break Effect by 16%. If the wearer's Break Effect is 150% or higher, the Break DMG dealt to the enemy target ignores 10% of their DEF. If the wearer's Break Effect is 250% or higher, the Super Break DMG dealt to the enemy target additionally ignores 15% of their DEF."
+    },
+    {
+      "id": "120",
+      "name": "The Wind-Soaring Valorous",
+      "skills": "Increases ATK by 12%. Increases the wearer's CRIT Rate by 6%. After the wearer uses a Follow-Up ATK, increases DMG dealt by Ultimate by 36%, lasting for 1 turn."
+    },
+    {
+      "id": "121",
+      "name": "Sacerdos' Relived Ordeal",
+      "skills": "Increases SPD by 6%. When using Skill or Ultimate on one ally target, increases the ability target's CRIT DMG by 18%, lasting for 2 turns. This effect can stack up to 2 times."
+    },
+    {
+      "id": "122",
+      "name": "Scholar Lost in Erudition",
+      "skills": "Increases CRIT Rate by 8%. Increases DMG dealt by Skill and Ultimate by 20%. After using Ultimate, additionally increases the DMG dealt by the next Skill by 25%."
+    },
+    {
+      "id": "123",
+      "name": "Hero of Triumphant Song",
+      "skills": "Increases ATK by 12%. While the wearer's memosprite is on the field, increases the wearer's SPD by 6%. When the wearer's memosprite attacks, increases the wearer's and memosprite's CRIT DMG by 30%, lasting for 2 turns."
+    },
+    {
+      "id": "124",
+      "name": "Poet of Mourning Collapse",
+      "skills": "Increases Quantum DMG by 10%. Decreases the wearer's SPD by 8%. Before entering battle, if the wearer's SPD is lower than 110/95, increases the wearer's CRIT Rate by 20%/32%. This effect applies to the wearer's memosprite at the same time."
+    },
+    {
+      "id": "125",
+      "name": "Warrior Goddess of Sun and Thunder",
+      "skills": "Increases SPD by 6%. When the wearer or their memosprite provides healing to ally targets other than themselves, the wearer gains \"Gentle Rain,\" which lasts for 2 turns and can only trigger once per turn. While the wearer has \"Gentle Rain,\" SPD increases by 6% and all allies' CRIT DMG increases by 15%. This effect cannot stack."
+    },
+    {
+      "id": "126",
+      "name": "Wavestrider Captain",
+      "skills": "Increases CRIT DMG by 16%. When the wearer becomes the target of another ally target's ability, gains 1 stack of \"Help,\" stacking up to 2 times. If there are 2 stacks of \"Help\" when the wearer uses their Ultimate, consumes all \"Help\" to increase the wearer's ATK by 48% for 1 turn."
+    },
+    {
+      "id": "127",
+      "name": "World-Remaking Deliverer",
+      "skills": "Increases CRIT Rate by 8%. After the wearer uses Basic ATK or Skill, if the wearer's memosprite is on the field, increases Max HP of the wearer and their memosprite by 24%, and increases all allies' DMG dealt by 15%, lasting until after the wearer's next use of Basic ATK or Skill."
+    },
+    {
+      "id": "128",
+      "name": "Self-Enshrouded Recluse",
+      "skills": "The provided Shield Effect increases by 10%. Increases the Shield Effect provided by the wearer by 12%. When an ally target holds a Shield provided by the wearer, the ally target's CRIT DMG increases by 15%."
+    },
+    {
+      "id": "129",
+      "name": "Ever-Glorious Magical Girl",
+      "skills": "Increases CRIT DMG by 16%. The Elation DMG dealt by the wearer and their memosprites ignores 10% of targets' DEF. For every 5 accumulated Punchline allies gain, the Elation DMG dealt additionally ignores 1% of targets' DEF, stacking up to 10 times."
+    },
+    {
+      "id": "130",
+      "name": "Diviner of Distant Reach",
+      "skills": "Increases SPD by 6%. Before entering combat, if the wearer's SPD is greater than or equal to 120/160, increases the wearer's CRIT Rate by 10%/18%. When the wearer uses Elation Skill for the first time in each battle, increases all allies' Elation by 10%. This effect cannot stack."
+    },
+    {
+      "id": "131",
+      "name": "As Navigator Isee Sees It",
+      "skills": "Increases ATK by 12%. When the wearer enters combat or uses Skill, the DMG dealt by their Skill and Ultimate increases by 18%, stacking up to 3 times. At the start of the wearer's turn or after using Ultimate, removes 1 stack of this effect."
+    },
+    {
+      "id": "132",
+      "name": "Divine-Querying Master Smith",
+      "skills": "Increases Max HP by 12%. Increases the wearer's CRIT DMG dealt to enemy targets in the DEF reduction state by 28%. After the wearer inflicts the DEF reduction state on an enemy target, all allies gain \"Comburent\" for 2 turns. This effect cannot be stacked. The DMG dealt by ally targets with \"Comburent\" increases by 15%. This effect can be triggered again after the wearer uses an attack."
+    },
+    {
+      "id": "133",
+      "name": "Dreamlit Actor",
+      "skills": "Increases SPD by 6%. When the wearer uses their Skill or Ultimate on one other ally target, increases the ability target's Elation by 16%, lasting for 3 turns. If the wearer has 10 or more points of Certified Banger, additionally increases all allies' CRIT DMG by 12%, lasting for 3 turns."
+    },
+    {
+      "id": "134",
+      "name": "The Edacious Heretic",
+      "skills": "Increases CRIT DMG by 16%. Increases DMG dealt by the wearer's Basic ATK by 36%. When the wearer uses a Basic ATK, increases the wearer's ATK by 20%, lasting for 2 turns."
+    },
+    {
+      "id": "301",
+      "name": "Space Sealing Station",
+      "skills": "Increases the wearer's ATK by 12%. When the wearer's SPD reaches 120 or higher, the wearer's ATK increases by an extra 12%."
+    },
+    {
+      "id": "302",
+      "name": "Fleet of the Ageless",
+      "skills": "Increases the wearer's Max HP by 12%. When the wearer's SPD reaches 120 or higher, all allies' ATK increases by 8%."
+    },
+    {
+      "id": "303",
+      "name": "Pan-Cosmic Commercial Enterprise",
+      "skills": "Increases the wearer's Effect Hit Rate by 10%. Meanwhile, the wearer's ATK increases by an amount that is equal to 25% of the current Effect Hit Rate, up to a maximum increase of 25%."
+    },
+    {
+      "id": "304",
+      "name": "Belobog of the Architects",
+      "skills": "Increases the wearer's DEF by 15%. When the wearer's Effect Hit Rate is 50% or higher, the wearer gains an extra 15% DEF."
+    },
+    {
+      "id": "305",
+      "name": "Celestial Differentiator",
+      "skills": "Increases the wearer's CRIT DMG by 16%. When the wearer's current CRIT DMG reaches 120% or higher, after entering battle, the wearer's CRIT Rate increases by 60% until the end of their first attack."
+    },
+    {
+      "id": "306",
+      "name": "Inert Salsotto",
+      "skills": "Increases the wearer's CRIT Rate by 8%. When the wearer's current CRIT Rate reaches 50% or higher, the DMG dealt by the wearer's Ultimate and Follow-Up ATK increases by 15%."
+    },
+    {
+      "id": "307",
+      "name": "Talia: Kingdom of Banditry",
+      "skills": "Increases the wearer's Break Effect by 16%. When the wearer's SPD reaches 145 or higher, the wearer's Break Effect increases by an extra 20%."
+    },
+    {
+      "id": "308",
+      "name": "Sprightly Vonwacq",
+      "skills": "Increases the wearer's Energy Regeneration Rate by 5%. When the wearer's SPD reaches 120 or higher, the wearer's action is Advanced Forward by 40% immediately upon entering battle."
+    },
+    {
+      "id": "309",
+      "name": "Rutilant Arena",
+      "skills": "Increases the wearer's CRIT Rate by 8%. When the wearer's current CRIT Rate reaches 70% or higher, DMG dealt by Basic ATK and Skill increases by 20%."
+    },
+    {
+      "id": "310",
+      "name": "Broken Keel",
+      "skills": "Increases the wearer's Effect RES by 10%. When the wearer's Effect RES is at 30% or higher, all allies' CRIT DMG increases by 10%."
+    },
+    {
+      "id": "311",
+      "name": "Firmament Frontline: Glamoth",
+      "skills": "Increases the wearer's ATK by 12%. When the wearer's SPD is equal to or higher than 135/160, the wearer deals 12%/18% more DMG."
+    },
+    {
+      "id": "312",
+      "name": "Penacony, Land of the Dreams",
+      "skills": "Increases wearer's Energy Regeneration Rate by 5%. Increases DMG by 10% for all other allies that are of the same Type as the wearer."
+    },
+    {
+      "id": "313",
+      "name": "Sigonia, the Unclaimed Desolation",
+      "skills": "Increases the wearer's CRIT Rate by 4%. When an enemy target gets defeated, the wearer's CRIT DMG increases by 4%, stacking up to 10 times."
+    },
+    {
+      "id": "314",
+      "name": "Izumo Gensei and Takama Divine Realm",
+      "skills": "Increases the wearer's ATK by 12%. When entering battle, if at least one teammate follows the same Path as the wearer, then the wearer's CRIT Rate increases by 12%."
+    },
+    {
+      "id": "315",
+      "name": "Duran, Dynasty of Running Wolves",
+      "skills": "When an ally character uses a Follow-Up ATK, the wearer gains 1 stack of \"Merit,\" stacking up to 5 times. Each stack of \"Merit\" increases the DMG dealt by the wearer's Follow-Up ATKs by 5%. When there are 5 stacks, additionally increases the wearer's CRIT DMG by 25%."
+    },
+    {
+      "id": "316",
+      "name": "Forge of the Kalpagni Lantern",
+      "skills": "Increases the wearer's SPD by 6%. When the wearer hits an enemy target that has Fire Weakness, the wearer's Break Effect increases by 40%, lasting for 1 turn."
+    },
+    {
+      "id": "317",
+      "name": "Lushaka, the Sunken Seas",
+      "skills": "Increases the wearer's Energy Regeneration Rate by 5%. If the wearer is not the first character in the team lineup, then increases the ATK of the first character in the team lineup by 12%."
+    },
+    {
+      "id": "318",
+      "name": "The Wondrous BananAmusement Park",
+      "skills": "Increases the wearer's CRIT DMG by 16%. When a target summoned by the wearer is on the field, CRIT DMG additionally increases by 32%."
+    },
+    {
+      "id": "319",
+      "name": "Bone Collection's Serene Demesne",
+      "skills": "Increases the wearer's Max HP by 12%. When the wearer's Max HP is 5000 or higher, increases the wearer's and their memosprite's CRIT DMG by 28%."
+    },
+    {
+      "id": "320",
+      "name": "Giant Tree of Rapt Brooding",
+      "skills": "Increases the wearer's SPD by 6%. When the wearer's SPD is 135/180 or higher, the wearer and their memosprite's Outgoing Healing increases by 12%/20%."
+    },
+    {
+      "id": "321",
+      "name": "Arcadia of Woven Dreams",
+      "skills": "When the number of ally targets on the field is not equal to 4, for every 1 additional/missing ally target, increases the DMG dealt by the wearer and their memosprite by 9%/12%, stacking up to 4/3 times."
+    },
+    {
+      "id": "322",
+      "name": "Revelry by the Sea",
+      "skills": "Increases the wearer's ATK by 12%. When the wearer's ATK is higher than or equal to 2400/3600, increases the DoT DMG dealt by 12%/24% respectively."
+    },
+    {
+      "id": "323",
+      "name": "Amphoreus, The Eternal Land",
+      "skills": "Increases the wearer's CRIT Rate by 8%. While the wearer's memosprite is on the field, increases all allies' SPD by 8%. This effect cannot be stacked."
+    },
+    {
+      "id": "324",
+      "name": "Tengoku@Livestream",
+      "skills": "Increases the wearer's CRIT DMG by 16%. If 3 or more Skill Points are consumed in the same turn, additionally increases the wearer's CRIT DMG by 32%, lasting for 3 turns."
+    },
+    {
+      "id": "325",
+      "name": "Punklorde Stage Zero",
+      "skills": "Increases the wearer's Elation by 8%. When Elation reaches 40%/80% for the first time in combat, increases the wearer's CRIT DMG by 20%/32%."
+    },
+    {
+      "id": "326",
+      "name": "City of Converging Stars",
+      "skills": "When the wearer uses Follow-Up ATK, increases ATK by 24% for 2 turns. When an enemy target gets defeated, increases CRIT DMG for all allies by 12% in the current battle. This effect cannot stack."
+    },
+    {
+      "id": "327",
+      "name": "Fallen Star Anchorage",
+      "skills": "Increases the wearer's CRIT Rate by 8%. When entering combat, if the wearer and another teammate are both Trailblaze Companions characters, increases the wearer's CRIT DMG by 32%."
+    },
+    {
+      "id": "328",
+      "name": "Cosmic Life Sciences Institute",
+      "skills": "When entering combat, if the wearer's Max Energy is greater than or equal to 200, for every 1 excess point, increases the wearer's DMG dealt by 0.2%, up to a max increase of 32%."
+    }
+  ]
+}
