@@ -26,6 +26,25 @@ class OCRFixtureTests(unittest.TestCase):
         self.assertTrue(item.fields["locked"])
         self.assertAlmostEqual(item.fields["mainStat"]["value"], 0.324)
 
+    def test_catalog_enriches_character_and_warp_resources(self) -> None:
+        character = parse_visible_text(
+            "Acheron Level 80 Ascension 6 Eidolon 1 Basic 6 Skill 10 Ultimate 10 Talent 10",
+            0.97,
+            "character",
+        )
+        self.assertEqual(character.name, "Acheron")
+        self.assertEqual(character.fields["path"], "Nihility")
+        self.assertEqual(character.fields["traces"]["ultimate"], 10)
+        warp = parse_visible_text(
+            "Stellar Jade 12,345 Star Rail Special Pass 17 Character Pity 42 Character Guaranteed Yes",
+            0.96,
+            "warp",
+        )
+        self.assertEqual(warp.fields["resources"]["stellarJade"], 12345)
+        self.assertEqual(warp.fields["resources"]["specialPasses"], 17)
+        self.assertEqual(warp.fields["resources"]["characterEventPity"], 42)
+        self.assertEqual(warp.fields["resources"]["characterEventGuaranteed"], 1)
+
 
 if __name__ == "__main__":
     unittest.main()

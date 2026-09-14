@@ -22,6 +22,7 @@ import {
   Sparkles,
   Upload,
   WandSparkles,
+  Wifi,
   X,
 } from 'lucide-react';
 import type { Account, Relic, RelicSlot } from '@ksro/shared';
@@ -47,6 +48,7 @@ import {
   saveSnapshot,
   type StoredSnapshot,
 } from './lib/accountStore';
+import type { LiveImportController } from './lib/liveImport';
 
 const compact = new Intl.NumberFormat('en', { notation: 'compact', maximumFractionDigits: 1 });
 const number = new Intl.NumberFormat('en', { maximumFractionDigits: 0 });
@@ -59,6 +61,7 @@ export interface ViewProps {
   setSnapshots: (snapshots: StoredSnapshot[]) => void;
   notify: (message: string, tone?: 'success' | 'warning') => void;
   openImport: () => void;
+  liveImport: LiveImportController;
 }
 
 function EmptyState({ title, body }: { title: string; body: string }) {
@@ -817,6 +820,7 @@ export function TeamsView({ account, notify }: ViewProps) {
 
 export function RelicsView({ account, setAccount, notify }: ViewProps) {
   const [filter, setFilter] = useState('review');
+  const [selectedRelicId, setSelectedRelicId] = useState('');
   const assessments = useMemo(
     () =>
       scoreRelics(account, {
@@ -839,7 +843,8 @@ export function RelicsView({ account, setAccount, notify }: ViewProps) {
       filter === assessment.recommendation ||
       (filter === 'unlevelled' && relic.level < 15),
   );
-  const selected = visible[0] ?? joined[0];
+  const selected =
+    visible.find(({ relic }) => relic.id === selectedRelicId) ?? visible[0] ?? joined[0];
   const upgrade = selected
     ? adviseRelicUpgrade(
         selected.relic,
@@ -897,9 +902,10 @@ export function RelicsView({ account, setAccount, notify }: ViewProps) {
           </div>
           {visible.slice(0, 18).map(({ relic, assessment }) => (
             <button
-              className="relic-row"
+              className={`relic-row ${selected?.relic.id === relic.id ? 'selected' : ''}`}
               key={relic.id}
-              onClick={() => setFilter(assessment.recommendation)}
+              aria-pressed={selected?.relic.id === relic.id}
+              onClick={() => setSelectedRelicId(relic.id)}
             >
               <span>
                 <b>{relic.slot}</b>
@@ -942,6 +948,22 @@ export function RelicsView({ account, setAccount, notify }: ViewProps) {
                 </div>
               ))}
             </div>
+            {selected.relic.speedPrecision ? (
+              <div className={`speed-precision ${selected.relic.speedPrecision.confidence}`}>
+                <strong>
+                  {selected.relic.speedPrecision.source === 'visible-decimal'
+                    ? 'Visible Speed decimal preserved'
+                    : selected.relic.speedPrecision.confidence === 'exact'
+                      ? 'Hidden Speed decimal resolved'
+                      : 'Hidden Speed decimal needs review'}
+                </strong>
+                <span>
+                  {selected.relic.speedPrecision.confidence === 'exact'
+                    ? `${selected.relic.speedPrecision.candidates[0]} SPD`
+                    : `${selected.relic.speedPrecision.displayed} displayed · candidates ${selected.relic.speedPrecision.candidates.join(', ')}`}
+                </span>
+              </div>
+            ) : null}
             <div className="probability-block">
               <small>CHANCE NEXT WEIGHTED SCORE CLEARS +{upgrade.nextStop}</small>
               <strong>{Math.round(upgrade.improvementProbability * 100)}%</strong>
@@ -979,10 +1001,17 @@ export function RelicsView({ account, setAccount, notify }: ViewProps) {
 
 export function PlannerView({ account }: ViewProps) {
   const [days, setDays] = useState(7);
-  const [passes, setPasses] = useState(120);
-  const [pity, setPity] = useState(20);
-  const [guaranteed, setGuaranteed] = useState(false);
+  const importedPasses =
+    (account.resources.specialPasses ?? 0) + Math.floor((account.resources.stellarJade ?? 0) / 160);
+  const [passesOverride, setPassesOverride] = useState<number>();
+  const [pityOverride, setPityOverride] = useState<number>();
+  const [guaranteedOverride, setGuaranteedOverride] = useState<boolean>();
   const [isCone, setIsCone] = useState(false);
+  const pityKey = isCone ? 'lightConeEventPity' : 'characterEventPity';
+  const guaranteeKey = isCone ? 'lightConeEventGuaranteed' : 'characterEventGuaranteed';
+  const passes = (passesOverride ?? importedPasses) || 120;
+  const pity = pityOverride ?? account.resources[pityKey] ?? 20;
+  const guaranteed = guaranteedOverride ?? account.resources[guaranteeKey] === 1;
   const farms = useMemo(() => planFarming(account, days), [account, days]);
   const pull = useMemo(
     () =>
@@ -1053,10 +1082,24 @@ export function PlannerView({ account }: ViewProps) {
         <section className="panel planner-panel">
           <p className="eyebrow">Pull-value simulator</p>
           <div className="segmented">
-            <button className={!isCone ? 'active' : ''} onClick={() => setIsCone(false)}>
+            <button
+              className={!isCone ? 'active' : ''}
+              onClick={() => {
+                setIsCone(false);
+                setPityOverride(undefined);
+                setGuaranteedOverride(undefined);
+              }}
+            >
               New character
             </button>
-            <button className={isCone ? 'active' : ''} onClick={() => setIsCone(true)}>
+            <button
+              className={isCone ? 'active' : ''}
+              onClick={() => {
+                setIsCone(true);
+                setPityOverride(undefined);
+                setGuaranteedOverride(undefined);
+              }}
+            >
               Signature Light Cone
             </button>
           </div>
@@ -1068,7 +1111,7 @@ export function PlannerView({ account }: ViewProps) {
                 min="0"
                 max="1000"
                 value={passes}
-                onChange={(event) => setPasses(Number(event.target.value))}
+                onChange={(event) => setPassesOverride(Number(event.target.value))}
               />
             </label>
             <label>
@@ -1078,7 +1121,7 @@ export function PlannerView({ account }: ViewProps) {
                 min="0"
                 max="89"
                 value={pity}
-                onChange={(event) => setPity(Number(event.target.value))}
+                onChange={(event) => setPityOverride(Number(event.target.value))}
               />
             </label>
           </div>
@@ -1090,7 +1133,7 @@ export function PlannerView({ account }: ViewProps) {
             <input
               type="checkbox"
               checked={guaranteed}
-              onChange={(event) => setGuaranteed(event.target.checked)}
+              onChange={(event) => setGuaranteedOverride(event.target.checked)}
             />
           </label>
           <div className="pull-probability">
@@ -1580,7 +1623,14 @@ function accountFromShowcase(data: any): Account {
   });
 }
 
-export function DataView({ account, setAccount, setSnapshots, openImport, notify }: ViewProps) {
+export function DataView({
+  account,
+  setAccount,
+  setSnapshots,
+  openImport,
+  notify,
+  liveImport,
+}: ViewProps) {
   const [uid, setUid] = useState('');
   const [loading, setLoading] = useState(false);
   const [manualJson, setManualJson] = useState('');
@@ -1655,6 +1705,118 @@ export function DataView({ account, setAccount, setSnapshots, openImport, notify
           </div>
         </div>
       )}
+      <section className="panel live-import-panel" aria-labelledby="live-import-title">
+        <div className="live-import-heading">
+          <div className="signal-icon cyan">
+            <Wifi size={20} />
+          </div>
+          <div>
+            <p className="eyebrow">Local scanner bridge</p>
+            <h2 id="live-import-title">Live account import</h2>
+            <p>
+              Sync reviewed scanner changes through an authenticated connection on this computer.
+              Nothing is uploaded to a server.
+            </p>
+          </div>
+          <span className={`connection-badge ${liveImport.status.state}`}>
+            <i /> {liveImport.status.state === 'connected' ? 'Connected' : liveImport.status.state}
+          </span>
+        </div>
+        <div className="pairing-row">
+          <label>
+            Scanner pairing code
+            <input
+              aria-label="Scanner pairing code"
+              autoComplete="off"
+              inputMode="text"
+              maxLength={32}
+              placeholder="Code shown in Krzys HSR Scanner"
+              value={liveImport.settings.pairingCode}
+              onChange={(event) =>
+                liveImport.updateSettings({
+                  pairingCode: event.target.value.replace(/[^A-Za-z0-9-]/g, '').toUpperCase(),
+                })
+              }
+            />
+          </label>
+          <div className="live-status-copy" role="status" aria-live="polite">
+            <strong>{liveImport.status.message}</strong>
+            {liveImport.status.lastSync && (
+              <span>
+                Last verified sync {new Date(liveImport.status.lastSync).toLocaleTimeString()}
+              </span>
+            )}
+          </div>
+        </div>
+        <div className="live-toggle-list">
+          <label className="switch-row">
+            <span>
+              <strong>Enable Live Import (Recommended)</strong>
+              <small>Reconnects automatically while the scanner is open.</small>
+            </span>
+            <input
+              type="checkbox"
+              checked={liveImport.settings.enabled}
+              onChange={(event) => liveImport.updateSettings({ enabled: event.target.checked })}
+            />
+          </label>
+          <label className="switch-row">
+            <span>
+              <strong>Update characters&apos; equipped relics and Light Cones</strong>
+              <small>Off preserves your current optimizer equipment assignments.</small>
+            </span>
+            <input
+              type="checkbox"
+              checked={liveImport.settings.updateEquippedGear}
+              onChange={(event) =>
+                liveImport.updateSettings({ updateEquippedGear: event.target.checked })
+              }
+            />
+          </label>
+          <label className="switch-row">
+            <span>
+              <strong>Import Warp resources</strong>
+              <small>
+                Jades, passes, pity, guarantees and Undying Starlight feed the pull planner.
+              </small>
+            </span>
+            <input
+              type="checkbox"
+              checked={liveImport.settings.importWarpResources}
+              onChange={(event) =>
+                liveImport.updateSettings({ importWarpResources: event.target.checked })
+              }
+            />
+          </label>
+        </div>
+        <details className="live-advanced">
+          <summary>Advanced safety and reconciliation</summary>
+          <label>
+            Local WebSocket URL
+            <input
+              aria-label="Local WebSocket URL"
+              spellCheck={false}
+              value={liveImport.settings.endpoint}
+              onChange={(event) => liveImport.updateSettings({ endpoint: event.target.value })}
+            />
+          </label>
+          <label className="switch-row">
+            <span>
+              <strong>Remove items missing from a complete scan</strong>
+              <small>
+                Off is safer and performs non-destructive upserts. Turn on only after a full scan.
+              </small>
+            </span>
+            <input
+              type="checkbox"
+              checked={liveImport.settings.removeMissingItems}
+              onChange={(event) =>
+                liveImport.updateSettings({ removeMissingItems: event.target.checked })
+              }
+            />
+          </label>
+        </details>
+      </section>
       <div className="data-cards">
         <article className="panel action-card">
           <Upload size={23} />
@@ -1841,6 +2003,14 @@ export function DataView({ account, setAccount, setSnapshots, openImport, notify
         <div className="inventory-stat">
           <strong>v{account.metadata.schemaVersion}</strong>
           <span>Account schema</span>
+        </div>
+        <div className="inventory-stat">
+          <strong>{number.format(account.resources.stellarJade ?? 0)}</strong>
+          <span>Stellar Jades</span>
+        </div>
+        <div className="inventory-stat">
+          <strong>{number.format(account.resources.specialPasses ?? 0)}</strong>
+          <span>Special Passes</span>
         </div>
       </section>
     </>

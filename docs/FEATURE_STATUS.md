@@ -1,8 +1,8 @@
 # Feature status
 
-This file is the release truth source for version 1.0.0. A polished screen is not evidence that its model matches Honkai: Star Rail or another optimizer.
+This file is the release truth source for version 1.1.0. A polished screen is not evidence that its model matches Honkai: Star Rail or another optimizer.
 
-## Verified in version 1.0.0
+## Verified in version 1.1.0
 
 - Local versioned account import/export with strict schema checks, privacy-safe export, snapshots, rollback, and full JSON correction.
 - Public showcase import for data exposed by Mihomo, with the UID omitted from saved account data.
@@ -15,6 +15,10 @@ This file is the release truth source for version 1.0.0. A polished screen is no
 - Local deterministic assistant intents for farming, weakest equipment coverage, and fixed two-team allocation.
 - Scan comparison for new, removed, moved, changed, low-confidence, and suspiciously decreased relic records.
 - Windows scanner safety gates: visible foreground HSR window capture, optional navigation off, foreground re-check before input, global F8 stop, mandatory review of every item, atomic session save, and strict export validation.
+- Authenticated local live import over a loopback-only WebSocket with a rotating session pairing code, production/development origin checks, message-size limits, schema/game-version validation, reconnect, revision deduplication, pre-merge snapshots, and undo.
+- Independent live-merge policies for equipped relics/Light Cones, Warp resources, and advanced remove-missing reconciliation. Notes, tags, reservations, and UID remain local; pending or invalid scanner data is withheld.
+- Scanner fast-pipeline mode with two local OCR workers, explicit Relic/Character/Light Cone/Warp capture hints, v4.5 catalog-assisted recognition, stable enhanced-relic reconciliation, and distinct handling of identical unequipped Light Cones.
+- Speed-decimal metadata that retains visible decimals and uses legal relic roll tiers to identify hidden precision. Non-unique roll candidates remain labelled ambiguous instead of being collapsed to a guessed decimal.
 
 ## Experimental or manual-input models
 
@@ -25,12 +29,12 @@ This file is the release truth source for version 1.0.0. A polished screen is no
 - Encounter cards are placeholders for user-entered enemy configuration. They are not current encounter definitions or clear predictions.
 - Scanner OCR tests use anonymous synthetic images at several scales. No copyrighted game screenshot fixture is included, and accuracy on every game layout is not claimed.
 
-## Not implemented in version 1.0.0
+## Not implemented in version 1.1.0
 
 - Full Fribbels character/Light Cone/conditional formula coverage or numerical parity.
 - GPU optimizer, character lineup discovery, content-specific endgame simulation, verified cycle estimates, or auto-battle emulation.
 - Exact relic-upgrade improvement probability against every build, material inventory/drop tables, synthesis modelling, or a verified daily farming route.
 - Native structured forms for every relic, Light Cone, character, placeholder, resource, and advanced conditional field; the strict full-account JSON editor is the complete fallback.
-- Scanner recognition for every character, Trace, Light Cone, relic set, localization, resolution, and UI revision.
+- Scanner recognition for every localization, resolution, and future UI revision. Catalog matching covers v4.5 names, but OCR still depends on visible text quality and every record remains review-gated.
 
-Accordingly, version 1.0.0 must not be described as feature-parity with, universally superior to, or a drop-in numerical replacement for Fribbels. Its stronger areas are privacy controls, strict fail-closed imports, scan-history safety, explicit assumptions, and account-wide planning surfaces.
+Accordingly, version 1.1.0 must not be described as complete numerical parity with, universally superior to, or a drop-in replacement for Fribbels. Its stronger areas are privacy controls, strict fail-closed imports and live reconciliation, scan-history safety, explicit assumptions, and account-wide planning surfaces. The independently audited comparison is tracked in [FRIBBELS-COMPARISON.md](FRIBBELS-COMPARISON.md).

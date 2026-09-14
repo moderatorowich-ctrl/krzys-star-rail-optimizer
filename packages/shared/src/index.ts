@@ -55,6 +55,29 @@ export const StatValueSchema = z.object({
     .optional(),
 });
 
+export const SpeedPrecisionSchema = z
+  .object({
+    source: z.enum(['visible-decimal', 'roll-inference']),
+    confidence: z.enum(['exact', 'ambiguous']),
+    displayed: z.number().nonnegative(),
+    candidates: z.array(z.number().nonnegative()).min(1).max(32),
+    minimum: z.number().nonnegative(),
+    maximum: z.number().nonnegative(),
+  })
+  .superRefine((precision, ctx) => {
+    if (
+      precision.minimum > precision.maximum ||
+      precision.candidates.some(
+        (candidate) => candidate < precision.minimum || candidate > precision.maximum,
+      )
+    ) {
+      ctx.addIssue({ code: 'custom', message: 'Speed candidates must fit the declared range.' });
+    }
+    if (precision.confidence === 'exact' && precision.candidates.length !== 1) {
+      ctx.addIssue({ code: 'custom', message: 'Exact Speed precision must have one candidate.' });
+    }
+  });
+
 export const RelicSchema = z
   .object({
     id: z.string().min(1),
@@ -74,6 +97,7 @@ export const RelicSchema = z
     ocrConfidence: z.number().min(0).max(1).optional(),
     note: z.string().max(500).optional(),
     tags: z.array(z.string().max(32)).max(12).optional(),
+    speedPrecision: SpeedPrecisionSchema.optional(),
   })
   .superRefine((relic, ctx) => {
     if (relic.level > relic.rarity * 3)

@@ -18,7 +18,7 @@ Repository Settings → Pages must use **GitHub Actions**. The public repository
 
 ## Scanner release
 
-Tag a verified commit with `scanner-v1.0.0` and push the tag. `.github/workflows/release-scanner.yml` runs on `windows-latest`, installs Python dependencies, reruns OCR/model tests, creates a one-file Windows executable, bundles the GPL license and scanner guide, and attaches `Krzys-HSR-Scanner-v1.0.0-for-HSR-v4.5.zip` to a release named `Krzys HSR Scanner v1.0.0 for HSR v4.5`.
+Tag a verified commit with `scanner-v1.1.0` and push the tag. `.github/workflows/release-scanner.yml` runs on `windows-latest`, installs Python dependencies, reruns OCR/model/live-bridge tests, creates a one-file Windows executable, bundles the GPL license and scanner guide, and attaches `Krzys-HSR-Scanner-v1.1.0-for-HSR-v4.5.zip` to a release named `Krzys HSR Scanner v1.1.0 for HSR v4.5`.
 
 The binary is reproducible from the tagged source but is not Authenticode-signed. Release notes disclose this and the scanner's supported game/export versions and safety model.
 

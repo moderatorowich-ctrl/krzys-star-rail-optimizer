@@ -12,7 +12,7 @@ Krzys Star Rail Optimizer is a local-first monorepo with no required application
 
 `packages/game-data` contains the version manifest, normalized generated data, encounter definitions, farming domains, and the demonstration account. `packages/shared` owns the versioned account schema and compatibility migrations.
 
-`apps/scanner` is a separate Python/GPL package. Capture, OCR, validation/model code, session persistence, and UI are deliberately separated. It shares the JSON contract, not runtime code, with the website.
+`apps/scanner` is a separate Python/GPL package. Capture, OCR, validation/model code, session persistence, live bridge, and UI are deliberately separated. It shares the JSON contract, not runtime code, with the website. Its optional WebSocket server binds only to `127.0.0.1`, permits the production and local-development origins, requires a rotating pairing code, and never publishes an account until every captured record is reviewed and the complete export validates.
 
 ## Data flow
 
@@ -22,6 +22,8 @@ Krzys Star Rail Optimizer is a local-first monorepo with no required application
 4. Views call pure engine functions. Expensive single-character searches cross the Web Worker boundary; progress and cancellation messages return independently of rendering.
 5. Only version-compatible derived state is reused. Exports are explicit downloads and redact identifying fields by default.
 
+Live import follows the same validation boundary. The browser pairs to the scanner at `ws://127.0.0.1:23313/ws`, validates the protocol and full account schema, snapshots the previous account, then performs stable-ID upserts. Equipped-item and Warp-resource changes are separate opt-ins. Scanner data waiting for review is reported as pending and is never merged.
+
 ## Security and privacy boundaries
 
-There are no project-controlled servers, secrets, analytics SDKs, ad trackers, eval calls, or background uploads. Browser storage is origin-local. The public UID action is an explicit browser-to-public-profile request. The service worker caches application assets, not imported account JSON. Scanner debug screenshots are opt-in and locally deletable.
+There are no project-controlled servers, analytics SDKs, ad trackers, eval calls, or background uploads. Browser storage is origin-local. The live pairing code is session-only browser state and can be rotated from the scanner. The public UID action is an explicit browser-to-public-profile request. The service worker caches application assets, not imported account JSON. Scanner debug screenshots are opt-in and locally deletable.

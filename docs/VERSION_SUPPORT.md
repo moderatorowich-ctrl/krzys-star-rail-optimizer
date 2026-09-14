@@ -4,8 +4,8 @@
 | ---------------------- | ------------------------------------------ |
 | Honkai: Star Rail      | 4.5                                        |
 | Game-data revision     | 2026.09.13.1                               |
-| Optimizer              | 1.0.0                                      |
-| Scanner                | 1.0.0                                      |
+| Optimizer              | 1.1.0                                      |
+| Scanner                | 1.1.0                                      |
 | Scanner export schemas | 1–2                                        |
 | Data source commit     | `d28928b1f09d7613c37ca7ca373a468367060fc0` |
 | Generated              | 2026-09-13                                 |

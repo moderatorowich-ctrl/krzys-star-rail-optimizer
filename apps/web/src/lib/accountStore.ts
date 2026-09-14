@@ -63,6 +63,8 @@ export function clearLocalData() {
   localStorage.removeItem(ACCOUNT_KEY);
   localStorage.removeItem(SNAPSHOTS_KEY);
   localStorage.removeItem('ksro.plans.v1');
+  localStorage.removeItem('ksro.live-import.v1');
+  sessionStorage.removeItem('ksro.live-import.pairing.v1');
 }
 
 export function downloadAccount(account: Account, privateData = false) {

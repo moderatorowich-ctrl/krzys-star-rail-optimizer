@@ -32,7 +32,7 @@ class ExportTests(unittest.TestCase):
         )
         payload = export_payload(session)
         self.assertEqual(payload["metadata"]["gameVersion"], "4.5")
-        self.assertEqual(payload["metadata"]["scannerVersion"], "1.0.0")
+        self.assertEqual(payload["metadata"]["scannerVersion"], "1.1.0")
         self.assertTrue(payload["metadata"]["uidRedacted"])
         self.assertEqual(validate_export(payload), [])
 
@@ -43,6 +43,56 @@ class ExportTests(unittest.TestCase):
         self.assertFalse(session.add(item))
         self.assertEqual(len(session.items), 2)
         self.assertTrue(session.items[-1].fields['possibleDuplicate'])
+
+    def test_enhanced_relic_reuses_stable_id(self) -> None:
+        session = ScanSession()
+        base = ScanItem(
+            kind="relic",
+            name="Fixture Set",
+            confidence=0.9,
+            source_hash="base",
+            fields={
+                "set": "Fixture Set",
+                "slot": "Head",
+                "rarity": 5,
+                "level": 12,
+                "mainStat": {"stat": "hp", "value": 620},
+                "substats": [{"stat": "spd", "value": 5.2}],
+            },
+        )
+        self.assertEqual(session.upsert(base), "new")
+        stable_id = session.items[0].fields["id"]
+        enhanced = ScanItem(
+            kind="relic",
+            name="Fixture Set",
+            confidence=0.95,
+            source_hash="enhanced",
+            fields={**base.fields, "id": None, "level": 15, "mainStat": {"stat": "hp", "value": 705}},
+        )
+        self.assertEqual(session.upsert(enhanced), "enhanced")
+        self.assertEqual(len(session.items), 1)
+        self.assertEqual(session.items[0].fields["id"], stable_id)
+
+    def test_unequipped_duplicate_light_cones_are_not_collapsed(self) -> None:
+        session = ScanSession()
+        first = ScanItem(
+            kind="light_cone",
+            name="Fixture Cone",
+            confidence=0.9,
+            source_hash="cone-a",
+            fields={"level": 80},
+        )
+        second = ScanItem(
+            kind="light_cone",
+            name="Fixture Cone",
+            confidence=0.9,
+            source_hash="cone-b",
+            fields={"level": 80},
+        )
+        self.assertEqual(session.upsert(first), "new")
+        self.assertEqual(session.upsert(second), "new")
+        self.assertEqual(len(session.items), 2)
+        self.assertNotEqual(session.items[0].fields["id"], session.items[1].fields["id"])
 
     def test_session_round_trip_preserves_resume_progress(self) -> None:
         session = ScanSession(

@@ -4,6 +4,7 @@ from dataclasses import asdict, dataclass, field
 from datetime import datetime, timezone
 from typing import Any
 import math
+import uuid
 
 from . import EXPORT_SCHEMA_VERSION, SCANNER_VERSION, SUPPORTED_GAME_VERSION
 
@@ -33,6 +34,8 @@ class ScanSession:
     current_index: int = 0
 
     def add(self, item: ScanItem) -> bool:
+        if item.kind in {"relic", "light_cone"} and not item.fields.get("id"):
+            item.fields["id"] = f"scan-{item.kind}-{uuid.uuid4().hex}"
         duplicate = any(
             existing.source_hash == item.source_hash and existing.kind == item.kind
             for existing in self.items
@@ -41,6 +44,41 @@ class ScanSession:
             item.fields['possibleDuplicate'] = True
         self.items.append(item)
         return not duplicate
+
+    def upsert(self, item: ScanItem) -> str:
+        """Reconcile a rescanned character/resource or a uniquely matched enhanced item."""
+        if item.kind == "character" and item.fields.get("id"):
+            for index, existing in enumerate(self.items):
+                if existing.kind == item.kind and existing.fields.get("id") == item.fields.get("id"):
+                    item.fields["id"] = existing.fields["id"]
+                    self.items[index] = item
+                    return "updated"
+        if item.kind == "warp":
+            for index, existing in enumerate(self.items):
+                if existing.kind == "warp":
+                    self.items[index] = item
+                    return "updated"
+        if item.kind in {"relic", "light_cone"}:
+            matches = [
+                (index, existing)
+                for index, existing in enumerate(self.items)
+                if _same_scan_identity(existing, item)
+            ]
+            if item.kind == "relic":
+                level = item.fields.get("level")
+                matches = [
+                    (index, existing)
+                    for index, existing in matches
+                    if isinstance(level, int)
+                    and isinstance(existing.fields.get("level"), int)
+                    and level > existing.fields["level"]
+                ]
+            if len(matches) == 1:
+                index, existing = matches[0]
+                item.fields["id"] = existing.fields.get("id") or f"scan-{item.kind}-{uuid.uuid4().hex}"
+                self.items[index] = item
+                return "enhanced" if item.kind == "relic" else "updated"
+        return "new" if self.add(item) else "duplicate"
 
     @property
     def progress(self) -> float:
@@ -53,6 +91,7 @@ def export_payload(session: ScanSession, include_uid: bool = False, uid: str = "
     characters = []
     light_cones = []
     relics = []
+    resources: dict[str, int | float] = {}
     for index, item in enumerate(session.items):
         fields = item.fields
         if item.kind == "relic":
@@ -69,6 +108,7 @@ def export_payload(session: ScanSession, include_uid: bool = False, uid: str = "
                     "discarded": bool(fields.get("discarded", False)),
                     "equippedCharacterId": fields.get("equippedCharacterId"),
                     "ocrConfidence": round(item.confidence, 4),
+                    **({"speedPrecision": fields["speedPrecision"]} if fields.get("speedPrecision") else {}),
                 }
             )
         elif item.kind == "character":
@@ -106,6 +146,10 @@ def export_payload(session: ScanSession, include_uid: bool = False, uid: str = "
                     "equippedCharacterId": fields.get("equippedCharacterId"),
                 }
             )
+        elif item.kind == "warp":
+            for key, value in (fields.get("resources") or {}).items():
+                if isinstance(value, (int, float)) and not isinstance(value, bool) and value >= 0:
+                    resources[str(key)] = value
     metadata: dict[str, Any] = {
         "schemaVersion": EXPORT_SCHEMA_VERSION,
         "gameVersion": SUPPORTED_GAME_VERSION,
@@ -121,7 +165,7 @@ def export_payload(session: ScanSession, include_uid: bool = False, uid: str = "
         "characters": characters,
         "lightCones": light_cones,
         "relics": relics,
-        "resources": {},
+        "resources": resources,
         "reservations": {},
     }
 
@@ -207,7 +251,44 @@ def validate_export(payload: dict[str, Any]) -> list[str]:
         confidence = relic.get("ocrConfidence", 1)
         if not isinstance(confidence, (int, float)) or not 0 <= confidence <= 1:
             errors.append(f"invalid OCR confidence for relic {relic_id}")
+        precision = relic.get("speedPrecision")
+        if precision is not None:
+            candidates = precision.get("candidates") if isinstance(precision, dict) else None
+            if (
+                not isinstance(precision, dict)
+                or precision.get("source") not in {"visible-decimal", "roll-inference"}
+                or precision.get("confidence") not in {"exact", "ambiguous"}
+                or not isinstance(candidates, list)
+                or not candidates
+                or len(candidates) > 32
+                or any(not numeric(value, 0, 100) for value in candidates)
+            ):
+                errors.append(f"Invalid Speed precision metadata for relic {relic_id}.")
     return errors
+
+
+def _same_scan_identity(existing: ScanItem, incoming: ScanItem) -> bool:
+    if existing.kind != incoming.kind or existing.name.casefold() != incoming.name.casefold():
+        return False
+    if incoming.kind == "light_cone":
+        existing_id = existing.fields.get("id")
+        incoming_id = incoming.fields.get("id")
+        if existing_id and incoming_id:
+            return existing_id == incoming_id
+        equipped_character = incoming.fields.get("equippedCharacterId")
+        return bool(equipped_character) and existing.fields.get("equippedCharacterId") == equipped_character
+    if incoming.kind != "relic":
+        return False
+    invariant_fields = ("set", "slot", "rarity", "equippedCharacterId")
+    if any(existing.fields.get(key) != incoming.fields.get(key) for key in invariant_fields):
+        return False
+    existing_main = (existing.fields.get("mainStat") or {}).get("stat")
+    incoming_main = (incoming.fields.get("mainStat") or {}).get("stat")
+    if existing_main != incoming_main:
+        return False
+    existing_substats = {stat.get("stat") for stat in existing.fields.get("substats", [])}
+    incoming_substats = {stat.get("stat") for stat in incoming.fields.get("substats", [])}
+    return existing_substats == incoming_substats
 
 
 def serialize_session(session: ScanSession) -> dict[str, Any]:

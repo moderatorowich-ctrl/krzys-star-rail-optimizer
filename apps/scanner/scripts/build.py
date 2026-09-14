@@ -4,6 +4,7 @@ import shutil
 import subprocess
 import sys
 import zipfile
+import os
 from importlib import metadata
 from pathlib import Path
 
@@ -32,6 +33,7 @@ RUNTIME_DISTRIBUTIONS = (
     "pytesseract",
     "pytweening",
     "pywin32-ctypes",
+    "websockets",
 )
 
 
@@ -82,6 +84,10 @@ def main() -> None:
             "Krzys-HSR-Scanner",
             "--paths",
             str(ROOT),
+            "--add-data",
+            f"{REPOSITORY_ROOT / 'packages' / 'game-data' / 'src' / 'game-data.generated.json'}{os.pathsep}krzys_hsr_scanner/data",
+            "--add-data",
+            f"{REPOSITORY_ROOT / 'packages' / 'game-data' / 'src' / 'relic-rolls.generated.json'}{os.pathsep}krzys_hsr_scanner/data",
             str(ROOT / "main.py"),
         ],
         cwd=ROOT,

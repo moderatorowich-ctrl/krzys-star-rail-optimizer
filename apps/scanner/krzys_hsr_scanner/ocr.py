@@ -9,7 +9,9 @@ from typing import Protocol
 
 from PIL import Image, ImageEnhance, ImageFilter, ImageOps
 
+from .game_data import match_catalog_entry
 from .model import ScanItem
+from .speed import infer_speed_precision
 
 
 class OCREngine(Protocol):
@@ -118,15 +120,25 @@ def parse_number(value: str) -> float:
     return number / 100 if percent else number
 
 
-def parse_visible_text(text: str, confidence: float) -> ScanItem:
+def parse_visible_text(text: str, confidence: float, kind_hint: str | None = None) -> ScanItem:
     normalized = " ".join(text.replace("\n", " ").split())
     kind = "relic"
-    if re.search(r"Superimposition|Light Cone", normalized, re.I):
+    if kind_hint in {"relic", "light_cone", "character", "warp"}:
+        kind = kind_hint
+    elif re.search(r"Stellar Jade|Star Rail (?:Special )?Pass|Pity|Warp", normalized, re.I):
+        kind = "warp"
+    elif re.search(r"Superimposition|Light Cone", normalized, re.I):
         kind = "light_cone"
     elif re.search(r"Eidolon|Traces|Ascension", normalized, re.I):
         kind = "character"
+    collection = {
+        "relic": "relicSets",
+        "light_cone": "lightCones",
+        "character": "characters",
+    }.get(kind)
+    catalog_entry = match_catalog_entry(normalized, collection) if collection else None
     name_match = re.search(r"(?:Name\s*[:|-]\s*)?([A-Za-z][A-Za-z '•&-]{3,50})(?=\s+(?:Level|Lv\.|\+\d|Rarity|Slot|Path|$))", normalized)
-    name = name_match.group(1).strip() if name_match else "Review required"
+    name = str(catalog_entry["name"]) if catalog_entry else (name_match.group(1).strip() if name_match else "Review required")
     level_match = re.search(r"(?:Level|Lv\.?|\+)\s*(\d{1,2})", normalized, re.I)
     rarity_match = re.search(r"(?:Rarity\s*)?([345])\s*(?:★|star)", normalized, re.I)
     fields: dict[str, object] = {
@@ -135,6 +147,30 @@ def parse_visible_text(text: str, confidence: float) -> ScanItem:
         "locked": bool(re.search(r"\bLocked\b|\bLock:\s*Yes\b", normalized, re.I)) and not bool(re.search(r"\bUnlocked\b|\bLock:\s*No\b", normalized, re.I)),
         "discarded": bool(re.search(r"\bMarked for Discard\b|\bDiscard:\s*Yes\b", normalized, re.I)),
     }
+    if kind == "warp":
+        resources: dict[str, int] = {}
+        resource_patterns = {
+            "stellarJade": r"Stellar Jade\s*[:|-]?\s*([0-9,]+)",
+            "specialPasses": r"Star Rail Special Pass(?:es)?\s*[:|-]?\s*([0-9,]+)",
+            "standardPasses": r"Star Rail Pass(?:es)?\s*[:|-]?\s*([0-9,]+)",
+            "undyingStarlight": r"Undying Starlight\s*[:|-]?\s*([0-9,]+)",
+            "characterEventPity": r"Character(?: Event)? Pity\s*[:|-]?\s*([0-9]+)",
+            "lightConeEventPity": r"Light Cone(?: Event)? Pity\s*[:|-]?\s*([0-9]+)",
+            "standardPity": r"Standard Pity\s*[:|-]?\s*([0-9]+)",
+        }
+        for key, pattern in resource_patterns.items():
+            match = re.search(pattern, normalized, re.I)
+            if match:
+                resources[key] = int(match.group(1).replace(",", ""))
+        for label, key in (
+            ("Character", "characterEventGuaranteed"),
+            ("Light Cone", "lightConeEventGuaranteed"),
+        ):
+            if re.search(rf"{label}(?: Event)? Guaranteed\s*[:|-]?\s*(?:Yes|True)", normalized, re.I):
+                resources[key] = 1
+        fields = {"resources": resources, "reviewed": False}
+        digest = hashlib.sha256(normalized.encode("utf-8")).hexdigest()
+        return ScanItem(kind=kind, name="Warp resources", fields=fields, confidence=confidence, source_hash=digest)
     slot_match = re.search(r"(Head|Hands?|Body|Feet|Planar Sphere|Link Rope)", normalized, re.I)
     if slot_match:
         slot = slot_match.group(1).title()
@@ -155,10 +191,49 @@ def parse_visible_text(text: str, confidence: float) -> ScanItem:
         match = re.search(rf'{label}\s*[:|-]?\s*(\d)', normalized, re.I)
         if match:
             fields[key] = int(match.group(1))
+    if catalog_entry:
+        if kind == "character":
+            fields.update(
+                {
+                    "id": str(catalog_entry["id"]),
+                    "path": catalog_entry["path"],
+                    "element": catalog_entry["element"],
+                    "baseStats": catalog_entry["baseStats"],
+                }
+            )
+            traces: dict[str, int | list[str]] = {"unlockedNodes": []}
+            for label, key in (
+                ("Basic", "basic"),
+                ("Skill", "skill"),
+                ("Ultimate", "ultimate"),
+                ("Talent", "talent"),
+                ("Memosprite Skill", "memospriteSkill"),
+                ("Memosprite Talent", "memospriteTalent"),
+            ):
+                match = re.search(rf"{label}\s*(?:Lv\.?|Level|[:|-])?\s*(\d{{1,2}})", normalized, re.I)
+                if match:
+                    traces[key] = int(match.group(1))
+            fields["traces"] = traces
+        elif kind == "light_cone":
+            fields.update(
+                {
+                    "path": catalog_entry["path"],
+                    "rarity": catalog_entry["rarity"],
+                    "baseStats": catalog_entry["baseStats"],
+                }
+            )
+        elif kind == "relic":
+            fields["set"] = catalog_entry["name"]
+    if kind in {"relic", "light_cone"}:
+        owner = match_catalog_entry(normalized, "characters")
+        if owner:
+            fields["equippedCharacterId"] = str(owner["id"])
     fields['reviewed'] = False
     stats = [stat for _, stat in sorted(positioned_stats, key=lambda item: item[0])]
     if stats:
         fields["mainStat"] = stats[0]
         fields["substats"] = stats[1:5]
+        visible_speed_decimal = bool(re.search(r"\bSPD\s*\+?[0-9]+\.[0-9]+", normalized, re.I))
+        infer_speed_precision(fields, visible_speed_decimal)
     digest = hashlib.sha256(normalized.encode("utf-8")).hexdigest()
     return ScanItem(kind=kind, name=name, fields=fields, confidence=confidence, source_hash=digest)

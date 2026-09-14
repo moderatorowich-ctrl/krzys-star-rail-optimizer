@@ -13,6 +13,7 @@ from tkinter import filedialog, messagebox, ttk
 
 from . import SCANNER_VERSION, SUPPORTED_GAME_VERSION
 from .capture import GuidedCapture
+from .live_bridge import DEFAULT_LIVE_PORT, LiveBridge
 from .model import ScanSession, deserialize_session, export_payload, serialize_session, validate_export
 from .ocr import TesseractEngine
 from .safety import GlobalStopHotkey
@@ -34,18 +35,24 @@ class ScannerApp(tk.Tk):
         self.configure(bg="#07111f")
         self.session = self._load_session()
         self.capture: GuidedCapture | None = None
+        self.live_bridge = LiveBridge(status_callback=self._live_bridge_status)
         self.hotkey: GlobalStopHotkey | None = None
         self.worker: threading.Thread | None = None
         self.closing = False
         self.status = tk.StringVar(value="Ready for guided capture.")
         self.progress = tk.DoubleVar(value=self.session.progress * 100)
         self.count = tk.IntVar(value=max(1, self.session.expected_items or 1))
-        self.capture_delay = tk.DoubleVar(value=0.7)
-        self.navigation_delay = tk.DoubleVar(value=1.2)
+        self.capture_delay = tk.DoubleVar(value=0.3)
+        self.navigation_delay = tk.DoubleVar(value=0.55)
+        self.capture_mode = tk.StringVar(value="Relics")
         self.automatic_navigation = tk.BooleanVar(value=False)
+        self.fast_ocr = tk.BooleanVar(value=True)
+        self.reconcile_updates = tk.BooleanVar(value=True)
         self.save_debug = tk.BooleanVar(value=False)
         self.include_uid = tk.BooleanVar(value=False)
         self.uid = tk.StringVar(value="")
+        self.live_status = tk.StringVar(value="Live bridge is off.")
+        self.pairing_code = tk.StringVar(value=self.live_bridge.pairing_code)
         self._style()
         self._build()
         self.bind_all("<F8>", lambda _event: self.stop())
@@ -80,12 +87,15 @@ class ScannerApp(tk.Tk):
         review_tab = ttk.Frame(notebook, padding=20)
         settings_tab = ttk.Frame(notebook, padding=20)
         diagnostics_tab = ttk.Frame(notebook, padding=20)
+        live_tab = ttk.Frame(notebook, padding=20)
         notebook.add(capture_tab, text="Capture")
         notebook.add(review_tab, text="Review & export")
+        notebook.add(live_tab, text="Live import")
         notebook.add(settings_tab, text="Settings")
         notebook.add(diagnostics_tab, text="Diagnostics")
         self._build_capture(capture_tab)
         self._build_review(review_tab)
+        self._build_live(live_tab)
         self._build_settings(settings_tab)
         self._build_diagnostics(diagnostics_tab)
 
@@ -103,12 +113,16 @@ class ScannerApp(tk.Tk):
         tk.Label(notice, text="No DLL injection · no process memory · no network interception · no game files · no credentials · optional navigation off by default", fg="#bcd0df", bg="#102a38", wraplength=790).pack(anchor="w", pady=(3, 0))
         form = ttk.Frame(parent)
         form.pack(fill="x")
-        ttk.Label(form, text="Items to capture").grid(row=0, column=0, sticky="w", pady=7)
-        ttk.Spinbox(form, from_=1, to=999, textvariable=self.count, width=10).grid(row=0, column=1, sticky="w", padx=12)
-        ttk.Label(form, text="Capture delay (seconds)").grid(row=1, column=0, sticky="w", pady=7)
-        ttk.Spinbox(form, from_=0.2, to=10, increment=0.1, textvariable=self.capture_delay, width=10).grid(row=1, column=1, sticky="w", padx=12)
-        ttk.Checkbutton(form, text="Enable optional keyboard navigation (presses Right only)", variable=self.automatic_navigation).grid(row=2, column=0, columnspan=2, sticky="w", pady=7)
-        ttk.Checkbutton(form, text="Save debug screenshots (off by default)", variable=self.save_debug).grid(row=3, column=0, columnspan=2, sticky="w", pady=7)
+        ttk.Label(form, text="Capture category").grid(row=0, column=0, sticky="w", pady=7)
+        ttk.Combobox(form, textvariable=self.capture_mode, values=("Relics", "Characters", "Light Cones", "Warp resources"), state="readonly", width=18).grid(row=0, column=1, sticky="w", padx=12)
+        ttk.Label(form, text="Items to capture").grid(row=1, column=0, sticky="w", pady=7)
+        ttk.Spinbox(form, from_=1, to=999, textvariable=self.count, width=10).grid(row=1, column=1, sticky="w", padx=12)
+        ttk.Label(form, text="Capture delay (seconds)").grid(row=2, column=0, sticky="w", pady=7)
+        ttk.Spinbox(form, from_=0.2, to=10, increment=0.1, textvariable=self.capture_delay, width=10).grid(row=2, column=1, sticky="w", padx=12)
+        ttk.Checkbutton(form, text="Enable optional keyboard navigation (presses Right only)", variable=self.automatic_navigation).grid(row=3, column=0, columnspan=2, sticky="w", pady=7)
+        ttk.Checkbutton(form, text="Fast pipeline: capture while two local OCR workers process", variable=self.fast_ocr).grid(row=4, column=0, columnspan=2, sticky="w", pady=7)
+        ttk.Checkbutton(form, text="Reconcile uniquely matched enhanced relics", variable=self.reconcile_updates).grid(row=5, column=0, columnspan=2, sticky="w", pady=7)
+        ttk.Checkbutton(form, text="Save debug screenshots (off by default)", variable=self.save_debug).grid(row=6, column=0, columnspan=2, sticky="w", pady=7)
         ttk.Progressbar(parent, variable=self.progress, maximum=100).pack(fill="x", pady=(25, 8))
         self.progress_label = ttk.Label(parent, text="0% · estimated time appears after start", foreground="#8ea3b8")
         self.progress_label.pack(anchor="w")
@@ -133,6 +147,22 @@ class ScannerApp(tk.Tk):
         ttk.Checkbutton(export, text="Include UID in export (off by default)", variable=self.include_uid).pack(side="left")
         ttk.Entry(export, textvariable=self.uid, width=14).pack(side="left", padx=8)
         ttk.Button(export, text="Export validated JSON", style="Accent.TButton", command=self.export).pack(side="right")
+
+    def _build_live(self, parent: ttk.Frame) -> None:
+        ttk.Label(parent, text="Authenticated local live import", font=("Segoe UI", 16, "bold")).pack(anchor="w")
+        ttk.Label(parent, text="The bridge listens only on this computer. The website must send the rotating pairing code before any account snapshot is released.", foreground="#8ea3b8", wraplength=790).pack(anchor="w", pady=(4, 18))
+        notice = tk.Frame(parent, bg="#102a38", padx=14, pady=12)
+        notice.pack(fill="x", pady=(0, 18))
+        tk.Label(notice, text="PAIRING CODE", font=("Segoe UI", 8, "bold"), fg="#63e6ff", bg="#102a38").pack(anchor="w")
+        tk.Label(notice, textvariable=self.pairing_code, font=("Consolas", 22, "bold"), fg="#eaf4ff", bg="#102a38").pack(anchor="w", pady=(4, 1))
+        tk.Label(notice, text=f"Local endpoint: ws://127.0.0.1:{DEFAULT_LIVE_PORT}/ws", fg="#8ea3b8", bg="#102a38").pack(anchor="w")
+        controls = ttk.Frame(parent)
+        controls.pack(fill="x")
+        ttk.Button(controls, text="Start live bridge", style="Accent.TButton", command=self.start_live_bridge).pack(side="left")
+        ttk.Button(controls, text="Stop", command=self.stop_live_bridge).pack(side="left", padx=8)
+        ttk.Button(controls, text="Rotate pairing code", command=self.rotate_pairing_code).pack(side="left")
+        ttk.Label(parent, textvariable=self.live_status, foreground="#8ea3b8", wraplength=790).pack(anchor="w", pady=(18, 8))
+        ttk.Label(parent, text="Reviewed, schema-valid snapshots publish immediately. Unreviewed OCR stays staged and the website receives only the pending-review count. The pairing code is kept in browser session storage, not permanent storage.", foreground="#8ea3b8", wraplength=790).pack(anchor="w", pady=(8, 0))
 
     def _build_settings(self, parent: ttk.Frame) -> None:
         ttk.Label(parent, text="Capture settings", font=("Segoe UI", 16, "bold")).pack(anchor="w")
@@ -171,6 +201,62 @@ class ScannerApp(tk.Tk):
             self.hotkey = GlobalStopHotkey(self.capture.cancel)
         return self.capture
 
+    def _live_bridge_status(self, message: str) -> None:
+        if self.closing:
+            return
+        try:
+            self.after(0, lambda: self.live_status.set(message))
+        except RuntimeError:
+            pass
+
+    def _capture_kind(self) -> str:
+        return {
+            "Relics": "relic",
+            "Characters": "character",
+            "Light Cones": "light_cone",
+            "Warp resources": "warp",
+        }[self.capture_mode.get()]
+
+    def start_live_bridge(self) -> None:
+        self.live_bridge.start()
+        self.live_status.set("Starting authenticated loopback bridge…")
+        self.after(150, self._publish_live)
+        self.after(600, self._publish_live)
+
+    def stop_live_bridge(self) -> None:
+        self.live_bridge.stop()
+
+    def rotate_pairing_code(self) -> None:
+        self.pairing_code.set(self.live_bridge.rotate_pairing_code())
+
+    def _publish_live(self) -> None:
+        if not self.live_bridge.running:
+            return
+        kind_names = {
+            "character": "character",
+            "light_cone": "lightCone",
+            "relic": "relic",
+            "warp": "warp",
+        }
+        scanned_kinds = tuple(
+            sorted({kind_names[item.kind] for item in self.session.items if item.kind in kind_names})
+        )
+        pending = sum(not item.fields.get("reviewed") for item in self.session.items)
+        if not self.session.items or pending:
+            self.live_bridge.publish(
+                None,
+                pending_review=pending,
+                scanned_kinds=scanned_kinds,
+            )
+            return
+        payload = export_payload(self.session, self.include_uid.get(), self.uid.get())
+        errors = validate_export(payload)
+        if errors:
+            self.live_bridge.publish(None, pending_review=0, scanned_kinds=scanned_kinds)
+            self.live_status.set("Connected, but the reviewed snapshot still has validation errors. Correct them before live import.")
+            return
+        self.live_bridge.publish(payload, scanned_kinds=scanned_kinds)
+
     def capture_once(self) -> None:
         self.start(single=True)
 
@@ -189,13 +275,13 @@ class ScannerApp(tk.Tk):
             return
         capture.stop_event.clear()
         capture.resume()
-        self.worker = threading.Thread(target=capture.run, args=(count, delay, navigation_delay, False if single else self.automatic_navigation.get(), self.save_debug.get(), self._thread_status), daemon=True)
+        self.worker = threading.Thread(target=capture.run, args=(count, delay, navigation_delay, False if single else self.automatic_navigation.get(), self.save_debug.get(), self._thread_status, self._capture_kind(), self.reconcile_updates.get(), self.fast_ocr.get()), daemon=True)
         self.worker.start()
         self.status.set("Scanning. Press F8 at any time for an immediate safe stop.")
 
     def _thread_status(self, message: str) -> None:
         if not self.closing:
-            self.after(0, lambda: (self.status.set(message), self._refresh_items()))
+            self.after(0, lambda: (self.status.set(message), self._refresh_items(), self._publish_live()))
 
     def pause_resume(self) -> None:
         if not self.capture or not self.worker or not self.worker.is_alive():
@@ -260,6 +346,7 @@ class ScannerApp(tk.Tk):
             item.fields["reviewed"] = True
             self._save_session()
             self._refresh_items()
+            self._publish_live()
             dialog.destroy()
         ttk.Button(dialog, text="Save correction", style="Accent.TButton", command=save).pack(pady=16)
 
@@ -314,6 +401,7 @@ class ScannerApp(tk.Tk):
         self.stop()
         if self.hotkey:
             self.hotkey.close()
+        self.live_bridge.stop()
         self.destroy()
 
 

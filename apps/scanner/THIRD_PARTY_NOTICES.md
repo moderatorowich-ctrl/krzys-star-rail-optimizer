@@ -22,5 +22,6 @@ The Windows scanner is built with Python 3.12 and the dependency versions resolv
 | pytesseract               | Apache-2.0                                 | github.com/madmaze/pytesseract                   |
 | pytweening                | MIT                                        | github.com/asweigart/pytweening                  |
 | pywin32-ctypes            | BSD-3-Clause                               | github.com/enthought/pywin32-ctypes              |
+| websockets                | BSD-3-Clause                               | websockets.readthedocs.io                        |
 
 Tesseract OCR is a separately installed system prerequisite and is not bundled in the scanner ZIP. Its Apache-2.0 license and notices are provided by the selected Tesseract distribution.

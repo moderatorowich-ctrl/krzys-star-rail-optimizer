@@ -28,6 +28,32 @@ describe('account schema', () => {
     expect(compareGameVersions('4.6', '4.5').compatible).toBe(false);
   });
 
+  it('accepts evidence-backed Speed precision and rejects inconsistent ranges', () => {
+    const relic = demoAccount.relics.find((item) =>
+      item.substats.some((stat) => stat.stat === 'spd'),
+    )!;
+    const valid = {
+      ...relic,
+      speedPrecision: {
+        source: 'roll-inference' as const,
+        confidence: 'exact' as const,
+        displayed: 5,
+        candidates: [5.2],
+        minimum: 5.2,
+        maximum: 5.2,
+      },
+    };
+    expect(
+      AccountSchema.parse({ ...demoAccount, relics: [valid] }).relics[0].speedPrecision,
+    ).toBeDefined();
+    expect(() =>
+      AccountSchema.parse({
+        ...demoAccount,
+        relics: [{ ...valid, speedPrecision: { ...valid.speedPrecision, maximum: 5.1 } }],
+      }),
+    ).toThrow(/declared range/);
+  });
+
   it('migrates a common scanner-shaped relic', () => {
     const account = migrateAccount(
       {

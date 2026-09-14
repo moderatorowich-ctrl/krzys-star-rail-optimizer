@@ -41,6 +41,17 @@ import {
   saveSnapshot,
   type StoredSnapshot,
 } from './lib/accountStore';
+import {
+  isAllowedLiveImportEndpoint,
+  liveMergeCount,
+  liveMergeDescription,
+  loadLiveImportSettings,
+  mergeLiveAccount,
+  parseLiveBridgeMessage,
+  saveLiveImportSettings,
+  type LiveImportSettings,
+  type LiveImportStatus,
+} from './lib/liveImport';
 
 type ViewId =
   | 'dashboard'
@@ -82,6 +93,23 @@ const viewComponents: Record<ViewId, (props: ViewProps) => React.ReactNode> = {
 
 const IS_STALE = new Date().getTime() > new Date(versionManifest.staleAfter).getTime();
 
+function liveSettingsStatus(settings: LiveImportSettings): LiveImportStatus {
+  if (!settings.enabled) return { state: 'disabled', message: 'Live import is off.' };
+  if (!settings.pairingCode.trim()) {
+    return {
+      state: 'pairing',
+      message: 'Enter the pairing code shown by Krzys HSR Scanner.',
+    };
+  }
+  if (!isAllowedLiveImportEndpoint(settings.endpoint)) {
+    return {
+      state: 'error',
+      message: 'For safety, live import can connect only to a loopback ws:// URL ending in /ws.',
+    };
+  }
+  return { state: 'connecting', message: 'Connecting to Krzys HSR Scanner…' };
+}
+
 export function App() {
   const [theme, setTheme] = useState<'dark' | 'light'>(() => {
     try {
@@ -100,7 +128,12 @@ export function App() {
   const [redoStack, setRedoStack] = useState<Account[]>([]);
   const [toast, setToast] = useState<{ message: string; tone: 'success' | 'warning' }>();
   const [pendingImport, setPendingImport] = useState<Account>();
+  const [liveSettings, setLiveSettings] = useState(loadLiveImportSettings);
+  const [liveStatus, setLiveStatus] = useState<LiveImportStatus>(() =>
+    liveSettingsStatus(liveSettings),
+  );
   const importRef = useRef<HTMLInputElement>(null);
+  const accountRef = useRef(account);
   const ActiveView = viewComponents[view];
 
   useEffect(() => {
@@ -127,8 +160,149 @@ export function App() {
     return () => clearTimeout(timeout);
   }, [toast]);
 
+  useEffect(() => {
+    accountRef.current = account;
+  }, [account]);
+
+  useEffect(() => {
+    let disposed = false;
+    let socket: WebSocket | undefined;
+    let retryTimer: ReturnType<typeof setTimeout> | undefined;
+    let lastRevision = -1;
+
+    if (
+      !liveSettings.enabled ||
+      !liveSettings.pairingCode.trim() ||
+      !isAllowedLiveImportEndpoint(liveSettings.endpoint)
+    )
+      return;
+
+    const scheduleReconnect = () => {
+      if (disposed || retryTimer) return;
+      setLiveStatus({ state: 'connecting', message: 'Scanner disconnected; retrying locally…' });
+      retryTimer = setTimeout(() => {
+        retryTimer = undefined;
+        connect();
+      }, 1800);
+    };
+
+    const connect = () => {
+      if (disposed) return;
+      setLiveStatus({ state: 'connecting', message: 'Connecting to Krzys HSR Scanner…' });
+      try {
+        socket = new WebSocket(liveSettings.endpoint);
+      } catch (error) {
+        setLiveStatus({
+          state: 'error',
+          message: error instanceof Error ? error.message : 'Could not open the local connection.',
+        });
+        return;
+      }
+      socket.addEventListener('open', () => {
+        socket?.send(
+          JSON.stringify({
+            type: 'pair',
+            protocolVersion: 1,
+            pairingCode: liveSettings.pairingCode.trim(),
+          }),
+        );
+      });
+      socket.addEventListener('message', (event) => {
+        if (disposed || typeof event.data !== 'string') return;
+        try {
+          const snapshot = parseLiveBridgeMessage(event.data, versionManifest.supportedGameVersion);
+          if (!snapshot.ready || !snapshot.account) {
+            setLiveStatus({
+              state: 'waiting',
+              message: snapshot.pendingReview
+                ? `Connected; ${snapshot.pendingReview} captured item${snapshot.pendingReview === 1 ? '' : 's'} still need review.`
+                : 'Connected; waiting for a validated scanner snapshot.',
+              revision: snapshot.revision,
+              pendingReview: snapshot.pendingReview,
+            });
+            return;
+          }
+          if (snapshot.revision === lastRevision) return;
+          lastRevision = snapshot.revision;
+          const previous = accountRef.current;
+          const merged = mergeLiveAccount(
+            previous,
+            snapshot.account,
+            liveSettings,
+            snapshot.scannedKinds,
+          );
+          const changes = liveMergeCount(merged.summary);
+          if (changes) {
+            const nextSnapshots = saveSnapshot(previous);
+            saveAccount(merged.account);
+            accountRef.current = merged.account;
+            setSnapshots(nextSnapshots);
+            setUndoStack((items) => [...items.slice(-19), previous]);
+            setRedoStack([]);
+            setAccountState(merged.account);
+            setToast({
+              message: `Live import: ${liveMergeDescription(merged.summary)}.`,
+              tone: 'success',
+            });
+          }
+          setLiveStatus({
+            state: 'connected',
+            message: changes
+              ? `Synced ${liveMergeDescription(merged.summary)}.`
+              : 'Connected; scanner and browser are already in sync.',
+            revision: snapshot.revision,
+            lastSync: snapshot.capturedAt,
+            pendingReview: 0,
+          });
+        } catch (error) {
+          setLiveStatus({
+            state: 'error',
+            message: error instanceof Error ? error.message : 'Live snapshot validation failed.',
+          });
+        }
+      });
+      socket.addEventListener('close', (event) => {
+        if (disposed) return;
+        if (event.code === 4001) {
+          setLiveStatus({
+            state: 'error',
+            message: 'Pairing was rejected. Copy the current scanner code and try again.',
+          });
+          return;
+        }
+        scheduleReconnect();
+      });
+      socket.addEventListener('error', () => {
+        if (!disposed)
+          setLiveStatus({
+            state: 'connecting',
+            message: 'Waiting for the local scanner bridge…',
+          });
+      });
+    };
+
+    const connectTimer = setTimeout(connect, 0);
+    return () => {
+      disposed = true;
+      if (connectTimer) clearTimeout(connectTimer);
+      if (retryTimer) clearTimeout(retryTimer);
+      socket?.close();
+    };
+  }, [liveSettings]);
+
   function notify(message: string, tone: 'success' | 'warning' = 'success') {
     setToast({ message, tone });
+  }
+
+  function updateLiveSettings(update: Partial<LiveImportSettings>) {
+    const next = { ...liveSettings, ...update };
+    setLiveSettings(next);
+    setLiveStatus(liveSettingsStatus(next));
+    try {
+      saveLiveImportSettings(next);
+    } catch {
+      setLiveStatus({ state: 'error', message: 'Live-import settings could not be saved.' });
+    }
   }
 
   function updateAccount(next: Account) {
@@ -207,6 +381,11 @@ export function App() {
     setSnapshots,
     notify,
     openImport: () => importRef.current?.click(),
+    liveImport: {
+      settings: liveSettings,
+      status: liveStatus,
+      updateSettings: updateLiveSettings,
+    },
   };
 
   return (

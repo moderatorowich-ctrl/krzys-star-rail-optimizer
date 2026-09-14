@@ -1412,6 +1412,10 @@ button:disabled {
 .relic-table button.relic-row:hover {
   background: var(--panel-soft);
 }
+.relic-table button.relic-row.selected {
+  background: color-mix(in srgb, var(--cyan) 8%, var(--panel-soft));
+  box-shadow: inset 3px 0 0 var(--cyan);
+}
 .relic-row > span:first-child {
   display: grid;
   gap: 3px;
@@ -1477,6 +1481,30 @@ button:disabled {
 }
 .substat-list span {
   color: var(--muted);
+}
+.speed-precision {
+  display: grid;
+  gap: 3px;
+  margin-top: 14px;
+  padding: 10px 12px;
+  border: 1px solid color-mix(in srgb, var(--cyan) 35%, var(--border));
+  border-radius: 9px;
+  background: color-mix(in srgb, var(--cyan) 7%, transparent);
+  font-size: 12px;
+}
+.speed-precision strong {
+  color: var(--cyan);
+}
+.speed-precision span {
+  color: var(--muted);
+  line-height: 1.45;
+}
+.speed-precision.ambiguous {
+  border-color: color-mix(in srgb, var(--gold) 45%, var(--border));
+  background: color-mix(in srgb, var(--gold) 7%, transparent);
+}
+.speed-precision.ambiguous strong {
+  color: var(--gold);
 }
 .probability-block {
   margin: 20px 0;
@@ -1888,6 +1916,118 @@ button:disabled {
   grid-template-columns: repeat(3, 1fr);
   gap: 13px;
 }
+.live-import-panel {
+  padding: 24px;
+  margin-bottom: 14px;
+  display: grid;
+  gap: 18px;
+  background: linear-gradient(135deg, rgba(99, 230, 255, 0.055), transparent 45%), var(--panel);
+}
+.live-import-heading {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 14px;
+}
+.live-import-heading h2 {
+  margin: 2px 0 5px;
+  font: 600 20px 'Space Grotesk';
+}
+.live-import-heading p:not(.eyebrow) {
+  margin: 0;
+  max-width: 680px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.55;
+}
+.connection-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 10px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.connection-badge i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: currentColor;
+}
+.connection-badge.connected {
+  color: #5ce4b0;
+  border-color: color-mix(in srgb, #5ce4b0 35%, var(--border));
+}
+.connection-badge.connecting,
+.connection-badge.waiting {
+  color: var(--gold);
+}
+.connection-badge.error {
+  color: #ff8e96;
+}
+.pairing-row {
+  display: grid;
+  grid-template-columns: minmax(240px, 0.75fr) minmax(280px, 1.25fr);
+  gap: 14px;
+  align-items: end;
+}
+.pairing-row > label,
+.live-advanced > label:not(.switch-row) {
+  display: grid;
+  gap: 7px;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.pairing-row input,
+.live-advanced input:not([type='checkbox']) {
+  width: 100%;
+  text-transform: none;
+}
+.live-status-copy {
+  min-height: 43px;
+  display: grid;
+  align-content: center;
+  gap: 3px;
+  padding: 9px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--panel-soft);
+}
+.live-status-copy strong {
+  font-size: 12px;
+}
+.live-status-copy span {
+  color: var(--muted);
+  font-size: 11px;
+}
+.live-toggle-list {
+  display: grid;
+}
+.live-toggle-list .switch-row {
+  padding: 13px 0;
+}
+.live-advanced {
+  border-top: 1px solid var(--border);
+  padding-top: 14px;
+}
+.live-advanced summary {
+  cursor: pointer;
+  color: var(--cyan);
+  font-size: 12px;
+  font-weight: 700;
+}
+.live-advanced[open] {
+  display: grid;
+  gap: 14px;
+}
 .action-card {
   padding: 23px;
   display: flex;
@@ -1968,6 +2108,27 @@ button:disabled {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   padding: 20px;
+}
+.account-inventory details {
+  grid-column: 1 / -1;
+  margin-bottom: 20px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--border);
+}
+.account-inventory details summary {
+  cursor: pointer;
+  color: var(--cyan);
+  font-size: 13px;
+  font-weight: 700;
+}
+.account-inventory details p {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+.account-inventory details textarea {
+  width: 100%;
+  margin: 12px 0;
 }
 .inventory-stat {
   display: grid;
@@ -2170,6 +2331,16 @@ button:disabled {
   .showcase-panel {
     align-items: stretch;
     flex-direction: column;
+  }
+  .live-import-heading,
+  .pairing-row {
+    grid-template-columns: 1fr;
+  }
+  .live-import-heading .signal-icon {
+    display: none;
+  }
+  .connection-badge {
+    justify-self: start;
   }
   .showcase-input {
     flex-direction: column;

@@ -1,5 +1,5 @@
 const PREFIX = `ksro:${self.registration.scope}:`;
-const CACHE = `${PREFIX}1.0.0-data-2026.09.13.1-r2`;
+const CACHE = `${PREFIX}1.1.0-data-2026.09.13.1-r1`;
 
 self.addEventListener('install', (event) => {
   event.waitUntil(caches.open(CACHE).then((cache) => cache.add(self.registration.scope)));
