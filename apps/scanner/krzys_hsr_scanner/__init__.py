@@ -1,0 +1,5 @@
+"""Krzys HSR Scanner package."""
+
+SCANNER_VERSION = "1.0.0"
+SUPPORTED_GAME_VERSION = "4.5"
+EXPORT_SCHEMA_VERSION = 2

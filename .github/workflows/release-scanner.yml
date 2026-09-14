@@ -1,0 +1,58 @@
+name: Release Windows scanner
+
+on:
+  push:
+    tags: ['scanner-v*']
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Release tag
+        required: true
+        default: scanner-v1.0.0
+
+permissions:
+  contents: write
+
+jobs:
+  package:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install scanner dependencies
+        run: |
+          choco install tesseract --yes --no-progress
+          python -m pip install -r apps/scanner/requirements.txt
+      - name: Test scanner
+        env:
+          REQUIRE_OCR: '1'
+          TESSERACT_CMD: C:\Program Files\Tesseract-OCR\tesseract.exe
+        run: python -m unittest discover -s apps/scanner/tests -t apps/scanner -v
+      - name: Build Windows package
+        run: python apps/scanner/scripts/build.py
+      - name: Package corresponding source
+        shell: pwsh
+        run: |
+          git archive --format=zip --output apps/scanner/dist/Krzys-HSR-Scanner-v1.0.0-source.zip HEAD apps/scanner docs/SCANNER.md packages/shared/src/index.ts
+          $source = 'apps/scanner/dist/Krzys-HSR-Scanner-v1.0.0-source.zip'
+          $hash = (Get-FileHash -Algorithm SHA256 -LiteralPath $source).Hash.ToLowerInvariant()
+          "$hash  Krzys-HSR-Scanner-v1.0.0-source.zip" | Out-File -Encoding ascii "$source.sha256"
+      - name: Publish scanner release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.event_name == 'workflow_dispatch' && inputs.tag || github.ref_name }}
+          name: Krzys HSR Scanner v1.0.0 for HSR v4.5
+          body: |
+            Krzys HSR Scanner v1.0.0 supports Honkai: Star Rail v4.5 and export schemas 1–2.
+
+            The scanner uses visible screen capture and local OCR only. It does not read process memory, intercept network traffic, collect credentials, bypass anti-cheat, or upload account data. Review OCR confidence and the generated export before importing it.
+
+            Windows may show a SmartScreen warning because this community build is not Authenticode-signed. Verify the SHA-256 checksum in the release assets before running it.
+          files: |
+            apps/scanner/dist/Krzys-HSR-Scanner-v1.0.0-for-HSR-v4.5.zip
+            apps/scanner/dist/Krzys-HSR-Scanner-v1.0.0-for-HSR-v4.5.zip.sha256
+            apps/scanner/dist/Krzys-HSR-Scanner-v1.0.0-source.zip
+            apps/scanner/dist/Krzys-HSR-Scanner-v1.0.0-source.zip.sha256
+          generate_release_notes: true

@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=75", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "krzys-hsr-scanner"
+version = "1.0.0"
+description = "Local screen-capture and OCR inventory scanner for Krzys Star Rail Optimizer"
+requires-python = ">=3.11"
+license = "GPL-3.0-only"
+dependencies = [
+  "mss>=10.0,<11",
+  "Pillow>=11.0,<13",
+  "pytesseract>=0.3.13,<0.4",
+  "pyautogui>=0.9.54,<1"
+]
+
+[project.scripts]
+krzys-hsr-scanner = "krzys_hsr_scanner.app:main"
+
+[tool.setuptools.packages.find]
+include = ["krzys_hsr_scanner*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -1,0 +1,102 @@
+name: Check HSR game data
+
+on:
+  schedule:
+    - cron: '21 4 * * *'
+  workflow_dispatch:
+
+permissions:
+  actions: write
+  contents: write
+  issues: write
+
+concurrency:
+  group: game-data-update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Check official version and source revision
+        id: check
+        shell: bash
+        run: |
+          set +e
+          node scripts/update-game-data.mjs --check-latest > data-check.json 2> >(tee data-check-error.log >&2)
+          code=$?
+          if ! jq -e . data-check.json >/dev/null 2>&1; then
+            jq -n --rawfile error data-check-error.log '{error: $error}' > data-check.json
+          fi
+          cat data-check.json
+          echo "code=$code" >> "$GITHUB_OUTPUT"
+          exit 0
+      - name: Promote same-version data revision
+        if: steps.check.outputs.code == '2'
+        run: |
+          node scripts/update-game-data.mjs --promote-data
+          npm run data:verify
+          npm run typecheck
+          npm run test
+          npm run build
+      - name: Commit validated data
+        if: steps.check.outputs.code == '2'
+        shell: bash
+        run: |
+          if git diff --quiet; then
+            echo "No normalized data changes." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add apps/web/public/sw.js packages/game-data/src/game-data.generated.json packages/game-data/src/relic-rolls.generated.json packages/game-data/src/version-manifest.json
+          git commit -m "Update verified HSR game data"
+          git push
+          gh workflow run ci-pages.yml --ref main
+          echo "Promoted a same-version data revision after schema, regression, type, and production-build validation." >> "$GITHUB_STEP_SUMMARY"
+      - name: Open or update compatibility issue
+        if: always() && (steps.check.outputs.code == '3' || steps.check.outputs.code == '1' || failure())
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const result = require('./data-check.json');
+            const isVersion = '${{ steps.check.outputs.code }}' === '3';
+            const title = isVersion
+              ? `Compatibility review required for HSR v${result.officialVersion}`
+              : 'HSR data pipeline requires manual review';
+            const body = isVersion
+              ? `The official HoYoLAB feed reports HSR v${result.officialVersion}, while the verified manifest supports v${result.supportedVersion}. No data was published. Review schemas, encounters, formulas, scanner OCR profiles, and regression fixtures before promotion.\n\nOfficial post: https://www.hoyolab.com/article/${result.officialPostId}`
+              : 'The scheduled data check failed before a safe update could be produced. The last verified dataset remains active. Inspect this workflow run and resolve the upstream or schema failure.';
+            const { data: issues } = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              per_page: 100,
+            });
+            const existing = issues.find(issue => issue.title === title);
+            if (existing) {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: existing.number,
+                body,
+              });
+            } else {
+              await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title,
+                body,
+                labels: [],
+              });
+            }
+            await core.summary.addHeading('Manual compatibility review required').addRaw(body).write();
+      - name: Summarize current dataset
+        if: steps.check.outputs.code == '0'
+        run: echo "The official game version and normalized source revision match the verified manifest. No update was required." >> "$GITHUB_STEP_SUMMARY"
