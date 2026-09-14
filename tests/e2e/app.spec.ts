@@ -123,6 +123,15 @@ test('live import exposes safe pairing and reconciliation controls', async ({ pa
   await expect(page.getByText('Import Warp resources')).toBeVisible();
 });
 
+test('live import explains the browser local-network permission while unavailable', async ({
+  page,
+}) => {
+  await page.goto('/#data');
+  await page.getByLabel('Scanner pairing code').fill('ABCD-EFGH-JKLM');
+  await page.getByText('Enable Live Import (Recommended)').click();
+  await expect(page.getByText(/browser Local Network Access/i)).toBeVisible({ timeout: 5_000 });
+});
+
 test('browser pairs with the real scanner bridge and validates a snapshot', async ({ page }) => {
   const port = await availablePort();
   const pairingCode = 'TEST-LIVE-45AA';

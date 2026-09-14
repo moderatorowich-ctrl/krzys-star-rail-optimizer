@@ -42,6 +42,8 @@ Live import is an optional local replacement for repeatedly exporting files:
 
 The default endpoint is `ws://127.0.0.1:23313/ws`. The server binds only to the loopback interface and accepts the production website or local development origins. A pairing code is held only for the browser session and can be rotated at any time to close existing connections. No cloud relay or automatic upload is involved.
 
+Current Chrome versions ask once whether the GitHub Pages site may access the local network before opening a loopback WebSocket. Select **Allow** for live import to connect; denying it leaves file import fully available. This is a browser security permission, not a scanner request for administrator rights or Internet access.
+
 Equipped relic/Light Cone updates and Warp-resource import are separate toggles. **Remove missing items** is an advanced destructive reconciliation option and is off by default. Even with live import enabled, unreviewed records and invalid exports are withheld rather than partially merged.
 
 ## Scan lifecycle

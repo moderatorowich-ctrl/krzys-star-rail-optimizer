@@ -168,6 +168,7 @@ export function App() {
     let disposed = false;
     let socket: WebSocket | undefined;
     let retryTimer: ReturnType<typeof setTimeout> | undefined;
+    let permissionHintTimer: ReturnType<typeof setTimeout> | undefined;
     let lastRevision = -1;
 
     if (
@@ -189,6 +190,15 @@ export function App() {
     const connect = () => {
       if (disposed) return;
       setLiveStatus({ state: 'connecting', message: 'Connecting to Krzys HSR Scanner…' });
+      if (permissionHintTimer) clearTimeout(permissionHintTimer);
+      permissionHintTimer = setTimeout(() => {
+        if (!disposed)
+          setLiveStatus({
+            state: 'waiting',
+            message:
+              'Waiting for the scanner or browser Local Network Access. Allow the browser prompt once, then keep the live bridge open.',
+          });
+      }, 1500);
       try {
         socket = new WebSocket(liveSettings.endpoint);
       } catch (error) {
@@ -199,6 +209,7 @@ export function App() {
         return;
       }
       socket.addEventListener('open', () => {
+        if (permissionHintTimer) clearTimeout(permissionHintTimer);
         socket?.send(
           JSON.stringify({
             type: 'pair',
@@ -209,6 +220,7 @@ export function App() {
       });
       socket.addEventListener('message', (event) => {
         if (disposed || typeof event.data !== 'string') return;
+        if (permissionHintTimer) clearTimeout(permissionHintTimer);
         try {
           const snapshot = parseLiveBridgeMessage(event.data, versionManifest.supportedGameVersion);
           if (!snapshot.ready || !snapshot.account) {
@@ -275,8 +287,9 @@ export function App() {
       socket.addEventListener('error', () => {
         if (!disposed)
           setLiveStatus({
-            state: 'connecting',
-            message: 'Waiting for the local scanner bridge…',
+            state: 'waiting',
+            message:
+              'Waiting for the scanner or browser Local Network Access. Allow the browser prompt once, then keep the live bridge open.',
           });
       });
     };
@@ -286,6 +299,7 @@ export function App() {
       disposed = true;
       if (connectTimer) clearTimeout(connectTimer);
       if (retryTimer) clearTimeout(retryTimer);
+      if (permissionHintTimer) clearTimeout(permissionHintTimer);
       socket?.close();
     };
   }, [liveSettings]);
