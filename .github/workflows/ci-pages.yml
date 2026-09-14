@@ -57,6 +57,7 @@ jobs:
           path: dist
 
   deploy:
+    if: vars.ENABLE_PRIVATE_PAGES == 'true'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
