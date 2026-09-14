@@ -14,7 +14,7 @@ npm run test:pages
 
 `.github/workflows/ci-pages.yml` runs on `main`. It installs locked dependencies, verifies data, types, lint, formatting, unit/regression/OCR tests, builds the site, checks the project base, checks links, runs Chromium desktop/mobile/accessibility integration tests, and audits production dependencies. Only the resulting `dist` artifact can reach the Pages deployment job.
 
-Repository Settings → Pages must use **GitHub Actions**. Private-repository Pages requires a GitHub plan that supports private Pages. The deploy job is gated by the repository variable `ENABLE_PRIVATE_PAGES=true`; set it only after private Pages is enabled for the account and repository. Do not change visibility if the plan rejects the deployment; preserve the private repository and report the plan restriction.
+Repository Settings → Pages must use **GitHub Actions**. The public repository deploys after every successful `main` verification run, and GitHub serves the project site over HTTPS. Changing the repository back to private may require a GitHub plan that supports private Pages or disabling the Pages deployment.
 
 ## Scanner release
 

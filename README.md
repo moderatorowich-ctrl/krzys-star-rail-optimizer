@@ -45,7 +45,7 @@ python -m pip install -r apps/scanner/requirements.txt
 npm run scanner:build
 ```
 
-`npm run build` emits a static project-path build to `dist/`. GitHub Actions verifies types, lint, formatting, unit/regression tests, OCR tests, accessibility, browser integration, broken links, production dependencies, and the Pages base path before the plan-gated deployment. See [deployment](docs/DEPLOYMENT.md) and [architecture](docs/ARCHITECTURE.md).
+`npm run build` emits a static project-path build to `dist/`. GitHub Actions verifies types, lint, formatting, unit/regression tests, OCR tests, accessibility, browser integration, broken links, production dependencies, and the Pages base path before deployment. See [deployment](docs/DEPLOYMENT.md) and [architecture](docs/ARCHITECTURE.md).
 
 ## Known limitations
 
