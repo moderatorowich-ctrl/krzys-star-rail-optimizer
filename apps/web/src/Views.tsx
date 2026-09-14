@@ -269,16 +269,26 @@ export function DashboardView({ account }: ViewProps) {
 }
 
 export function OptimizerView({ account, setAccount, notify }: ViewProps) {
-  const [characterId, setCharacterId] = useState(account.characters[0]?.id ?? '');
+  const [characterId, setCharacterId] = useState(() => {
+    const linked = new URLSearchParams(location.hash.split('?')[1]).get('character');
+    return (
+      account.characters.find((item) => item.id === linked)?.id ?? account.characters[0]?.id ?? ''
+    );
+  });
   const [objective, setObjective] = useState<'damage' | 'auto' | 'survival' | 'balanced'>(
     'balanced',
   );
-  const [minSpeed, setMinSpeed] = useState(134);
+  const [minSpeed, setMinSpeed] = useState(() => {
+    const linked = new URLSearchParams(location.hash.split('?')[1]).get('spd');
+    const value = Number(linked);
+    return linked !== null && Number.isFinite(value) && value >= 0 && value <= 1000 ? value : 134;
+  });
   const [exact, setExact] = useState(false);
   const [progress, setProgress] = useState(0);
   const [evaluated, setEvaluated] = useState(0);
   const [running, setRunning] = useState(false);
   const [results, setResults] = useState<BuildResult[]>([]);
+  const [resultKey, setResultKey] = useState('');
   const [excluded, setExcluded] = useState<string[]>([]);
   const [pinned, setPinned] = useState<string[]>([]);
   const [calculationText, setCalculationText] = useState(
@@ -304,7 +314,17 @@ export function OptimizerView({ account, setAccount, notify }: ViewProps) {
   );
   const workerRef = useRef<Worker | undefined>(undefined);
   const character = account.characters.find((item) => item.id === characterId);
-  const current = results[0];
+  const inputKey = JSON.stringify([
+    account,
+    characterId,
+    objective,
+    minSpeed,
+    exact,
+    excluded,
+    pinned,
+    calculationText,
+  ]);
+  const current = resultKey === inputKey ? results[0] : undefined;
   const frontier = useMemo(() => paretoFrontier(results), [results]);
   useEffect(() => () => workerRef.current?.terminate(), []);
   const equipped = character
@@ -332,6 +352,7 @@ export function OptimizerView({ account, setAccount, notify }: ViewProps) {
       type: 'module',
     });
     workerRef.current = worker;
+    setResults([]);
     setRunning(true);
     setProgress(0);
     setEvaluated(0);
@@ -341,6 +362,7 @@ export function OptimizerView({ account, setAccount, notify }: ViewProps) {
         setEvaluated(data.evaluated);
       }
       if (data.type === 'result') {
+        setResultKey(inputKey);
         setResults(data.result);
         setRunning(false);
         setProgress(1);

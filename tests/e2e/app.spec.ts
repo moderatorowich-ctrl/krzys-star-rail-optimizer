@@ -60,6 +60,15 @@ test('optimizer runs in a worker and produces a build', async ({ page }) => {
   await page.getByRole('button', { name: 'Run optimizer' }).click();
   await expect(page.getByText('Top result')).toBeVisible({ timeout: 20_000 });
   await expect(page.getByText('Why it ranks first')).toBeVisible();
+  await page.locator('select').first().selectOption({ index: 1 });
+  await expect(page.getByText('Top result')).not.toBeVisible();
+});
+
+test('optimizer links restore local character and speed settings', async ({ page }) => {
+  const id = demoAccount.characters[1].id;
+  await page.goto(`/#optimizer?character=${encodeURIComponent(id)}&spd=145.5`);
+  await expect(page.getByRole('combobox', { name: 'Character', exact: true })).toHaveValue(id);
+  await expect(page.getByLabel('Minimum Speed')).toHaveValue('145.5');
 });
 
 test('relic table rows select the matching detail record', async ({ page }) => {
