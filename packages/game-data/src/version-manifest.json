@@ -1,8 +1,8 @@
 {
   "supportedGameVersion": "4.5",
   "gameDataRevision": "2026.09.13.1",
-  "optimizerVersion": "1.1.0",
-  "scannerVersion": "1.1.0",
+  "optimizerVersion": "1.1.1",
+  "scannerVersion": "1.1.1",
   "generatedAt": "2026-09-13T00:00:00.000Z",
   "dataSource": "fribbels/hsr-optimizer game_data.json (MIT), verified against official HoYoLAB Version 4.5 notice",
   "dataSourceRevision": "d28928b1f09d7613c37ca7ca373a468367060fc0",

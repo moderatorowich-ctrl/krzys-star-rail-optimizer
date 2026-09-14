@@ -1,6 +1,6 @@
 # Krzys HSR Scanner
 
-**Scanner v1.1.0 · Supports Honkai: Star Rail v4.5 · Export schemas 1–2**
+**Scanner v1.1.1 · Supports Honkai: Star Rail v4.5 · Export schemas 1–2**
 
 Krzys HSR Scanner is a Windows desktop companion that turns visible inventory screens into a locally validated JSON export.
 
@@ -15,7 +15,7 @@ Optional keyboard navigation is visible in the interface and disabled by default
 ## Installation
 
 1. Install the current [Tesseract OCR for Windows](https://tesseract-ocr.github.io/tessdoc/Installation.html). The scanner detects the conventional `C:\Program Files\Tesseract-OCR\tesseract.exe` path; otherwise set `TESSERACT_CMD` to the executable path.
-2. Download `Krzys-HSR-Scanner-v1.1.0-for-HSR-v4.5.zip` from Releases and extract it.
+2. Download `Krzys-HSR-Scanner-v1.1.1-for-HSR-v4.5.zip` from Releases and extract it.
 3. Verify the published SHA-256 checksum asset.
 4. Start `Krzys-HSR-Scanner.exe`. A SmartScreen warning can appear because the community executable is not Authenticode-signed.
 5. Open the game in English at a 16:9 resolution. 1920×1080 is the primary tested profile; coordinate scaling handles other common 16:9 resolutions and Windows DPI scaling.
@@ -52,7 +52,7 @@ The interface shows count, progress, and estimated remaining time. Captured fiel
 
 UID capture is off by default. Debug screenshots are never created unless explicitly enabled; deletion requires confirmation. Diagnostic bundles never include screenshots, raw inventory fields, credentials, cookies, tokens, or UID.
 
-Exports follow the schema documented in `packages/shared/src/index.ts`, contain supported game/scanner/schema versions, and use `Krzys-HSR-Scanner-v1.1.0-for-HSR-v4.5-<timestamp>.json`. Import through the website's **Account data** view.
+Exports follow the schema documented in `packages/shared/src/index.ts`, contain supported game/scanner/schema versions, and use `Krzys-HSR-Scanner-v1.1.1-for-HSR-v4.5-<timestamp>.json`. Import through the website's **Account data** view.
 
 ## Source build
 

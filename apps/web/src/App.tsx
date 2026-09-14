@@ -202,6 +202,7 @@ export function App() {
       try {
         socket = new WebSocket(liveSettings.endpoint);
       } catch (error) {
+        if (permissionHintTimer) clearTimeout(permissionHintTimer);
         setLiveStatus({
           state: 'error',
           message: error instanceof Error ? error.message : 'Could not open the local connection.',
@@ -209,6 +210,8 @@ export function App() {
         return;
       }
       socket.addEventListener('open', () => {
+        if (disposed) return;
+        lastRevision = -1;
         if (permissionHintTimer) clearTimeout(permissionHintTimer);
         socket?.send(
           JSON.stringify({
@@ -235,7 +238,6 @@ export function App() {
             return;
           }
           if (snapshot.revision === lastRevision) return;
-          lastRevision = snapshot.revision;
           const previous = accountRef.current;
           const merged = mergeLiveAccount(
             previous,
@@ -257,6 +259,7 @@ export function App() {
               tone: 'success',
             });
           }
+          lastRevision = snapshot.revision;
           setLiveStatus({
             state: 'connected',
             message: changes

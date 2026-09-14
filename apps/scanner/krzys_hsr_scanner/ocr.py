@@ -166,8 +166,9 @@ def parse_visible_text(text: str, confidence: float, kind_hint: str | None = Non
             ("Character", "characterEventGuaranteed"),
             ("Light Cone", "lightConeEventGuaranteed"),
         ):
-            if re.search(rf"{label}(?: Event)? Guaranteed\s*[:|-]?\s*(?:Yes|True)", normalized, re.I):
-                resources[key] = 1
+            match = re.search(rf"{label}(?: Event)? Guaranteed\s*[:|-]?\s*(Yes|True|No|False)\b", normalized, re.I)
+            if match:
+                resources[key] = int(match.group(1).lower() in {"yes", "true"})
         fields = {"resources": resources, "reviewed": False}
         digest = hashlib.sha256(normalized.encode("utf-8")).hexdigest()
         return ScanItem(kind=kind, name="Warp resources", fields=fields, confidence=confidence, source_hash=digest)
@@ -179,8 +180,7 @@ def parse_visible_text(text: str, confidence: float, kind_hint: str | None = Non
         fields["slot"] = slot
     positioned_stats: list[tuple[int, dict[str, object]]] = []
     for label, key in STAT_ALIASES.items():
-        match = re.search(rf"{re.escape(label)}\s*\+?([0-9]+(?:\.[0-9]+)?%?)", normalized, re.I)
-        if match:
+        for match in re.finditer(rf"\b{re.escape(label)}\s*\+?([0-9][0-9,]*(?:\.[0-9]+)?\s*%?)", normalized, re.I):
             actual_key = key + 'Pct' if key in ['hp', 'atk', 'def'] and match.group(1).endswith('%') else key
             positioned_stats.append((match.start(), {"stat": actual_key, "value": parse_number(match.group(1))}))
     for element in ['Physical', 'Fire', 'Ice', 'Lightning', 'Wind', 'Quantum', 'Imaginary']:
@@ -198,7 +198,7 @@ def parse_visible_text(text: str, confidence: float, kind_hint: str | None = Non
                     "id": str(catalog_entry["id"]),
                     "path": catalog_entry["path"],
                     "element": catalog_entry["element"],
-                    "baseStats": catalog_entry["baseStats"],
+                    **({"baseStats": catalog_entry["baseStats"]} if fields["level"] == 80 else {}),
                 }
             )
             traces: dict[str, int | list[str]] = {"unlockedNodes": []}
@@ -219,7 +219,7 @@ def parse_visible_text(text: str, confidence: float, kind_hint: str | None = Non
                 {
                     "path": catalog_entry["path"],
                     "rarity": catalog_entry["rarity"],
-                    "baseStats": catalog_entry["baseStats"],
+                    **({"baseStats": catalog_entry["baseStats"]} if fields["level"] == 80 else {}),
                 }
             )
         elif kind == "relic":

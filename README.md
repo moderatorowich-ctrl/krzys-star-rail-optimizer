@@ -1,6 +1,6 @@
 # Krzys Star Rail Optimizer
 
-**Supports Honkai: Star Rail v4.5 · Optimizer v1.1.0 · Data updated 2026-09-13**
+**Supports Honkai: Star Rail v4.5 · Optimizer v1.1.1 · Data updated 2026-09-13**
 
 [Repository](https://github.com/moderatorowich-ctrl/krzys-star-rail-optimizer) · [Feature status](docs/FEATURE_STATUS.md) · [Version policy](docs/VERSION_SUPPORT.md)
 
@@ -50,7 +50,7 @@ npm run scanner:build
 
 ## Known limitations
 
-- Version 1.1.0 materially expands scanner and account-sync coverage, but it does not yet have full Fribbels character-kit, conditional, benchmark, or GPU-search parity. See the exact [feature status](docs/FEATURE_STATUS.md).
+- Version 1.1.1 materially expands scanner and account-sync coverage, but it does not yet have full Fribbels character-kit, conditional, benchmark, or GPU-search parity. See the exact [feature status](docs/FEATURE_STATUS.md).
 - Combat, encounter, upgrade, farming, and auto-battle scores are documented generic or heuristic models, not clear guarantees.
 - Character-specific scripted kits, current encounter definitions, lineup search, every conditional set effect, and every localization OCR profile are not implemented.
 - Public showcase import is limited to what the third-party Mihomo public profile endpoint exposes and may be unavailable independently of this app.

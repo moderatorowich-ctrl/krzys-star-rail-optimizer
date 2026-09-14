@@ -11,6 +11,12 @@ from krzys_hsr_scanner.model import (
 
 
 class ExportTests(unittest.TestCase):
+    def test_warp_pages_merge_without_losing_previous_resources(self) -> None:
+        session = ScanSession()
+        session.upsert(ScanItem(kind="warp", name="Warp", confidence=1, fields={"resources": {"stellarJade": 123, "characterEventGuaranteed": 1}}))
+        session.upsert(ScanItem(kind="warp", name="Warp", confidence=1, fields={"resources": {"specialPasses": 5, "characterEventGuaranteed": 0}}))
+        self.assertEqual(session.items[0].fields["resources"], {"stellarJade": 123, "specialPasses": 5, "characterEventGuaranteed": 0})
+
     def test_round_trip_shape_and_versions(self) -> None:
         session = ScanSession()
         session.add(
@@ -32,7 +38,7 @@ class ExportTests(unittest.TestCase):
         )
         payload = export_payload(session)
         self.assertEqual(payload["metadata"]["gameVersion"], "4.5")
-        self.assertEqual(payload["metadata"]["scannerVersion"], "1.1.0")
+        self.assertEqual(payload["metadata"]["scannerVersion"], "1.1.1")
         self.assertTrue(payload["metadata"]["uidRedacted"])
         self.assertEqual(validate_export(payload), [])
 

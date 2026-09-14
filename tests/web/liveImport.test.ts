@@ -12,6 +12,35 @@ function cloneAccount(): Account {
   return structuredClone(demoAccount);
 }
 
+it('cleans dangling equipment and reservations without mutating the previous account', () => {
+  const current = cloneAccount();
+  const before = structuredClone(current);
+  current.relics[0].reservedFor = current.characters[0].id;
+  current.reservations[current.relics[0].id] = current.characters[0].id;
+  const incoming = cloneAccount();
+  incoming.characters = [];
+  const merged = mergeLiveAccount(
+    current,
+    incoming,
+    {
+      updateEquippedGear: false,
+      importWarpResources: false,
+      removeMissingItems: true,
+    },
+    ['character'],
+  );
+  expect(merged.account.characters).toHaveLength(0);
+  expect(merged.account.reservations).toEqual({});
+  expect(
+    merged.account.relics.every((item) => !item.equippedCharacterId && !item.reservedFor),
+  ).toBe(true);
+  expect(merged.account.lightCones.every((item) => !item.equippedCharacterId)).toBe(true);
+  expect(current.relics[0].reservedFor).toBe(current.characters[0].id);
+  expect(current.relics.map((item) => item.equippedCharacterId)).toEqual(
+    before.relics.map((item) => item.equippedCharacterId),
+  );
+});
+
 it('allows only loopback websocket endpoints', () => {
   expect(isAllowedLiveImportEndpoint('ws://127.0.0.1:23313/ws')).toBe(true);
   expect(isAllowedLiveImportEndpoint('ws://localhost:23313/ws')).toBe(true);

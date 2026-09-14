@@ -64,11 +64,25 @@ test('optimizer runs in a worker and produces a build', async ({ page }) => {
 
 test('relic table rows select the matching detail record', async ({ page }) => {
   await page.goto('/#relics');
+  await page.getByRole('button', { name: 'all', exact: true }).click();
   const rows = page.locator('.relic-table button.relic-row');
+  expect(await rows.count()).toBe(demoAccount.relics.length);
   expect(await rows.count()).toBeGreaterThan(1);
   await rows.nth(1).click();
   await expect(rows.nth(1)).toHaveAttribute('aria-pressed', 'true');
   await expect(rows.nth(0)).toHaveAttribute('aria-pressed', 'false');
+});
+
+test('pull planner respects zero pulls and bounds banner pity', async ({ page }) => {
+  await page.goto('/#planner');
+  await page.getByLabel('Passes', { exact: true }).fill('0');
+  await expect(page.getByLabel('Passes', { exact: true })).toHaveValue('0');
+  await expect(page.locator('.pull-probability')).toContainText('0.0%');
+  await page.getByLabel('Current pity').fill('999');
+  await expect(page.getByLabel('Current pity')).toHaveValue('89');
+  await page.getByRole('button', { name: 'Signature Light Cone', exact: true }).click();
+  await page.getByLabel('Current pity').fill('999');
+  await expect(page.getByLabel('Current pity')).toHaveValue('79');
 });
 
 test('core views have no serious accessibility violations', async ({ page }) => {

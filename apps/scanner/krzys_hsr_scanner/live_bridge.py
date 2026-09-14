@@ -130,6 +130,9 @@ class LiveBridge:
             if not isinstance(raw, str) or len(raw) > 4096:
                 raise ValueError("Invalid pairing message")
             message = json.loads(raw)
+            if not isinstance(message, dict):
+                websocket.close(code=4001, reason="Pairing rejected")
+                return
             supplied = str(message.get("pairingCode", ""))
             valid = (
                 message.get("type") == "pair"
@@ -148,6 +151,9 @@ class LiveBridge:
                     websocket.close(code=1009, reason="Message too large")
                     return
                 request = json.loads(incoming)
+                if not isinstance(request, dict):
+                    websocket.close(code=1008, reason="Invalid request")
+                    return
                 if request.get("type") == "requestSnapshot":
                     websocket.send(self.snapshot_json())
         except (ConnectionClosed, TimeoutError, ValueError, TypeError, json.JSONDecodeError):

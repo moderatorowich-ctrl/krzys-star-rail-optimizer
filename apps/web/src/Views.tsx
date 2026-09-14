@@ -877,7 +877,7 @@ export function RelicsView({ account, setAccount, notify }: ViewProps) {
                 Math.max(1, assessments.length),
             )}
           </span>
-          <small>ACCOUNT MEDIAN</small>
+          <small>ACCOUNT AVERAGE</small>
         </div>
       </section>
       <div className="filter-bar">
@@ -900,7 +900,7 @@ export function RelicsView({ account, setAccount, notify }: ViewProps) {
             <span>Account</span>
             <span>Action</span>
           </div>
-          {visible.slice(0, 18).map(({ relic, assessment }) => (
+          {visible.map(({ relic, assessment }) => (
             <button
               className={`relic-row ${selected?.relic.id === relic.id ? 'selected' : ''}`}
               key={relic.id}
@@ -1009,8 +1009,11 @@ export function PlannerView({ account }: ViewProps) {
   const [isCone, setIsCone] = useState(false);
   const pityKey = isCone ? 'lightConeEventPity' : 'characterEventPity';
   const guaranteeKey = isCone ? 'lightConeEventGuaranteed' : 'characterEventGuaranteed';
-  const passes = (passesOverride ?? importedPasses) || 120;
-  const pity = pityOverride ?? account.resources[pityKey] ?? 20;
+  const passes = Math.min(2000, Math.max(0, Math.floor(passesOverride ?? importedPasses)));
+  const pity = Math.min(
+    isCone ? 79 : 89,
+    Math.max(0, Math.floor(pityOverride ?? account.resources[pityKey] ?? 0)),
+  );
   const guaranteed = guaranteedOverride ?? account.resources[guaranteeKey] === 1;
   const farms = useMemo(() => planFarming(account, days), [account, days]);
   const pull = useMemo(
@@ -1109,7 +1112,7 @@ export function PlannerView({ account }: ViewProps) {
               <input
                 type="number"
                 min="0"
-                max="1000"
+                max="2000"
                 value={passes}
                 onChange={(event) => setPassesOverride(Number(event.target.value))}
               />
@@ -1119,7 +1122,7 @@ export function PlannerView({ account }: ViewProps) {
               <input
                 type="number"
                 min="0"
-                max="89"
+                max={isCone ? 79 : 89}
                 value={pity}
                 onChange={(event) => setPityOverride(Number(event.target.value))}
               />

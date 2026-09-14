@@ -56,6 +56,10 @@ class ScanSession:
         if item.kind == "warp":
             for index, existing in enumerate(self.items):
                 if existing.kind == "warp":
+                    item.fields["resources"] = {
+                        **existing.fields.get("resources", {}),
+                        **item.fields.get("resources", {}),
+                    }
                     self.items[index] = item
                     return "updated"
         if item.kind in {"relic", "light_cone"}:

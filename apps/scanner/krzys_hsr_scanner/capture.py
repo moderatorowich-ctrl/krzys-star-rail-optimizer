@@ -58,7 +58,9 @@ class GuidedCapture:
         kind_hint: str | None,
         reconcile_updates: bool,
     ) -> tuple[bool, str]:
-        if self.stop_event.is_set() or self.pause_event.is_set():
+        while self.pause_event.is_set() and not self.stop_event.wait(0.05):
+            pass
+        if self.stop_event.is_set():
             return False, "Capture discarded after stop/pause."
         item = parse_visible_text(text, confidence, kind_hint)
         if reconcile_updates:
@@ -109,6 +111,10 @@ class GuidedCapture:
                     hwnd, _ = game_window()
                     if hwnd != self.target_window:
                         raise RuntimeError("Foreground game window changed; navigation stopped.")
+                    while self.pause_event.is_set() and not self.stop_event.wait(0.05):
+                        pass
+                    if self.stop_event.is_set():
+                        break
                     pyautogui.press("right")
                     if self.stop_event.wait(navigation_delay_seconds):
                         break

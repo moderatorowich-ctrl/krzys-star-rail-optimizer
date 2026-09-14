@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "krzys-hsr-scanner"
-version = "1.1.0"
+version = "1.1.1"
 description = "Local screen-capture and OCR inventory scanner for Krzys Star Rail Optimizer"
 requires-python = ">=3.11"
 license = "GPL-3.0-only"

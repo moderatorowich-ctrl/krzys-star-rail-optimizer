@@ -156,7 +156,8 @@ export function parseLiveBridgeMessage(
     message.pendingReview < 0 ||
     !Array.isArray(message.scannedKinds) ||
     message.scannedKinds.some(
-      (kind) => !['character', 'lightCone', 'relic', 'warp'].includes(String(kind)),
+      (kind) =>
+        typeof kind !== 'string' || !['character', 'lightCone', 'relic', 'warp'].includes(kind),
     ) ||
     (message.ready && (message.pendingReview !== 0 || message.account === undefined))
   )
@@ -165,6 +166,8 @@ export function parseLiveBridgeMessage(
   const compatibility = compareGameVersions(message.gameVersion, supportedGameVersion);
   if (!compatibility.compatible) throw new Error(compatibility.message);
   const account = message.ready ? migrateAccount(message.account, supportedGameVersion) : undefined;
+  if (account && account.metadata.gameVersion !== message.gameVersion)
+    throw new Error('Snapshot and account game versions do not match.');
   return {
     type: 'snapshot',
     protocolVersion: 1,
@@ -366,6 +369,34 @@ export function mergeLiveAccount(
     }
   }
 
+  const characterIds = new Set(characters.map((item) => item.id));
+  const relicIds = new Set(relics.map((item) => item.id));
+  for (const [index, original] of relics.entries()) {
+    const relic = { ...original };
+    relics[index] = relic;
+    if (relic.equippedCharacterId && !characterIds.has(relic.equippedCharacterId)) {
+      relic.equippedCharacterId = undefined;
+      summary.relicsUpdated += 1;
+    }
+    if (relic.reservedFor && !characterIds.has(relic.reservedFor)) {
+      relic.reservedFor = undefined;
+      summary.relicsUpdated += 1;
+    }
+  }
+  for (const [index, original] of lightCones.entries()) {
+    const cone = { ...original };
+    lightCones[index] = cone;
+    if (cone.equippedCharacterId && !characterIds.has(cone.equippedCharacterId)) {
+      cone.equippedCharacterId = undefined;
+      summary.lightConesUpdated += 1;
+    }
+  }
+  const reservations = Object.fromEntries(
+    Object.entries(current.reservations).filter(
+      ([relicId, characterId]) => relicIds.has(relicId) && characterIds.has(characterId),
+    ),
+  );
+
   return {
     account: AccountSchema.parse({
       ...current,
@@ -380,7 +411,7 @@ export function mergeLiveAccount(
       lightCones,
       relics,
       resources,
-      reservations: current.reservations,
+      reservations,
     }),
     summary,
   };

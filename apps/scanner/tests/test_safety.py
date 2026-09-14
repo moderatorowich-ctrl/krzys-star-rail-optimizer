@@ -1,7 +1,7 @@
 import tempfile
 import unittest
 from pathlib import Path
-from unittest.mock import patch
+from unittest.mock import patch, MagicMock
 from PIL import Image
 from krzys_hsr_scanner.capture import GuidedCapture
 from krzys_hsr_scanner.model import ScanSession
@@ -9,6 +9,25 @@ from krzys_hsr_scanner.ocr import parse_visible_text
 
 
 class SafetyTests(unittest.TestCase):
+    def test_fast_capture_does_not_navigate_after_stop(self):
+        with tempfile.TemporaryDirectory() as directory:
+            capture = GuidedCapture(None, ScanSession(), Path(directory)/'state.json', Path(directory)/'debug')
+            navigation = MagicMock()
+            capture.engine = MagicMock()
+            capture.target_window = None
+            with patch.object(capture, '_prepare_capture', return_value=Image.new('RGB', (10, 10))), patch.object(capture.engine, 'recognize', return_value=('Fixture', .95)), patch('krzys_hsr_scanner.capture.game_window', return_value=(None, 'Fixture')), patch.dict('sys.modules', {'pyautogui': navigation}):
+                capture._run_pipelined(2, .01, False, None, False, lambda message: capture.cancel())
+            navigation.press.assert_not_called()
+            self.assertEqual(capture.session.items, [])
+
+    def test_pause_retains_completed_ocr_until_resume(self):
+        with tempfile.TemporaryDirectory() as directory:
+            capture = GuidedCapture(None, ScanSession(), Path(directory)/'state.json', Path(directory)/'debug')
+            capture.pause()
+            with patch.object(capture.stop_event, 'wait', side_effect=lambda delay: capture.resume()):
+                capture._accept_ocr_result('Fixture Level 15 Hands ATK 352', .95, 'relic', False)
+            self.assertEqual(len(capture.session.items), 1)
+
     def test_hands_and_negative_flags(self):
         item = parse_visible_text('Fixture Level 15 Hands 5 star ATK 352.8 HP 3.8% Unlocked Discard: No', .95)
         self.assertEqual(item.fields['slot'], 'Hands')

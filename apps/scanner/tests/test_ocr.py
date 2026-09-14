@@ -6,6 +6,17 @@ from krzys_hsr_scanner.ocr import crop_detail, parse_visible_text, preprocess, s
 
 
 class OCRFixtureTests(unittest.TestCase):
+    def test_lower_level_character_does_not_get_level_80_stats(self) -> None:
+        item = parse_visible_text("Acheron Level 60", 0.97, "character")
+        self.assertNotIn("baseStats", item.fields)
+
+    def test_false_guarantee_and_repeated_stats(self) -> None:
+        warp = parse_visible_text("Character Guaranteed No", 0.96, "warp")
+        self.assertEqual(warp.fields["resources"]["characterEventGuaranteed"], 0)
+        relic = parse_visible_text("Head Level 15 HP 1,234 HP 10.5% SPD 5", 0.96)
+        self.assertEqual(relic.fields["mainStat"]["value"], 1234)
+        self.assertEqual(relic.fields["substats"][0]["stat"], "hpPct")
+
     def test_synthetic_1080p_fixture_preprocessing(self) -> None:
         image = Image.new("RGB", (1920, 1080), "#111827")
         draw = ImageDraw.Draw(image)
